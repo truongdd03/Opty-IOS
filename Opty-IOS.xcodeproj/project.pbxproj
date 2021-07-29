@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065501075C689E82D003514C /* Pods_Opty_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
 		5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */; };
 		5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AB9146D0E7217B6FFC72E92 /* Pods-Opty-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.debug.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		5EB6386426B2C293007B6FBF /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5EB6386F26B2C516007B6FBF /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5EB6387426B2C563007B6FBF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
+		D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Opty_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065501075C689E82D003514C /* Pods_Opty_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15F5D0323F627BCCA2439A4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AB9146D0E7217B6FFC72E92 /* Pods-Opty-IOS.debug.xcconfig */,
+				C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		420067D395335B892A7F0336 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5EB6384026B2BFC7007B6FBF = {
 			isa = PBXGroup;
 			children = (
 				5EB6384B26B2BFC7007B6FBF /* Opty-IOS */,
 				5EB6384A26B2BFC7007B6FBF /* Products */,
+				15F5D0323F627BCCA2439A4F /* Pods */,
+				420067D395335B892A7F0336 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EB6385D26B2BFCA007B6FBF /* Build configuration list for PBXNativeTarget "Opty-IOS" */;
 			buildPhases = (
+				E56E10E1B2F67CC9F5373CF9 /* [CP] Check Pods Manifest.lock */,
 				5EB6384526B2BFC7007B6FBF /* Sources */,
 				5EB6384626B2BFC7007B6FBF /* Frameworks */,
 				5EB6384726B2BFC7007B6FBF /* Resources */,
+				E7A8D4278FD82C977ABCE57E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +199,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E56E10E1B2F67CC9F5373CF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Opty-IOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7A8D4278FD82C977ABCE57E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5EB6384526B2BFC7007B6FBF /* Sources */ = {
@@ -327,6 +396,7 @@
 		};
 		5EB6385E26B2BFCA007B6FBF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AB9146D0E7217B6FFC72E92 /* Pods-Opty-IOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -345,6 +415,7 @@
 		};
 		5EB6385F26B2BFCA007B6FBF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
