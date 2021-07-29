@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
 		5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */; };
-		5EB6385126B2BFC7007B6FBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6385026B2BFC7007B6FBF /* ViewController.swift */; };
+		5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */; };
 		5EB6385426B2BFC7007B6FBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB6385226B2BFC7007B6FBF /* Main.storyboard */; };
 		5EB6385626B2BFCA007B6FBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB6385526B2BFCA007B6FBF /* Assets.xcassets */; };
 		5EB6385926B2BFCA007B6FBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB6385726B2BFCA007B6FBF /* LaunchScreen.storyboard */; };
+		5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6386426B2C293007B6FBF /* Utilities.swift */; };
+		5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6386F26B2C516007B6FBF /* LogInViewController.swift */; };
+		5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6387426B2C563007B6FBF /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5EB6385026B2BFC7007B6FBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		5EB6385326B2BFC7007B6FBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EB6385526B2BFCA007B6FBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EB6385826B2BFCA007B6FBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EB6385A26B2BFCA007B6FBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EB6386426B2C293007B6FBF /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5EB6386F26B2C516007B6FBF /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		5EB6387426B2C563007B6FBF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,48 @@
 			children = (
 				5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */,
 				5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */,
-				5EB6385026B2BFC7007B6FBF /* ViewController.swift */,
-				5EB6385226B2BFC7007B6FBF /* Main.storyboard */,
+				5EB6386926B2C4BD007B6FBF /* ViewControllers */,
+				5EB6386326B2C26D007B6FBF /* Support */,
+				5EB6386126B2BFDA007B6FBF /* storyboards */,
 				5EB6385526B2BFCA007B6FBF /* Assets.xcassets */,
 				5EB6385726B2BFCA007B6FBF /* LaunchScreen.storyboard */,
 				5EB6385A26B2BFCA007B6FBF /* Info.plist */,
 			);
 			path = "Opty-IOS";
+			sourceTree = "<group>";
+		};
+		5EB6386126B2BFDA007B6FBF /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5EB6385226B2BFC7007B6FBF /* Main.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		5EB6386326B2C26D007B6FBF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				5EB6386426B2C293007B6FBF /* Utilities.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		5EB6386926B2C4BD007B6FBF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EB6387226B2C54E007B6FBF /* Authentication */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5EB6387226B2C54E007B6FBF /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */,
+				5EB6386F26B2C516007B6FBF /* LogInViewController.swift */,
+				5EB6387426B2C563007B6FBF /* SignUpViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EB6385126B2BFC7007B6FBF /* ViewController.swift in Sources */,
+				5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */,
+				5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */,
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,
+				5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */,
+				5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */,
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
