@@ -30,7 +30,9 @@ class SignUpViewController: UIViewController {
         Utilities.styleFilledButton(SignUpButton)
     }
     
-
+    @IBAction func SignUpTapped(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

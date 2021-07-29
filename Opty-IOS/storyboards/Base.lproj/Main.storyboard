@@ -150,8 +150,9 @@
                                     <constraint firstAttribute="width" constant="300" id="Ebi-f6-cmh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Sign up"/>
                                 <connections>
+                                    <action selector="SignUpTapped:" destination="JVJ-xC-NTl" eventType="touchUpInside" id="k50-n1-OVD"/>
                                     <action selector="signUpButton:" destination="vRS-7s-Vlg" eventType="touchUpInside" id="ehv-OE-Btt"/>
                                 </connections>
                             </button>
@@ -220,6 +221,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="LogInButtonTapped:" destination="p82-6j-F25" eventType="touchUpInside" id="3zh-Xu-6dJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UH2-GI-0xK"/>
