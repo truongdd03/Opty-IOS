@@ -30,7 +30,7 @@ class Utilities {
         
         // Filled rounded corner style
         button.backgroundColor = UIColor.systemBlue
-        button.layer.cornerRadius = 25.0
+        button.layer.cornerRadius = 15.0
         button.tintColor = UIColor.white
     }
     
@@ -39,7 +39,7 @@ class Utilities {
         // Hollow rounded corner style
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        button.layer.cornerRadius = 25.0
+        button.layer.cornerRadius = 15.0
         button.tintColor = UIColor.black
     }
     

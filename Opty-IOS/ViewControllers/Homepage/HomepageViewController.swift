@@ -30,7 +30,12 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell") as! DetailsTableViewCell
         cell.cellLabel = parts[indexPath.row]
-
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Homepage", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: parts[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

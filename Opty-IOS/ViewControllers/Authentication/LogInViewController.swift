@@ -42,7 +42,7 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func LogInButtonTapped(_ sender: Any) {
-        if (!validateInputs()) { return }
+        /*if (!validateInputs()) { return }
         
         let email = EmailTextField.text!
         let password = PasswordTextField.text!
@@ -53,7 +53,8 @@ class LogInViewController: UIViewController {
             }
             
             self.transitToNewsfeed()
-        }
+        }*/
+        transitToNewsfeed()
     }
     
     func transitToNewsfeed() {

@@ -17,6 +17,7 @@
 		5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27842F26B2EBE000469AB5 /* MessageViewController.swift */; };
 		5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27843326B2EC6400469AB5 /* HomepageViewController.swift */; };
 		5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27843726B2F8B200469AB5 /* DetailsTableViewCell.swift */; };
+		5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
 		5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */; };
 		5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */; };
@@ -39,6 +40,7 @@
 		5E27842F26B2EBE000469AB5 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		5E27843326B2EC6400469AB5 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		5E27843726B2F8B200469AB5 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicsViewController.swift; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,8 +114,17 @@
 			children = (
 				5E27843326B2EC6400469AB5 /* HomepageViewController.swift */,
 				5E27843726B2F8B200469AB5 /* DetailsTableViewCell.swift */,
+				5E3856F626B39487008EBAE8 /* Categories */,
 			);
 			path = Homepage;
+			sourceTree = "<group>";
+		};
+		5E3856F626B39487008EBAE8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		5EB6384026B2BFC7007B6FBF = {
@@ -318,6 +329,7 @@
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,
 				5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */,
 				5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */,
+				5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */,
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
 				5E27842826B2EA1C00469AB5 /* NewsfeedViewController.swift in Sources */,
 			);
