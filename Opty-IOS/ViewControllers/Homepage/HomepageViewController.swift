@@ -11,26 +11,25 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    let parts = ["Basics", "Education", "Experience", "Skills"];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Home"
         tableView.delegate = self
         tableView.dataSource = self
-        //let customCell = UINib(nibName: "DetailsCell", bundle: nil)
-        //tableView.register(customCell, forCellReuseIdentifier: "DetailsCell")
-
-        // Do any additional setup after loading the view.
     }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return parts.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell") as! DetailsTableViewCell
-        cell.cellLabel = "This is row \(indexPath.row)"
+        cell.cellLabel = parts[indexPath.row]
 
         return cell
     }
