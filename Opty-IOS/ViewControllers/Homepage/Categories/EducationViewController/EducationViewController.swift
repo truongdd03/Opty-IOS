@@ -14,6 +14,9 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var SaveButton: UIButton!
     @IBOutlet weak var CancelButton: UIButton!
     
+    var degrees: [Degree] = []
+    var awards: [Award] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +33,17 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         DegreeTableView.dataSource = self
         AwardTableView.delegate = self
         AwardTableView.dataSource = self
+        
+        DegreeTableView.allowsSelection = false
+        
+        fetchData()
+    }
+    
+    func fetchData() {
+        for _ in 0...5 {
+            degrees.append(Degree(school: "Michigan State University", degree: "BS in Computer Science", startDate: "Sep 21", endDate: "Jun 25"))
+            awards.append(Award(name: "You are welcome here", content: "Hi! This is your scholarship"))
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -38,25 +52,47 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
     
     // MARK: Table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if (tableView == DegreeTableView) {
+            return degrees.count
+        }
+        return awards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if (tableView == DegreeTableView) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DegreeCell") as! DegreeTableViewCell
-            cell.schoolName = "University of California - San Diego"
-            cell.degreeName = "BS in Computer Science"
-            cell.startDate = "Jun 21"
-            cell.endDate = "Sep 25"
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AwardCell")!
-            cell.textLabel?.text = "Your scholarship"
-            cell.detailTextLabel?.text = "This is a scholarship for only you! You are the best!"
+            let tmp: Degree = degrees[indexPath.row]
+            cell.schoolName = tmp.school
+            cell.degreeName = tmp.degree
+            cell.startDate = tmp.startDate
+            cell.endDate = tmp.endDate
             return cell
         }
-
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AwardCell")!
+        cell.textLabel?.text = awards[indexPath.row].name
+        cell.detailTextLabel?.text = awards[indexPath.row].content
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+        
+            if (tableView == DegreeTableView) {
+                self.degrees.remove(at: indexPath.row)
+                self.DegreeTableView.deleteRows(at: [indexPath], with: .automatic)
+                self.DegreeTableView.reloadData()
+            } else {
+                self.awards.remove(at: indexPath.row)
+                self.AwardTableView.deleteRows(at: [indexPath], with: .automatic)
+                self.AwardTableView.reloadData()
+            }
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 
 }

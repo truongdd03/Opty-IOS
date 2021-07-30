@@ -22,6 +22,8 @@
 		5E3856FF26B3E6F0008EBAE8 /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E3856FE26B3E6F0008EBAE8 /* countries.txt */; };
 		5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */; };
 		5E6CED9D26B4026D009C86D7 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CED9C26B4026D009C86D7 /* MyViewController.swift */; };
+		5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA026B41073009C86D7 /* Degree.swift */; };
+		5E6CEDA426B41168009C86D7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA326B41168009C86D7 /* Award.swift */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
 		5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */; };
 		5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */; };
@@ -49,6 +51,8 @@
 		5E3856FE26B3E6F0008EBAE8 /* countries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
 		5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeTableViewCell.swift; sourceTree = "<group>"; };
 		5E6CED9C26B4026D009C86D7 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		5E6CEDA026B41073009C86D7 /* Degree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
+		5E6CEDA326B41168009C86D7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 			path = EducationViewController;
 			sourceTree = "<group>";
 		};
+		5E6CED9F26B41032009C86D7 /* Variables */ = {
+			isa = PBXGroup;
+			children = (
+				5E6CEDA026B41073009C86D7 /* Degree.swift */,
+				5E6CEDA326B41168009C86D7 /* Award.swift */,
+			);
+			path = Variables;
+			sourceTree = "<group>";
+		};
 		5EB6384026B2BFC7007B6FBF = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB6386426B2C293007B6FBF /* Utilities.swift */,
+				5E6CED9F26B41032009C86D7 /* Variables */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -352,9 +366,11 @@
 				5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */,
 				5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */,
 				5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */,
+				5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */,
 				5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */,
 				5E27842026B2E83D00469AB5 /* MyCollectionViewController.swift in Sources */,
 				5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */,
+				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,
 				5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */,
