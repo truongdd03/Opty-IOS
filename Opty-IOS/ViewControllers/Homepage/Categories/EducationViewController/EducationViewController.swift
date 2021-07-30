@@ -11,11 +11,13 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var DegreeTableView: UITableView!
     @IBOutlet weak var AwardTableView: UITableView!
-    @IBOutlet weak var SaveButton: UIButton!
     @IBOutlet weak var CancelButton: UIButton!
     
     var degrees: [Degree] = []
     var awards: [Award] = []
+    
+    let screenWidth = UIScreen.main.bounds.width - 10
+    let screenHeight = UIScreen.main.bounds.height / 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,6 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         DegreeTableView.layer.borderColor = UIColor.systemBlue.cgColor
         AwardTableView.layer.borderWidth = 1
         AwardTableView.layer.borderColor = UIColor.systemBlue.cgColor
-        Utilities.styleFilledButton(SaveButton)
         Utilities.styleHollowButton(CancelButton)
         
         DegreeTableView.delegate = self
@@ -50,6 +51,11 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func addDegreeButtonTapped(_ sender: Any) {
+        let vc = UIViewController()
+        vc.preferredContentSize = CGSize(width: screenWidth, height: screenHeight)
+
+    }
     // MARK: Table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == DegreeTableView) {
