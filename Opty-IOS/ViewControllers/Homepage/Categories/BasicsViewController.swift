@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BasicsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var DatePicker: UIDatePicker!

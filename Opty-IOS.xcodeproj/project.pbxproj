@@ -20,6 +20,8 @@
 		5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */; };
 		5E3856FB26B3D874008EBAE8 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3856FA26B3D874008EBAE8 /* EducationViewController.swift */; };
 		5E3856FF26B3E6F0008EBAE8 /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E3856FE26B3E6F0008EBAE8 /* countries.txt */; };
+		5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */; };
+		5E6CED9D26B4026D009C86D7 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CED9C26B4026D009C86D7 /* MyViewController.swift */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
 		5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */; };
 		5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */; };
@@ -45,6 +47,8 @@
 		5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicsViewController.swift; sourceTree = "<group>"; };
 		5E3856FA26B3D874008EBAE8 /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		5E3856FE26B3E6F0008EBAE8 /* countries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
+		5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeTableViewCell.swift; sourceTree = "<group>"; };
+		5E6CED9C26B4026D009C86D7 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5E27841F26B2E83D00469AB5 /* MyCollectionViewController.swift */,
+				5E6CED9C26B4026D009C86D7 /* MyViewController.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -127,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */,
-				5E3856FA26B3D874008EBAE8 /* EducationViewController.swift */,
+				5E38570326B3EF67008EBAE8 /* EducationViewController */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -138,6 +143,15 @@
 				5E3856FE26B3E6F0008EBAE8 /* countries.txt */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		5E38570326B3EF67008EBAE8 /* EducationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E3856FA26B3D874008EBAE8 /* EducationViewController.swift */,
+				5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */,
+			);
+			path = EducationViewController;
 			sourceTree = "<group>";
 		};
 		5EB6384026B2BFC7007B6FBF = {
@@ -336,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */,
+				5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */,
 				5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */,
 				5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */,
 				5E27842026B2E83D00469AB5 /* MyCollectionViewController.swift in Sources */,
@@ -347,6 +362,7 @@
 				5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */,
 				5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */,
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
+				5E6CED9D26B4026D009C86D7 /* MyViewController.swift in Sources */,
 				5E27842826B2EA1C00469AB5 /* NewsfeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

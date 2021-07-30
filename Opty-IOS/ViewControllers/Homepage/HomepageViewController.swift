@@ -7,10 +7,11 @@
 
 import UIKit
 
-class HomepageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomepageViewController: MyViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var BackButton: UIButton!
     
     let parts = ["Basics", "Education", "Experience", "Skills"];
     
@@ -18,11 +19,17 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
 
         title = "Home"
+        Utilities.styleHollowButton(BackButton)
         tableView.delegate = self
         tableView.dataSource = self
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 
+    // MARK: Table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return parts.count
     }
