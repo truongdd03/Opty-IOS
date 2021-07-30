@@ -36,6 +36,7 @@ class HomepageViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Homepage", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: parts[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

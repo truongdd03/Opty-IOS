@@ -31,6 +31,8 @@ class BasicsViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchCountries()
+        
         title = "Basics"
         Utilities.styleTextField(nameTextField)
         Utilities.styleTextField(AddressTextField)
@@ -40,6 +42,16 @@ class BasicsViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         Utilities.styleTextField(GithubTextField)
         Utilities.styleFilledButton(SaveButton)
         Utilities.styleHollowButton(CancelButton)
+    }
+    
+    func fetchCountries() {
+        let file = "countries"
+        if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: textFile) {
+                //countries = split(fileContents) { $0 == "\n" }
+                countries = fileContents.components(separatedBy: "\n")
+            }
+        }
     }
     
     @IBAction func ChooseNationButtonTapped(_ sender: Any) {

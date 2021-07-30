@@ -82,11 +82,46 @@
                         <outlet property="nameLabel" destination="aNi-wu-SG7" id="VIM-hp-OTv"/>
                         <outlet property="tableView" destination="Hs1-wD-f4Z" id="PgX-3d-gQQ"/>
                         <segue destination="gL6-4e-8D7" kind="push" id="4jN-pV-Yqc"/>
+                        <segue destination="Ti5-rJ-cdr" kind="push" id="rlt-9f-e9L"/>
+                        <segue destination="2SE-c2-E0g" kind="push" id="6Xl-BA-eCC"/>
+                        <segue destination="SIE-GQ-8Uu" kind="push" id="nI5-jS-HSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzA-0R-qm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1205.7971014492755" y="164.73214285714286"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wLD-SB-cy5">
+            <objects>
+                <viewController id="2SE-c2-E0g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qNs-q2-j6S">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eeS-qy-jnq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uQE-zt-Pzw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYd-I7-yxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="1056"/>
+        </scene>
+        <!--Education View Controller-->
+        <scene sceneID="WEo-kB-l0z">
+            <objects>
+                <viewController storyboardIdentifier="Education" id="SIE-GQ-8Uu" customClass="EducationViewController" customModule="Opty_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jY0-C3-o3K">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Dg-dk-FUh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Ya-lb-aot"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WDe-Iv-gEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="1056"/>
         </scene>
         <!--Basics View Controller-->
         <scene sceneID="d10-Pe-wQ1">
@@ -137,7 +172,7 @@
                                     <constraint firstAttribute="width" constant="120" id="hdD-ww-j6n"/>
                                 </constraints>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="South Korea" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwO-DB-hzI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afghanistan" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwO-DB-hzI">
                                 <rect key="frame" x="200" y="271.66666666666669" width="150" height="20.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="WHN-6c-WTg"/>
@@ -188,7 +223,7 @@
                                     <action selector="ChooseNationButtonTapped:" destination="gL6-4e-8D7" eventType="touchUpInside" id="sTT-Hk-1It"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="South Korea" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-xO-xxg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afghanistan" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-xO-xxg">
                                 <rect key="frame" x="220" y="452" width="130" height="20.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="LzF-TA-Pbu"/>
@@ -296,7 +331,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9I-BK-dkc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2321.739130434783" y="-695.08928571428567"/>
+            <point key="canvasLocation" x="-74" y="1057"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tfL-pF-typ">
+            <objects>
+                <viewController id="Ti5-rJ-cdr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bqa-jU-Ruv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hlP-b1-8s3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="doR-rz-5Pg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U65-HQ-nYs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2762" y="1056"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3wZ-Da-yk1">
@@ -314,7 +365,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nai-Gr-PLk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="295.6521739130435" y="165.40178571428569"/>
+            <point key="canvasLocation" x="171" y="164"/>
         </scene>
     </scenes>
     <resources>
