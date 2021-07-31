@@ -27,7 +27,7 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
     let screenHeight = UIScreen.main.bounds.height / 2
     var selectedRow = 0
     
-    static var basicInfo = Info(name: "", birth: "", nation: "", address: "", country: "", phone: "")
+    static var basicInfo = Info(name: "", birth: Date(), nation: "", address: "", city: "", state: "", country: "", phone: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,29 +42,41 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         Utilities.styleTextField(PhoneTextField)
         Utilities.styleFilledButton(SaveButton)
         Utilities.styleHollowButton(CancelButton)
+        
+        showFields()
+    }
+    
+    func showFields() {
+        let info = BasicsViewController.basicInfo
+        nameTextField.text = info.name
+        PhoneTextField.text = info.phone
+        DatePicker.date = info.birth
+        AddressTextField.text = info.address
+        CityTextField.text = info.city
+        StateTextField.text = info.state
+        CountryLabel.text = info.country
+        NationLabel.text = info.nation
     }
     
     func fetchCountries() {
         let file = "countries"
         if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
             if let fileContents = try? String(contentsOf: textFile) {
-                //countries = split(fileContents) { $0 == "\n" }
                 countries = fileContents.components(separatedBy: "\n")
             }
         }
     }
     
-    func validateInputs() -> Bool {
-        if (!nameTextField.hasText || !AddressTextField.hasText || !CityTextField.hasText || !StateTextField.hasText || !PhoneTextField.hasText) {
-            showError(message: "Please fill all fields")
-            return false;
-        }
-        
-        return true
+    func reformatDate(date: UIDatePicker) -> String {
+        return ""
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        let birth = DatePicker.date
         
+        BasicsViewController.basicInfo = Info(name: nameTextField.text, birth: birth, nation: NationLabel.text, address: AddressTextField.text!, city: CityTextField.text, state: StateTextField.text, country: CountryLabel.text, phone: PhoneTextField.text)
+        
+        alert(title: "Saved", message: "")
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
