@@ -23,6 +23,7 @@
 		5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */; };
 		5E4268E926B4EF6C007D25FD /* AddAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */; };
 		5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */; };
+		5E4268EF26B50695007D25FD /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268EE26B50695007D25FD /* Info.swift */; };
 		5E6CED9D26B4026D009C86D7 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CED9C26B4026D009C86D7 /* MyViewController.swift */; };
 		5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA026B41073009C86D7 /* Degree.swift */; };
 		5E6CEDA426B41168009C86D7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA326B41168009C86D7 /* Award.swift */; };
@@ -55,6 +56,7 @@
 		5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeTableViewCell.swift; sourceTree = "<group>"; };
 		5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAwardViewController.swift; sourceTree = "<group>"; };
 		5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		5E4268EE26B50695007D25FD /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		5E6CED9C26B4026D009C86D7 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		5E6CEDA026B41073009C86D7 /* Degree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		5E6CEDA326B41168009C86D7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5E6CEDA026B41073009C86D7 /* Degree.swift */,
+				5E4268EE26B50695007D25FD /* Info.swift */,
 				5E6CEDA326B41168009C86D7 /* Award.swift */,
 			);
 			path = Variables;
@@ -378,6 +381,7 @@
 				5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */,
 				5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */,
 				5E27842026B2E83D00469AB5 /* MyCollectionViewController.swift in Sources */,
+				5E4268EF26B50695007D25FD /* Info.swift in Sources */,
 				5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */,
 				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,

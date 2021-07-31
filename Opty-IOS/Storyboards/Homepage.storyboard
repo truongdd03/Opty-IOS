@@ -698,11 +698,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Github link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7W-E4-vpr">
-                                <rect key="frame" x="20" y="622" width="350" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4m-3I-5KM">
                                 <rect key="frame" x="240" y="746" width="100" height="34"/>
                                 <constraints>
@@ -710,6 +705,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="gL6-4e-8D7" eventType="touchUpInside" id="AvI-hb-lor"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LU8-aQ-7If">
                                 <rect key="frame" x="50" y="746" width="100" height="34"/>
@@ -743,6 +741,7 @@
                             <constraint firstItem="Fyy-Bw-QoH" firstAttribute="trailing" secondItem="wl7-ab-SqC" secondAttribute="trailing" constant="20" id="GgV-P2-5KQ"/>
                             <constraint firstItem="7lq-gS-ev9" firstAttribute="top" secondItem="6Ri-UQ-kiD" secondAttribute="bottom" constant="40" id="Hua-Q0-IOz"/>
                             <constraint firstItem="OtG-B1-1D7" firstAttribute="top" secondItem="7lq-gS-ev9" secondAttribute="bottom" constant="25" id="Lyg-JX-vsU"/>
+                            <constraint firstItem="b4m-3I-5KM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OtG-B1-1D7" secondAttribute="bottom" constant="30" id="M3z-Yn-zrm"/>
                             <constraint firstItem="wl7-ab-SqC" firstAttribute="centerY" secondItem="46k-k1-jQ2" secondAttribute="centerY" id="Msz-Mg-JI1"/>
                             <constraint firstItem="jWP-7v-9e0" firstAttribute="leading" secondItem="gJG-xO-xxg" secondAttribute="trailing" id="NMG-fD-wQ3"/>
                             <constraint firstItem="orX-sv-pDU" firstAttribute="leading" secondItem="Fyy-Bw-QoH" secondAttribute="leading" constant="20" id="Ns4-1C-VlX"/>
@@ -754,17 +753,14 @@
                             <constraint firstItem="OtG-B1-1D7" firstAttribute="leading" secondItem="Fyy-Bw-QoH" secondAttribute="leading" constant="20" id="aaj-4I-1O4"/>
                             <constraint firstItem="Fyy-Bw-QoH" firstAttribute="trailing" secondItem="jWP-7v-9e0" secondAttribute="trailing" constant="20" id="adH-E3-WC4"/>
                             <constraint firstItem="46k-k1-jQ2" firstAttribute="leading" secondItem="Fyy-Bw-QoH" secondAttribute="leading" constant="20" id="bHI-FF-3h3"/>
-                            <constraint firstItem="Fyy-Bw-QoH" firstAttribute="trailing" secondItem="w7W-E4-vpr" secondAttribute="trailing" constant="20" id="csv-O7-Wp3"/>
                             <constraint firstItem="orX-sv-pDU" firstAttribute="top" secondItem="ddM-Ba-7um" secondAttribute="bottom" constant="20" id="dHb-Nk-uAK"/>
                             <constraint firstItem="Fyy-Bw-QoH" firstAttribute="trailing" secondItem="vdM-5P-2Tt" secondAttribute="trailing" constant="20" id="g8o-cI-1JW"/>
                             <constraint firstItem="Fyy-Bw-QoH" firstAttribute="trailing" secondItem="OtG-B1-1D7" secondAttribute="trailing" constant="20" id="hdi-kE-w3V"/>
                             <constraint firstItem="CbR-jX-rPH" firstAttribute="leading" secondItem="Fyy-Bw-QoH" secondAttribute="leading" constant="20" id="iog-5c-EVK"/>
                             <constraint firstItem="Fyy-Bw-QoH" firstAttribute="bottom" secondItem="b4m-3I-5KM" secondAttribute="bottom" constant="30" id="jlD-CJ-az8"/>
                             <constraint firstItem="tbr-WM-oGq" firstAttribute="leading" secondItem="OwO-DB-hzI" secondAttribute="trailing" id="nEx-LH-AP2"/>
-                            <constraint firstItem="w7W-E4-vpr" firstAttribute="top" secondItem="OtG-B1-1D7" secondAttribute="bottom" constant="30" id="qdO-4x-Iso"/>
                             <constraint firstItem="Fyy-Bw-QoH" firstAttribute="trailing" secondItem="ddM-Ba-7um" secondAttribute="trailing" constant="20" id="qoc-gy-HXs"/>
                             <constraint firstItem="6Ri-UQ-kiD" firstAttribute="leading" secondItem="Fyy-Bw-QoH" secondAttribute="leading" constant="20" id="teM-Xu-47x"/>
-                            <constraint firstItem="w7W-E4-vpr" firstAttribute="leading" secondItem="Fyy-Bw-QoH" secondAttribute="leading" constant="20" id="xFF-V8-pmw"/>
                             <constraint firstItem="vdM-5P-2Tt" firstAttribute="centerY" secondItem="orX-sv-pDU" secondAttribute="centerY" id="xMR-tH-RWu"/>
                         </constraints>
                     </view>
@@ -775,7 +771,6 @@
                         <outlet property="CityTextField" destination="wl7-ab-SqC" id="OQ3-7B-Ioc"/>
                         <outlet property="CountryLabel" destination="gJG-xO-xxg" id="DKh-Yr-YRV"/>
                         <outlet property="DatePicker" destination="vdM-5P-2Tt" id="bEb-El-PXS"/>
-                        <outlet property="GithubTextField" destination="w7W-E4-vpr" id="Aeu-r0-WZt"/>
                         <outlet property="NationLabel" destination="OwO-DB-hzI" id="DYV-87-oPP"/>
                         <outlet property="PhoneTextField" destination="OtG-B1-1D7" id="aT5-q0-DMj"/>
                         <outlet property="PickerViewButton" destination="tbr-WM-oGq" id="LeS-zg-JeG"/>

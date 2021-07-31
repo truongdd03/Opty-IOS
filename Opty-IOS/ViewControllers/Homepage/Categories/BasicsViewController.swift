@@ -15,7 +15,6 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var CityTextField: UITextField!
     @IBOutlet weak var StateTextField: UITextField!
     @IBOutlet weak var PhoneTextField: UITextField!
-    @IBOutlet weak var GithubTextField: UITextField!
     @IBOutlet weak var SaveButton: UIButton!
     @IBOutlet weak var CancelButton: UIButton!
     
@@ -28,6 +27,8 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
     let screenHeight = UIScreen.main.bounds.height / 2
     var selectedRow = 0
     
+    static var basicInfo = Info(name: "", birth: "", nation: "", address: "", country: "", phone: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +40,6 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         Utilities.styleTextField(CityTextField)
         Utilities.styleTextField(StateTextField)
         Utilities.styleTextField(PhoneTextField)
-        Utilities.styleTextField(GithubTextField)
         Utilities.styleFilledButton(SaveButton)
         Utilities.styleHollowButton(CancelButton)
     }
@@ -52,6 +52,23 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
                 countries = fileContents.components(separatedBy: "\n")
             }
         }
+    }
+    
+    func validateInputs() -> Bool {
+        if (!nameTextField.hasText || !AddressTextField.hasText || !CityTextField.hasText || !StateTextField.hasText || !PhoneTextField.hasText) {
+            showError(message: "Please fill all fields")
+            return false;
+        }
+        
+        return true
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ChooseNationButtonTapped(_ sender: Any) {
@@ -89,11 +106,6 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         self.present(alert, animated: true)
 
     }
-    
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
     
     // MARK: Picker View
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
