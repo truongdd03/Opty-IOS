@@ -11,6 +11,7 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var BackButton: UIButton!
     @IBOutlet weak var ExperienceTableView: UITableView!
+    @IBOutlet weak var AddButton: UIButton!
     
     static var jobs: [Job] = []
     
@@ -24,6 +25,7 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
         ExperienceTableView.allowsSelection = false
         
         Utilities.styleHollowButton(BackButton)
+        Utilities.styleFilledButton(AddButton)
         
         fetchData()
     }
