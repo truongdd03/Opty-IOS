@@ -67,8 +67,12 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    func reformatDate(date: UIDatePicker) -> String {
-        return ""
+    func alert(title: String, message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        present(ac, animated: true)
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {

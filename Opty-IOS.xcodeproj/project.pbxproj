@@ -37,6 +37,7 @@
 		5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6386426B2C293007B6FBF /* Utilities.swift */; };
 		5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6386F26B2C516007B6FBF /* LogInViewController.swift */; };
 		5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6387426B2C563007B6FBF /* SignUpViewController.swift */; };
+		5EB830CE26B51A1600F63ABC /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830CD26B51A1600F63ABC /* ExperienceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		5EB6386426B2C293007B6FBF /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5EB6386F26B2C516007B6FBF /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5EB6387426B2C563007B6FBF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5EB830CD26B51A1600F63ABC /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Opty_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */,
+				5EB830CD26B51A1600F63ABC /* ExperienceViewController.swift */,
 				5E38570326B3EF67008EBAE8 /* EducationViewController */,
 			);
 			path = Categories;
@@ -389,6 +392,7 @@
 				5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */,
 				5E4268E926B4EF6C007D25FD /* AddAwardViewController.swift in Sources */,
 				5E3856FB26B3D874008EBAE8 /* EducationViewController.swift in Sources */,
+				5EB830CE26B51A1600F63ABC /* ExperienceViewController.swift in Sources */,
 				5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */,
 				5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */,
 				5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */,

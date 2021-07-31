@@ -20,11 +20,5 @@ class MyViewController: UIViewController {
         let vc = storyBoard.instantiateViewController(identifier: "HomeMessage") as! UITableViewController
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func alert(title: String, message: String) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(ac, animated: true)
-    }
 
 }
