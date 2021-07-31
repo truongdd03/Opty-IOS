@@ -228,11 +228,11 @@
 		5EB6386926B2C4BD007B6FBF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5EB6387226B2C54E007B6FBF /* Authentication */,
+				5E27842626B2EA0400469AB5 /* Newsfeed */,
 				5E27843226B2EC4400469AB5 /* Homepage */,
 				5E27842E26B2EBC300469AB5 /* Message */,
-				5E27842626B2EA0400469AB5 /* Newsfeed */,
 				5E27841E26B2E81000469AB5 /* Templates */,
-				5EB6387226B2C54E007B6FBF /* Authentication */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

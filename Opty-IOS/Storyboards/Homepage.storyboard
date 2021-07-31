@@ -171,6 +171,7 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="V57-2l-wYi" secondAttribute="bottom" id="bdZ-d2-vUu"/>
                                                         <constraint firstItem="mJ0-YD-8If" firstAttribute="top" secondItem="bss-2W-ctr" secondAttribute="top" id="sR5-2D-8tI"/>
                                                     </constraints>
                                                 </stackView>

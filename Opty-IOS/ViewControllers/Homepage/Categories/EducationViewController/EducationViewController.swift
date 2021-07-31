@@ -13,8 +13,8 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var AwardTableView: UITableView!
     @IBOutlet weak var CancelButton: UIButton!
     
-    var degrees: [Degree] = []
-    var awards: [Award] = []
+    static var degrees: [Degree] = []
+    static var awards: [Award] = []
     
     let screenWidth = UIScreen.main.bounds.width - 10
     let screenHeight = UIScreen.main.bounds.height / 2
@@ -38,13 +38,19 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         DegreeTableView.allowsSelection = false
         
         fetchData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadDegree), name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
+    }
+    
+    @objc func loadDegree() {
+        self.DegreeTableView.reloadData()
     }
     
     func fetchData() {
-        for _ in 0...5 {
-            degrees.append(Degree(school: "Michigan State University", degree: "BS in Computer Science", startDate: "Sep 21", endDate: "Jun 25"))
-            awards.append(Award(name: "You are welcome here", content: "Hi! This is your scholarship"))
-        }
+        /*for _ in 0...5 {
+            EducationViewController.degrees.append(Degree(school: "Michigan State University", degree: "BS in Computer Science", startDate: "Sep 21", endDate: "Jun 25"))
+            EducationViewController.awards.append(Award(name: "You are welcome here", content: "Hi! This is your scholarship"))
+        }*/
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -59,15 +65,15 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
     // MARK: Table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == DegreeTableView) {
-            return degrees.count
+            return EducationViewController.degrees.count
         }
-        return awards.count
+        return EducationViewController.awards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (tableView == DegreeTableView) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DegreeCell") as! DegreeTableViewCell
-            let tmp: Degree = degrees[indexPath.row]
+            let tmp: Degree = EducationViewController.degrees[indexPath.row]
             cell.schoolName = tmp.school
             cell.degreeName = tmp.degree
             cell.startDate = tmp.startDate
@@ -76,8 +82,8 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AwardCell")!
-        cell.textLabel?.text = awards[indexPath.row].name
-        cell.detailTextLabel?.text = awards[indexPath.row].content
+        cell.textLabel?.text = EducationViewController.awards[indexPath.row].name
+        cell.detailTextLabel?.text = EducationViewController.awards[indexPath.row].content
         return cell
     }
     
@@ -85,11 +91,11 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         if (editingStyle == .delete) {
         
             if (tableView == DegreeTableView) {
-                self.degrees.remove(at: indexPath.row)
+                EducationViewController.degrees.remove(at: indexPath.row)
                 self.DegreeTableView.deleteRows(at: [indexPath], with: .automatic)
                 self.DegreeTableView.reloadData()
             } else {
-                self.awards.remove(at: indexPath.row)
+                EducationViewController.awards.remove(at: indexPath.row)
                 self.AwardTableView.deleteRows(at: [indexPath], with: .automatic)
                 self.AwardTableView.reloadData()
             }

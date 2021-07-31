@@ -35,7 +35,47 @@ class AddDegreeViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         self.dismiss(animated: true, completion: nil)
     }
     
+    func showError(message: String) {
+        let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true)
+    }
+    
+    func validateInputs() -> Bool {
+        if (!schoolInput.hasText || !majorInput.hasText) {
+            showError(message: "Please fill all fields")
+            return false;
+        }
+        if (StartDate.date > EndDate.date) {
+            showError(message: "End date is ealier than start date")
+            return false;
+        }
+        return true;
+    }
+    
+    func reformatDate(date: UIDatePicker) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/yy"
+        return formatter.string(from: date.date)
+    }
+    
+    func updateFirebase() {
+        // TO DO
+    }
+    
     @IBAction func addButtonTapped(_ sender: Any) {
+        if (!validateInputs()) { return }
+        let degree = degreeTypes[DegreePicker.selectedRow(inComponent: 0)] + " in " + majorInput.text!
+        let startDate = reformatDate(date: StartDate)
+        let endDate = reformatDate(date: EndDate)
+        
+        EducationViewController.degrees.append(Degree(school: schoolInput.text!, degree: degree, startDate: startDate, endDate: endDate))
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
+        
+        updateFirebase()
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
