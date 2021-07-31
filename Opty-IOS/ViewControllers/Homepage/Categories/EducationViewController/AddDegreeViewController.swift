@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddDegreeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var schoolInput: UITextField!
     @IBOutlet weak var DegreePicker: UIPickerView!
@@ -33,12 +33,6 @@ class AddDegreeViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func showError(message: String) {
-        let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(ac, animated: true)
     }
     
     func validateInputs() -> Bool {

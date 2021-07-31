@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddAwardViewController: UIViewController {
+class AddAwardViewController: PopUpViewController {
 
     @IBOutlet weak var AwardNameInput: UITextField!
     @IBOutlet weak var DescriptionInput: UITextView!
@@ -31,8 +31,22 @@ class AddAwardViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
+    func validateInputs() -> Bool {
+        if (!AwardNameInput.hasText || !DescriptionInput.hasText) {
+            showError(message: "Please fill all fields")
+            return false
+        }
+        
+        return true
+    }
     
+    @IBAction func addButtonTapped(_ sender: Any) {
+        if (!validateInputs()) { return }
+        
+        EducationViewController.awards.append(Award(name: AwardNameInput.text!, content: DescriptionInput.text!))
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAward"), object: nil)
+
         self.dismiss(animated: true, completion: nil)
     }
     

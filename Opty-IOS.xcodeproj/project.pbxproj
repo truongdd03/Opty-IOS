@@ -22,6 +22,7 @@
 		5E3856FF26B3E6F0008EBAE8 /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E3856FE26B3E6F0008EBAE8 /* countries.txt */; };
 		5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */; };
 		5E4268E926B4EF6C007D25FD /* AddAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */; };
+		5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */; };
 		5E6CED9D26B4026D009C86D7 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CED9C26B4026D009C86D7 /* MyViewController.swift */; };
 		5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA026B41073009C86D7 /* Degree.swift */; };
 		5E6CEDA426B41168009C86D7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA326B41168009C86D7 /* Award.swift */; };
@@ -53,6 +54,7 @@
 		5E3856FE26B3E6F0008EBAE8 /* countries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
 		5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeTableViewCell.swift; sourceTree = "<group>"; };
 		5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAwardViewController.swift; sourceTree = "<group>"; };
+		5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		5E6CED9C26B4026D009C86D7 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		5E6CEDA026B41073009C86D7 /* Degree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		5E6CEDA326B41168009C86D7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				5E27841F26B2E83D00469AB5 /* MyCollectionViewController.swift */,
 				5E6CED9C26B4026D009C86D7 /* MyViewController.swift */,
+				5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				5E3856FB26B3D874008EBAE8 /* EducationViewController.swift in Sources */,
 				5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */,
 				5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */,
+				5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */,
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
 				5E6CED9D26B4026D009C86D7 /* MyViewController.swift in Sources */,
 				5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */,

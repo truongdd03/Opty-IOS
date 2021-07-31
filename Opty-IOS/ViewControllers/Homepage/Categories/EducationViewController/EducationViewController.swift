@@ -40,10 +40,16 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         fetchData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadDegree), name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadAward), name: NSNotification.Name(rawValue: "loadAward"), object: nil)
+
     }
     
     @objc func loadDegree() {
         self.DegreeTableView.reloadData()
+    }
+    
+    @objc func loadAward() {
+        self.AwardTableView.reloadData()
     }
     
     func fetchData() {

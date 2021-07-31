@@ -622,7 +622,7 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="vdM-5P-2Tt">
-                                <rect key="frame" x="250" y="214.33333333333334" width="120" height="34.333333333333343"/>
+                                <rect key="frame" x="250" y="214.66666666666666" width="120" height="34.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="hdD-ww-j6n"/>
                                 </constraints>
@@ -643,9 +643,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="46k-k1-jQ2">
-                                <rect key="frame" x="20" y="371" width="190" height="34"/>
+                                <rect key="frame" x="20" y="371" width="180" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="CuN-JE-Jss"/>
+                                    <constraint firstAttribute="width" constant="180" id="CuN-JE-Jss"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="address-line1"/>
@@ -659,9 +659,9 @@
                                 <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Provide/State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ri-UQ-kiD">
-                                <rect key="frame" x="20" y="435" width="190" height="34"/>
+                                <rect key="frame" x="20" y="435" width="180" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="6Gq-Hf-eAw"/>
+                                    <constraint firstAttribute="width" constant="180" id="6Gq-Hf-eAw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="address-level1"/>
@@ -679,7 +679,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Afghanistan" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-xO-xxg">
-                                <rect key="frame" x="220" y="451.66666666666669" width="130" height="20.333333333333314"/>
+                                <rect key="frame" x="220" y="452" width="130" height="20.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="LzF-TA-Pbu"/>
                                 </constraints>
