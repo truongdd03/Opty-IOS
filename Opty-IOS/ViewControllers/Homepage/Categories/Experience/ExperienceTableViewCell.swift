@@ -10,15 +10,18 @@ import UIKit
 class ExperienceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var TagsCollection: UICollectionView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var JobDescription: UITextView!
+    @IBOutlet weak var DurationLabel: UILabel!
+    
+    var content = "" {
+        didSet {
+            JobDescription.text = content
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var duration = "" {
+        didSet {
+            DurationLabel.text = duration
+        }
     }
     
     func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {

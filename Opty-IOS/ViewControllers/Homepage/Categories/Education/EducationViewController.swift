@@ -36,6 +36,7 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         AwardTableView.dataSource = self
         
         DegreeTableView.allowsSelection = false
+        AwardTableView.allowsSelection = false
         
         fetchData()
         
@@ -107,10 +108,6 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
             }
             
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
     }
 
 }

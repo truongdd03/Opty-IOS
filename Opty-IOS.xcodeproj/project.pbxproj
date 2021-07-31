@@ -40,6 +40,7 @@
 		5EB830D426B548CA00F63ABC /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */; };
 		5EB830D726B560E200F63ABC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D626B560E200F63ABC /* Job.swift */; };
 		5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */; };
+		5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
 		5EB830D626B560E200F63ABC /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Opty_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,9 +152,9 @@
 		5E3856F626B39487008EBAE8 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				5EB830D126B548A500F63ABC /* Experience */,
 				5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */,
 				5E38570326B3EF67008EBAE8 /* Education */,
+				5EB830D126B548A500F63ABC /* Experience */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -269,6 +271,7 @@
 			children = (
 				5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */,
 				5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */,
+				5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */,
 			);
 			path = Experience;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			files = (
 				5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */,
 				5EB830D726B560E200F63ABC /* Job.swift in Sources */,
+				5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */,
 				5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */,
 				5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */,
 				5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */,
