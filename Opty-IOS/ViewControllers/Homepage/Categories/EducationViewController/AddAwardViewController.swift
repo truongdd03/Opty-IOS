@@ -46,8 +46,14 @@ class AddAwardViewController: PopUpViewController {
         EducationViewController.awards.append(Award(name: AwardNameInput.text!, content: DescriptionInput.text!))
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAward"), object: nil)
+        
+        updateFirebase()
 
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: Firebase
+    func updateFirebase() {
+        // To do
+    }
 }

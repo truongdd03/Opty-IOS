@@ -53,10 +53,6 @@ class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPick
         return formatter.string(from: date.date)
     }
     
-    func updateFirebase() {
-        // TO DO
-    }
-    
     @IBAction func addButtonTapped(_ sender: Any) {
         if (!validateInputs()) { return }
         let degree = degreeTypes[DegreePicker.selectedRow(inComponent: 0)] + " in " + majorInput.text!
@@ -72,6 +68,12 @@ class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPick
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: Firebase
+    func updateFirebase() {
+        // To do
+    }
+    
+    // MARK: Picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
