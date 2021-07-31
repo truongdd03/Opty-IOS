@@ -38,6 +38,8 @@
 		5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6386F26B2C516007B6FBF /* LogInViewController.swift */; };
 		5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6387426B2C563007B6FBF /* SignUpViewController.swift */; };
 		5EB830D426B548CA00F63ABC /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */; };
+		5EB830D726B560E200F63ABC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D626B560E200F63ABC /* Job.swift */; };
+		5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		5EB6386F26B2C516007B6FBF /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		5EB6387426B2C563007B6FBF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
+		5EB830D626B560E200F63ABC /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Opty_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,6 +182,7 @@
 				5E6CEDA026B41073009C86D7 /* Degree.swift */,
 				5E4268EE26B50695007D25FD /* Info.swift */,
 				5E6CEDA326B41168009C86D7 /* Award.swift */,
+				5EB830D626B560E200F63ABC /* Job.swift */,
 			);
 			path = Variables;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */,
+				5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */,
 			);
 			path = Experience;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EB6387526B2C563007B6FBF /* SignUpViewController.swift in Sources */,
+				5EB830D726B560E200F63ABC /* Job.swift in Sources */,
 				5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */,
 				5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */,
 				5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */,
@@ -396,6 +403,7 @@
 				5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */,
 				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,
+				5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */,
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,
 				5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */,
 				5E4268E926B4EF6C007D25FD /* AddAwardViewController.swift in Sources */,
