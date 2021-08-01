@@ -41,6 +41,7 @@
 		5EB830D726B560E200F63ABC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D626B560E200F63ABC /* Job.swift */; };
 		5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */; };
 		5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */; };
+		5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		5EB830D626B560E200F63ABC /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Opty_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,8 +174,7 @@
 			children = (
 				5E3856FA26B3D874008EBAE8 /* EducationViewController.swift */,
 				5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */,
-				5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */,
-				5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */,
+				5EFF111326B63EC20040DC86 /* PopUp */,
 			);
 			path = Education;
 			sourceTree = "<group>";
@@ -270,10 +271,28 @@
 			isa = PBXGroup;
 			children = (
 				5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */,
+				5EFF111526B63EF90040DC86 /* ExperienceCell */,
+				5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */,
+			);
+			path = Experience;
+			sourceTree = "<group>";
+		};
+		5EFF111326B63EC20040DC86 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */,
+				5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		5EFF111526B63EF90040DC86 /* ExperienceCell */ = {
+			isa = PBXGroup;
+			children = (
 				5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */,
 				5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */,
 			);
-			path = Experience;
+			path = ExperienceCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +436,7 @@
 				5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */,
 				5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */,
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
+				5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */,
 				5E6CED9D26B4026D009C86D7 /* MyViewController.swift in Sources */,
 				5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */,
 				5E27842826B2EA1C00469AB5 /* NewsfeedViewController.swift in Sources */,
