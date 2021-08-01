@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var CompanyInput: UITextField!
     @IBOutlet weak var RoleInput: UITextField!
     @IBOutlet weak var DuarationInput: UITextField!
@@ -18,7 +18,10 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
     @IBOutlet weak var TagsCollectionView: UICollectionView!
     @IBOutlet weak var DeselectedTagsCollectionView: UICollectionView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var selectedTags: [String] = []
+    var tags: [String] = []
     var deselectedTags: [String] = []
     
     override func viewDidLoad() {
@@ -35,6 +38,7 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
         TagsCollectionView.dataSource = self
         DeselectedTagsCollectionView.delegate = self
         DeselectedTagsCollectionView.dataSource = self
+        searchBar.delegate = self
         
         fetchTags()
     }
@@ -43,10 +47,19 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
         let file = "tags"
         if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
             if let fileContents = try? String(contentsOf: textFile) {
-                deselectedTags = fileContents.components(separatedBy: "\n")
+                tags = fileContents.components(separatedBy: "\n")
             }
         }
-        deselectedTags.sort()
+        tags.removeLast()
+        tags.sort()
+        deselectedTags = tags
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        deselectedTags = searchText.isEmpty ? tags : tags.filter { (item: String) -> Bool in
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        DeselectedTagsCollectionView.reloadData()
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -71,6 +84,8 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
 
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     
     // MARK: Collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

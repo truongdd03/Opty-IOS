@@ -821,6 +821,7 @@
                         <outlet property="JobDescriptionInput" destination="e1o-ba-JdB" id="0KH-bE-iRa"/>
                         <outlet property="RoleInput" destination="O9W-TO-Sxe" id="kdo-9I-a2E"/>
                         <outlet property="TagsCollectionView" destination="76o-LC-d82" id="cWt-X6-w3x"/>
+                        <outlet property="searchBar" destination="ZyF-pp-l2f" id="U5H-gf-1QO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9O-ML-jPJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
