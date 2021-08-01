@@ -18,8 +18,8 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
     @IBOutlet weak var TagsCollectionView: UICollectionView!
     @IBOutlet weak var DeselectedTagsCollectionView: UICollectionView!
     
-    var selectedTags: [String] = ["Swift", "Javascript", "C++", "CSS", "HTML", "Pascal"]
-    var deselectedTags: [String] = ["Python", "Ruby", "Java", "Koltin", "C#"]
+    var selectedTags: [String] = []
+    var deselectedTags: [String] = ["Python", "Ruby", "Java", "Koltin", "C#", "Swift", "Javascript", "C++", "CSS", "HTML", "Pascal"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,22 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
         self.dismiss(animated: true, completion: nil)
     }
     
+    func validateInputs() -> Bool {
+        if (!CompanyInput.hasText || !RoleInput.hasText || !DuarationInput.hasText || !JobDescriptionInput.hasText) {
+            showError(message: "Please fill all fields")
+            return false;
+        }
+        return true;
+    }
+    
     @IBAction func addButtonTapped(_ sender: Any) {
+        if (!validateInputs()) { return }
+        
+        let tmp = Job(company: CompanyInput.text!, role: RoleInput.text!, tags: selectedTags, content: JobDescriptionInput.text!, duration: DuarationInput.text!)
+        ExperienceViewController.jobs.append(tmp)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadExperience"), object: nil)
+
         self.dismiss(animated: true, completion: nil)
     }
     

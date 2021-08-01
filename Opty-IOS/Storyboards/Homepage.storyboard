@@ -687,7 +687,7 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Job description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-ba-JdB">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e1o-ba-JdB">
                                         <rect key="frame" x="10" y="241.66666666666671" width="270" height="93.333333333333343"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>

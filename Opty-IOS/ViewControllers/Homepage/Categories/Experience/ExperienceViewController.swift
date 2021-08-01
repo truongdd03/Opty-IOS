@@ -24,16 +24,20 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
         ExperienceTableView.dataSource = self
         ExperienceTableView.allowsSelection = false
         
+        NotificationCenter.default.addObserver(self, selector: #selector(loadExperience), name: NSNotification.Name(rawValue: "loadExperience"), object: nil)
+        
         Utilities.styleHollowButton(BackButton)
         Utilities.styleFilledButton(AddButton)
         
         fetchData()
     }
     
+    @objc func loadExperience() {
+        ExperienceTableView.reloadData()
+    }
+    
     func fetchData() {
-        for _ in 0...3 {
-            ExperienceViewController.jobs.append(Job(company: "Facebook", role: "Leader", tags: ["java", "swift", "c++", "html", "css"], content: "Hi how are you i'm fine", duration: "5 years"))
-        }
+        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

@@ -19,6 +19,6 @@ class Job: NSObject {
         self.role = role
         self.tags = tags
         self.content = content ?? ""
-        self.duration = duration
+        self.duration = duration + "yr(s)"
     }
 }
