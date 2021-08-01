@@ -76,11 +76,7 @@ extension ExperienceViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tag", for: indexPath) as! TagCollectionViewCell
         
-        cell.tagName.text = ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item]
-        cell.tagName.layer.borderWidth = 1
-        cell.tagName.layer.cornerRadius = 5
-        cell.tagName.layer.borderColor = UIColor.black.cgColor
-        cell.tagName.layer.masksToBounds = true
+        cell.setLabel(tag: ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item])
         return cell
     }
 }
