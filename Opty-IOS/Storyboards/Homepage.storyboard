@@ -649,26 +649,25 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="6Ry-aR-uH6"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ow4-Jk-y8s">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ow4-Jk-y8s">
                                             <size key="itemSize" width="80" height="20"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Tags" id="RBe-OS-VDx" customClass="TagCollectionViewCell" customModule="Opty_IOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Tag" id="RBe-OS-VDx" customClass="TagCollectionViewCell" customModule="Opty_IOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="1.6666666666666667" width="80" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Q2-Ki-rAN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javascript" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-ba-l0a">
-                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
                                                             <color key="backgroundColor" systemColor="systemTealColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="LpQ-b7-4C8"/>
-                                                                <constraint firstAttribute="height" constant="20" id="pKn-VO-Frn"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -682,6 +681,9 @@
                                                         <constraint firstItem="L84-ba-l0a" firstAttribute="leading" secondItem="8Q2-Ki-rAN" secondAttribute="leading" id="nOB-Ts-NDi"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="tagName" destination="L84-ba-l0a" id="aF2-GF-uNG"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -744,14 +746,14 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="BYq-lk-6GR"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UDv-W5-Bzo">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UDv-W5-Bzo">
                                             <size key="itemSize" width="90" height="25"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Tags" id="bj0-fB-5xS" customClass="TagCollectionViewCell" customModule="Opty_IOS" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DeselectedTag" id="bj0-fB-5xS" customClass="TagCollectionViewCell" customModule="Opty_IOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mhT-nT-CbG">
@@ -762,7 +764,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="90" height="25"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="Xbf-JR-vU3"/>
                                                                 <constraint firstAttribute="width" constant="90" id="vWo-DQ-F7x"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -777,6 +778,10 @@
                                                         <constraint firstItem="SV7-hg-QIb" firstAttribute="top" secondItem="mhT-nT-CbG" secondAttribute="top" id="wcd-DY-hyo"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <size key="customSize" width="90" height="25"/>
+                                                <connections>
+                                                    <outlet property="tagName" destination="SV7-hg-QIb" id="9t5-aX-Bta"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -811,6 +816,7 @@
                         <outlet property="AddButton" destination="FSZ-No-z5e" id="6oL-RC-TLy"/>
                         <outlet property="CancelButton" destination="Txb-gX-6aM" id="cDJ-5R-EZM"/>
                         <outlet property="CompanyInput" destination="9p6-kd-ifb" id="hvV-Fo-7D2"/>
+                        <outlet property="DeselectedTagsCollectionView" destination="jyv-Zu-keU" id="Xa3-Pq-Z12"/>
                         <outlet property="DuarationInput" destination="5oM-DL-N6s" id="ZUW-w4-aqn"/>
                         <outlet property="JobDescriptionInput" destination="e1o-ba-JdB" id="0KH-bE-iRa"/>
                         <outlet property="RoleInput" destination="O9W-TO-Sxe" id="kdo-9I-a2E"/>
