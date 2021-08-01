@@ -583,7 +583,7 @@
                                         <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9p6-kd-ifb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Organization/Project's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9p6-kd-ifb">
                                         <rect key="frame" x="10" y="61" width="270" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -666,9 +666,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javascript" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-ba-l0a">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
                                                             <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="80" id="LpQ-b7-4C8"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -737,7 +734,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZyF-pp-l2f">
-                                        <rect key="frame" x="10" y="30" width="270" height="56"/>
+                                        <rect key="frame" x="10" y="30.333333333333371" width="270" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jyv-Zu-keU">
@@ -763,19 +760,16 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javascript" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV7-hg-QIb">
                                                             <rect key="frame" x="0.0" y="0.0" width="90" height="25"/>
                                                             <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="90" id="vWo-DQ-F7x"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="SV7-hg-QIb" secondAttribute="trailing" id="9e1-zU-5I9"/>
-                                                        <constraint firstAttribute="bottom" secondItem="SV7-hg-QIb" secondAttribute="bottom" id="HYO-rU-xeQ"/>
-                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="leading" secondItem="mhT-nT-CbG" secondAttribute="leading" id="XQg-V2-Ckj"/>
-                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="top" secondItem="mhT-nT-CbG" secondAttribute="top" id="yXj-RK-25w"/>
+                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="leading" secondItem="mhT-nT-CbG" secondAttribute="leading" id="EAA-VX-8Oe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SV7-hg-QIb" secondAttribute="trailing" id="SFw-Q2-2oK"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SV7-hg-QIb" secondAttribute="bottom" id="iKi-G2-WSv"/>
+                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="top" secondItem="mhT-nT-CbG" secondAttribute="top" id="sz5-0X-JfH"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="90" height="25"/>
@@ -1100,10 +1094,6 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javascript" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igg-CC-aoV">
                                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
                                                                         <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="20" id="11P-0F-zpi"/>
-                                                                            <constraint firstAttribute="width" constant="80" id="BZ7-Ia-4Pb"/>
-                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>

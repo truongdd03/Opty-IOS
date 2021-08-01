@@ -72,7 +72,8 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
 }
 
 // MARK: Collection view
-extension ExperienceViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ExperienceViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return ExperienceViewController.jobs[collectionView.tag].tags.count
     }
@@ -82,5 +83,12 @@ extension ExperienceViewController: UICollectionViewDelegate, UICollectionViewDa
         
         cell.setLabel(tag: ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let label = UILabel()
+        label.text = ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item]
+        
+        return CGSize(width: label.intrinsicContentSize.width + 15, height: 20)
     }
 }

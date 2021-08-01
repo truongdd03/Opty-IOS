@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var CompanyInput: UITextField!
     @IBOutlet weak var RoleInput: UITextField!
     @IBOutlet weak var DuarationInput: UITextField!
@@ -132,4 +132,21 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
             TagsCollectionView.reloadData()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if (collectionView == TagsCollectionView) {
+            let label = UILabel()
+            label.text = selectedTags[indexPath.item]
+            
+            return CGSize(width: label.intrinsicContentSize.width + 15, height: 20)
+        } else {
+            let label = UILabel()
+            label.text = deselectedTags[indexPath.item]
+            
+            return CGSize(width: label.intrinsicContentSize.width + 20, height: 25)
+        }
+        
+    }
+    
+
 }

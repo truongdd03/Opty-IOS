@@ -13,7 +13,7 @@ class HomepageViewController: MyViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var BackButton: UIButton!
     
-    let parts = ["Basics", "Education", "Experience", "Skills"];
+    let parts = ["Basics", "Education", "Experience", "Projects", "Skills"];
     
     override func viewDidLoad() {
         super.viewDidLoad()
