@@ -5,12 +5,12 @@ C++
 C++14
 Haskell
 Java
-ObjectiveC
+Objective-C
 Pascal
 Perl
 PHP
 Python
-Python3
+Python 3
 Ruby
 SQLite
 Swift
@@ -30,3 +30,25 @@ Scala
 Part-time
 Remote
 Senior
+Personal project
+Frontend
+Backend
+Fullstack
+Data scientist
+Software tester
+Web Developer
+Systems analyst
+Software engineer
+Network architect
+Software developer
+Engineer manager
+UI designer
+Database administrator
+Cloud computing engineer
+Web developer
+Business analyst
+Computer hardware engineer
+Information security analyst
+Cyber security
+IT project manager
+IT support
