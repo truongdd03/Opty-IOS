@@ -26,6 +26,18 @@ class Utilities {
         
     }
     
+    static func styleSimpleTextField(textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.systemBlue.cgColor
+        textField.layer.cornerRadius = 5
+    }
+    
+    static func styleTextView(textView: UITextView) {
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.systemBlue.cgColor
+        textView.layer.cornerRadius = 5
+    }
+    
     static func styleFilledButton(_ button:UIButton) {
         
         // Filled rounded corner style
