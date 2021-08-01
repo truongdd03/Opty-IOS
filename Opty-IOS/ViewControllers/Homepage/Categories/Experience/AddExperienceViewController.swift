@@ -64,4 +64,22 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
         cell.setLabel(tag: deselectedTags[indexPath.item])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (collectionView == TagsCollectionView) {
+            let tag = selectedTags[indexPath.item]
+            selectedTags.remove(at: indexPath.item)
+            TagsCollectionView.deleteItems(at: [indexPath])
+            
+            deselectedTags.append(tag)
+            DeselectedTagsCollectionView.reloadData()
+        } else {
+            let tag = deselectedTags[indexPath.item]
+            deselectedTags.remove(at: indexPath.item)
+            DeselectedTagsCollectionView.deleteItems(at: [indexPath])
+            
+            selectedTags.insert(tag, at: 0)
+            TagsCollectionView.reloadData()
+        }
+    }
 }
