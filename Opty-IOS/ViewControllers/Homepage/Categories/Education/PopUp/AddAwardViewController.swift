@@ -19,12 +19,8 @@ class AddAwardViewController: PopUpViewController {
 
         Utilities.styleHollowButton(CancelButton)
         Utilities.styleFilledButton(AddButton)
-        DescriptionInput.layer.borderWidth = 1
-        DescriptionInput.layer.borderColor = UIColor.systemBlue.cgColor
-        DescriptionInput.layer.cornerRadius = 5
-        AwardNameInput.layer.borderWidth = 1
-        AwardNameInput.layer.borderColor = UIColor.systemBlue.cgColor
-        AwardNameInput.layer.cornerRadius = 5
+        Utilities.styleSimpleTextField(textField: AwardNameInput)
+        
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
