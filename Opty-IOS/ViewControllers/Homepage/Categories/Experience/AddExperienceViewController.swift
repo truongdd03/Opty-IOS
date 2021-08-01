@@ -35,6 +35,7 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
         TagsCollectionView.dataSource = self
         DeselectedTagsCollectionView.delegate = self
         DeselectedTagsCollectionView.dataSource = self
+        
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {

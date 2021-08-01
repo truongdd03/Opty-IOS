@@ -643,13 +643,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="76o-LC-d82">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="76o-LC-d82">
                                         <rect key="frame" x="10" y="355" width="270" height="20"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="6Ry-aR-uH6"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ow4-Jk-y8s">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ow4-Jk-y8s">
                                             <size key="itemSize" width="80" height="20"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -657,14 +657,14 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Tag" id="RBe-OS-VDx" customClass="TagCollectionViewCell" customModule="Opty_IOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1.6666666666666667" width="80" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Q2-Ki-rAN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javascript" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-ba-l0a">
-                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
                                                             <color key="backgroundColor" systemColor="systemTealColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="LpQ-b7-4C8"/>
@@ -675,10 +675,10 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="L84-ba-l0a" secondAttribute="trailing" id="FwO-e5-sE1"/>
-                                                        <constraint firstAttribute="bottom" secondItem="L84-ba-l0a" secondAttribute="bottom" id="Gp9-hL-k56"/>
-                                                        <constraint firstItem="L84-ba-l0a" firstAttribute="top" secondItem="8Q2-Ki-rAN" secondAttribute="top" id="bnK-4J-lc5"/>
-                                                        <constraint firstItem="L84-ba-l0a" firstAttribute="leading" secondItem="8Q2-Ki-rAN" secondAttribute="leading" id="nOB-Ts-NDi"/>
+                                                        <constraint firstAttribute="bottom" secondItem="L84-ba-l0a" secondAttribute="bottom" id="9Al-42-SEr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="L84-ba-l0a" secondAttribute="trailing" id="9fi-rH-42K"/>
+                                                        <constraint firstItem="L84-ba-l0a" firstAttribute="leading" secondItem="8Q2-Ki-rAN" secondAttribute="leading" id="KeL-q1-XsF"/>
+                                                        <constraint firstItem="L84-ba-l0a" firstAttribute="top" secondItem="8Q2-Ki-rAN" secondAttribute="top" id="iL7-uP-o1Y"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <connections>
@@ -740,13 +740,13 @@
                                         <rect key="frame" x="10" y="30.333333333333371" width="270" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jyv-Zu-keU">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jyv-Zu-keU">
                                         <rect key="frame" x="10" y="105" width="270" height="25"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="BYq-lk-6GR"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UDv-W5-Bzo">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UDv-W5-Bzo">
                                             <size key="itemSize" width="90" height="25"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -772,10 +772,10 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="leading" secondItem="mhT-nT-CbG" secondAttribute="leading" id="2mt-9P-MPT"/>
-                                                        <constraint firstAttribute="bottom" secondItem="SV7-hg-QIb" secondAttribute="bottom" id="Nb0-b6-nhW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="SV7-hg-QIb" secondAttribute="trailing" id="n9T-hl-8s7"/>
-                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="top" secondItem="mhT-nT-CbG" secondAttribute="top" id="wcd-DY-hyo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SV7-hg-QIb" secondAttribute="trailing" id="9e1-zU-5I9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SV7-hg-QIb" secondAttribute="bottom" id="HYO-rU-xeQ"/>
+                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="leading" secondItem="mhT-nT-CbG" secondAttribute="leading" id="XQg-V2-Ckj"/>
+                                                        <constraint firstItem="SV7-hg-QIb" firstAttribute="top" secondItem="mhT-nT-CbG" secondAttribute="top" id="yXj-RK-25w"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="90" height="25"/>
@@ -1076,13 +1076,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="61J-R3-9sn">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="61J-R3-9sn">
                                                     <rect key="frame" x="64.666666666666657" y="65.666666666666671" width="305.33333333333337" height="30"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="R09-Cn-LWm"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zVu-0c-KnW">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zVu-0c-KnW">
                                                         <size key="itemSize" width="80" height="20"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
