@@ -9,7 +9,7 @@ import UIKit
 
 class TagCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tagName: UILabel!
-    
+        
     public func setLabel(tag: String) {
         tagName.text = tag
         tagName.layer.borderWidth = 1

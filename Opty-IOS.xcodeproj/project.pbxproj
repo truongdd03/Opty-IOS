@@ -42,6 +42,7 @@
 		5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */; };
 		5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */; };
 		5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */; };
+		5EFF111826B6ACC10040DC86 /* tags.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EFF111726B6ACC10040DC86 /* tags.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
+		5EFF111726B6ACC10040DC86 /* tags.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = tags.txt; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Opty_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				5E3856FE26B3E6F0008EBAE8 /* countries.txt */,
+				5EFF111726B6ACC10040DC86 /* tags.txt */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				5E27842326B2E99700469AB5 /* Homepage.storyboard in Resources */,
 				5EB6385426B2BFC7007B6FBF /* Main.storyboard in Resources */,
 				5E27842C26B2EAE500469AB5 /* Message.storyboard in Resources */,
+				5EFF111826B6ACC10040DC86 /* tags.txt in Resources */,
 				5E3856FF26B3E6F0008EBAE8 /* countries.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

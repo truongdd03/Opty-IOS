@@ -19,7 +19,7 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
     @IBOutlet weak var DeselectedTagsCollectionView: UICollectionView!
     
     var selectedTags: [String] = []
-    var deselectedTags: [String] = ["Python", "Ruby", "Java", "Koltin", "C#", "Swift", "Javascript", "C++", "CSS", "HTML", "Pascal"]
+    var deselectedTags: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,17 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
         DeselectedTagsCollectionView.delegate = self
         DeselectedTagsCollectionView.dataSource = self
         
+        fetchTags()
+    }
+    
+    func fetchTags() {
+        let file = "tags"
+        if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: textFile) {
+                deselectedTags = fileContents.components(separatedBy: "\n")
+            }
+        }
+        deselectedTags.sort()
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -86,7 +97,16 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
             selectedTags.remove(at: indexPath.item)
             TagsCollectionView.deleteItems(at: [indexPath])
             
-            deselectedTags.append(tag)
+            var kt = false
+            for i in 0..<deselectedTags.count-1 {
+                if (tag > deselectedTags[i] && tag < deselectedTags[i+1]) {
+                    deselectedTags.insert(tag, at: i+1)
+                    kt = true
+                    break
+                }
+            }
+            if (!kt) { deselectedTags.insert(tag, at: 0) }
+            
             DeselectedTagsCollectionView.reloadData()
         } else {
             let tag = deselectedTags[indexPath.item]
