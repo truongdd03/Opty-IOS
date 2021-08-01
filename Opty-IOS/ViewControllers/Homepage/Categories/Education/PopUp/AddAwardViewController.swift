@@ -20,7 +20,7 @@ class AddAwardViewController: PopUpViewController {
         Utilities.styleHollowButton(CancelButton)
         Utilities.styleFilledButton(AddButton)
         Utilities.styleSimpleTextField(textField: AwardNameInput)
-        
+        Utilities.styleTextView(textView: DescriptionInput)
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
