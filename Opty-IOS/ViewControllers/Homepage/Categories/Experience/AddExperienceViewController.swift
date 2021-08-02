@@ -40,18 +40,7 @@ class AddExperienceViewController: PopUpViewController, UISearchBarDelegate {
         DeselectedTagsCollectionView.dataSource = self
         searchBar.delegate = self
         
-        fetchTags()
-    }
-    
-    func fetchTags() {
-        let file = "tags"
-        if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
-            if let fileContents = try? String(contentsOf: textFile) {
-                tags = fileContents.components(separatedBy: "\n")
-            }
-        }
-        tags.removeLast()
-        tags.sort()
+        tags = fetchTags()
         deselectedTags = tags
     }
     
