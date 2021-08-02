@@ -11,7 +11,6 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var DegreeTableView: UITableView!
     @IBOutlet weak var AwardTableView: UITableView!
-    @IBOutlet weak var CancelButton: UIButton!
     
     static var degrees: [Degree] = []
     static var awards: [Award] = []
@@ -28,7 +27,6 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         DegreeTableView.layer.borderColor = UIColor.systemBlue.cgColor
         AwardTableView.layer.borderWidth = 1
         AwardTableView.layer.borderColor = UIColor.systemBlue.cgColor
-        Utilities.styleHollowButton(CancelButton)
         
         DegreeTableView.delegate = self
         DegreeTableView.dataSource = self
@@ -58,10 +56,6 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
             EducationViewController.degrees.append(Degree(school: "Michigan State University", degree: "BS in Computer Science", startDate: "Sep 21", endDate: "Jun 25"))
             EducationViewController.awards.append(Award(name: "You are welcome here", content: "Hi! This is your scholarship"))
         }*/
-    }
-    
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addDegreeButtonTapped(_ sender: Any) {

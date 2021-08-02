@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jh5-HA-3BO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -43,11 +43,13 @@
             </objects>
             <point key="canvasLocation" x="73.913043478260875" y="79.6875"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Newsfeed-->
         <scene sceneID="iAT-ea-DKr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jh5-HA-3BO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Newsfeed" image="doc.richtext.fill" catalog="system" id="M1x-1y-99z"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1qw-hf-7op">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -63,6 +65,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc.richtext.fill" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

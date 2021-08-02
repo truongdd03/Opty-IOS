@@ -9,7 +9,6 @@ import UIKit
 
 class ExperienceViewController: MyViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var BackButton: UIButton!
     @IBOutlet weak var ExperienceTableView: UITableView!
     @IBOutlet weak var AddButton: UIButton!
     
@@ -26,7 +25,6 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadExperience), name: NSNotification.Name(rawValue: "loadExperience"), object: nil)
         
-        Utilities.styleHollowButton(BackButton)
         Utilities.styleFilledButton(AddButton)
         
         fetchData()
@@ -38,10 +36,6 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
     
     func fetchData() {
         
-    }
-    
-    @IBAction func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
     // MARK: Table view

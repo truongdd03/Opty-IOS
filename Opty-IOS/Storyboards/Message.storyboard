@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bHY-JE-f1g">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -30,13 +30,35 @@
                             <outlet property="delegate" destination="lEz-C5-N8M" id="OSC-TV-QUF"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="0Tc-J6-0gg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfc-gM-wQn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="149"/>
+            <point key="canvasLocation" x="1118.840579710145" y="148.66071428571428"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="cG8-vZ-mTF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bHY-JE-f1g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Message" image="message.fill" catalog="system" id="pOh-EJ-ehf"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KZp-bm-hlF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lEz-C5-N8M" kind="relationship" relationship="rootViewController" id="uQo-Ci-7GZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="897-ei-Raz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="148.66071428571428"/>
         </scene>
     </scenes>
     <resources>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

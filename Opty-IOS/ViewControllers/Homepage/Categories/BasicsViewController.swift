@@ -16,7 +16,6 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var StateTextField: UITextField!
     @IBOutlet weak var PhoneTextField: UITextField!
     @IBOutlet weak var SaveButton: UIButton!
-    @IBOutlet weak var CancelButton: UIButton!
     
     @IBOutlet weak var NationLabel: UILabel!
     @IBOutlet weak var CountryLabel: UILabel!
@@ -41,7 +40,6 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         Utilities.styleTextField(StateTextField)
         Utilities.styleTextField(PhoneTextField)
         Utilities.styleFilledButton(SaveButton)
-        Utilities.styleHollowButton(CancelButton)
         
         showFields()
     }
@@ -81,10 +79,6 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         BasicsViewController.basicInfo = Info(name: nameTextField.text, birth: birth, nation: NationLabel.text, address: AddressTextField.text!, city: CityTextField.text, state: StateTextField.text, country: CountryLabel.text, phone: PhoneTextField.text)
         
         alert(title: "Saved", message: "")
-    }
-    
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ChooseNationButtonTapped(_ sender: Any) {

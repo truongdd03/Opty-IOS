@@ -11,7 +11,6 @@ class SkillsViewController: MyViewController {
 
     @IBOutlet weak var TagsCollectionView: UICollectionView!
     @IBOutlet weak var SkillsTableView: UITableView!
-    @IBOutlet weak var BackButton: UIButton!
     
     static var skills: [Skill] = []
     static var tags: [String] = []
@@ -20,7 +19,6 @@ class SkillsViewController: MyViewController {
         super.viewDidLoad()
 
         title = "Skills"
-        Utilities.styleHollowButton(BackButton)
         
         SkillsTableView.delegate = self
         SkillsTableView.dataSource = self
@@ -46,10 +44,6 @@ class SkillsViewController: MyViewController {
     
     func fetchData() {
 
-    }
-    
-    @IBAction func BackButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
     }
     
     func addTagTo(array: [String], tag: String) -> [String] {

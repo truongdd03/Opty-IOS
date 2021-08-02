@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KtM-JP-qpp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0RW-Dn-VPr">
+            <objects>
+                <tabBarController storyboardIdentifier="Main" id="KtM-JP-qpp" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IkS-kg-H5K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="sjo-pu-itp" kind="relationship" relationship="viewControllers" id="eey-Fz-2rh"/>
+                        <segue destination="IF3-sG-Be9" kind="relationship" relationship="viewControllers" id="cut-H5-MEy"/>
+                        <segue destination="NH3-av-Wzs" kind="relationship" relationship="viewControllers" id="icR-5r-3m6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKf-wj-Jap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-525" y="143"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="1jx-uO-Uin">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Message" id="NH3-av-Wzs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ZFA-M2-jNq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRH-2z-XYW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1023" y="558"/>
+        </scene>
+        <!--Newsfeed-->
+        <scene sceneID="ydZ-v1-M3k">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Newsfeed" id="sjo-pu-itp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="doc.richtext.fill" catalog="system" id="6CS-sh-YvC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAt-Md-7eQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-525" y="646"/>
+        </scene>
+        <!--Homepage-->
+        <scene sceneID="yeA-kY-Wb1">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Hompage" storyboardName="Homepage" id="IF3-sG-Be9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="3zf-ji-Y6o"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IO7-5J-xDx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="558"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="doc.richtext.fill" catalog="system" width="115" height="128"/>
+    </resources>
+</document>

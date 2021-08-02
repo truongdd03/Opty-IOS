@@ -11,23 +11,21 @@ class HomepageViewController: MyViewController, UITableViewDataSource, UITableVi
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var BackButton: UIButton!
     
     let parts = ["Basics", "Education", "Experience", "Skills"];
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Home"
-        Utilities.styleHollowButton(BackButton)
+        title = "Account"
         tableView.delegate = self
         tableView.dataSource = self
+
     }
-    
-    @IBAction func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
 
     // MARK: Table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

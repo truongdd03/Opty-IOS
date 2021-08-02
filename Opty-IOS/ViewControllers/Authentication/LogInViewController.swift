@@ -58,8 +58,9 @@ class LogInViewController: UIViewController {
     }
     
     func transitToNewsfeed() {
-        let storyBoard = UIStoryboard(name: "Newsfeed", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "Newsfeed") as! MyCollectionViewController
+        let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "Main") as! UITabBarController
+        navigationController?.setNavigationBarHidden(true, animated: false)
         navigationController?.pushViewController(vc, animated: true)
     }
     
