@@ -32,7 +32,12 @@ class SkillsViewController: MyViewController {
         fetchData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadSkillTags), name: NSNotification.Name(rawValue: "loadSkillTags"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadSkills), name: NSNotification.Name(rawValue: "loadSkills"), object: nil)
 
+    }
+    
+    @objc func loadSkills() {
+        SkillsTableView.reloadData()
     }
     
     @objc func loadSkillTags() {
@@ -40,9 +45,7 @@ class SkillsViewController: MyViewController {
     }
     
     func fetchData() {
-        for _ in 0...3 {
-            SkillsViewController.skills.append(Skill(name: "Team working", content: "kjfdslkjf fkdsjfldjs"))
-        }
+
     }
     
     @IBAction func BackButtonTapped(_ sender: Any) {

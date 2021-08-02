@@ -930,6 +930,110 @@
             </objects>
             <point key="canvasLocation" x="2742" y="1817"/>
         </scene>
+        <!--Add Skill View Controller-->
+        <scene sceneID="p0W-1v-32S">
+            <objects>
+                <viewController id="8Ve-j7-fIC" customClass="AddSkillViewController" customModule="Opty_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Afh-Er-gXc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNg-Oy-2hB">
+                                <rect key="frame" x="50" y="150" width="290" height="350"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add skill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP7-XJ-Uu7">
+                                        <rect key="frame" x="113" y="10" width="64" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemBlueColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Skill's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8wu-HA-Giw">
+                                        <rect key="frame" x="10" y="51" width="270" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-i4-rVe">
+                                        <rect key="frame" x="10" y="95" width="270" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-fT-cLM">
+                                        <rect key="frame" x="40" y="290" width="80" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="4vT-VT-7uc"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonTapped:" destination="rnQ-fH-OhN" eventType="touchUpInside" id="0US-zz-KKT"/>
+                                            <action selector="cancelButtonTapped:" destination="8Ve-j7-fIC" eventType="touchUpInside" id="cpm-rZ-hLw"/>
+                                            <action selector="cancelButtonTapped:" destination="D40-tk-ivX" eventType="touchUpInside" id="f3N-ob-OuX"/>
+                                            <action selector="cancelButtonTapped:" destination="o5r-g8-cJg" eventType="touchUpInside" id="nGw-XQ-zxH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTI-gP-upP">
+                                        <rect key="frame" x="170" y="290" width="80" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="9CM-yd-Cf2"/>
+                                        </constraints>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addButtonTapped:" destination="8Ve-j7-fIC" eventType="touchUpInside" id="AoC-zb-nyH"/>
+                                            <action selector="addButtonTapped:" destination="rnQ-fH-OhN" eventType="touchUpInside" id="Fxw-nx-Fqk"/>
+                                            <action selector="addButtonTapped:" destination="D40-tk-ivX" eventType="touchUpInside" id="PQx-8o-Ypi"/>
+                                            <action selector="addButtonTapped:" destination="o5r-g8-cJg" eventType="touchUpInside" id="Pbv-rT-sfX"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oIm-jl-b24">
+                                        <rect key="frame" x="10" y="112" width="270" height="148"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oIm-jl-b24" secondAttribute="trailing" constant="10" id="5Oj-dl-vCb"/>
+                                    <constraint firstItem="wP7-XJ-Uu7" firstAttribute="top" secondItem="JNg-Oy-2hB" secondAttribute="top" constant="10" id="AX4-V0-glL"/>
+                                    <constraint firstItem="8wu-HA-Giw" firstAttribute="top" secondItem="wP7-XJ-Uu7" secondAttribute="bottom" constant="20" id="GHe-Zi-41g"/>
+                                    <constraint firstItem="jTI-gP-upP" firstAttribute="centerY" secondItem="ltd-fT-cLM" secondAttribute="centerY" id="GIn-Nz-Evk"/>
+                                    <constraint firstAttribute="trailing" secondItem="5g8-i4-rVe" secondAttribute="trailing" constant="10" id="NHd-bM-T0v"/>
+                                    <constraint firstItem="ltd-fT-cLM" firstAttribute="leading" secondItem="JNg-Oy-2hB" secondAttribute="leading" constant="40" id="Psg-Nc-FGp"/>
+                                    <constraint firstItem="8wu-HA-Giw" firstAttribute="leading" secondItem="JNg-Oy-2hB" secondAttribute="leading" constant="10" id="R9e-iR-VU7"/>
+                                    <constraint firstAttribute="bottom" secondItem="jTI-gP-upP" secondAttribute="bottom" constant="30" id="SLh-cq-Y3B"/>
+                                    <constraint firstAttribute="trailing" secondItem="jTI-gP-upP" secondAttribute="trailing" constant="40" id="X1t-n4-EAm"/>
+                                    <constraint firstItem="wP7-XJ-Uu7" firstAttribute="centerX" secondItem="JNg-Oy-2hB" secondAttribute="centerX" id="ZTa-cJ-dBC"/>
+                                    <constraint firstAttribute="trailing" secondItem="8wu-HA-Giw" secondAttribute="trailing" constant="10" id="bYL-Xo-ZZD"/>
+                                    <constraint firstItem="oIm-jl-b24" firstAttribute="top" secondItem="5g8-i4-rVe" secondAttribute="bottom" id="d8y-r6-65I"/>
+                                    <constraint firstAttribute="height" constant="350" id="eyY-zv-aET"/>
+                                    <constraint firstItem="5g8-i4-rVe" firstAttribute="top" secondItem="8wu-HA-Giw" secondAttribute="bottom" constant="10" id="giA-7f-ZaK"/>
+                                    <constraint firstItem="oIm-jl-b24" firstAttribute="leading" secondItem="JNg-Oy-2hB" secondAttribute="leading" constant="10" id="lEn-j5-7h0"/>
+                                    <constraint firstItem="ltd-fT-cLM" firstAttribute="top" secondItem="oIm-jl-b24" secondAttribute="bottom" constant="30" id="qyB-Td-iMi"/>
+                                    <constraint firstAttribute="bottom" secondItem="ltd-fT-cLM" secondAttribute="bottom" constant="30" id="r0T-qx-VU1"/>
+                                    <constraint firstItem="5g8-i4-rVe" firstAttribute="leading" secondItem="JNg-Oy-2hB" secondAttribute="leading" constant="10" id="ryI-tz-922"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ej8-5G-c4g"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ej8-5G-c4g" firstAttribute="trailing" secondItem="JNg-Oy-2hB" secondAttribute="trailing" constant="50" id="1bL-cu-jrw"/>
+                            <constraint firstItem="JNg-Oy-2hB" firstAttribute="top" secondItem="ej8-5G-c4g" secondAttribute="top" constant="150" id="Jx4-Qa-XeJ"/>
+                            <constraint firstItem="JNg-Oy-2hB" firstAttribute="leading" secondItem="ej8-5G-c4g" secondAttribute="leading" constant="50" id="XTp-Ex-Bbb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AddButton" destination="jTI-gP-upP" id="3OI-Dt-IOb"/>
+                        <outlet property="CancelButton" destination="ltd-fT-cLM" id="UB7-yz-HF4"/>
+                        <outlet property="SkillContentTextView" destination="oIm-jl-b24" id="bqF-HS-BeO"/>
+                        <outlet property="SkillNameInput" destination="8wu-HA-Giw" id="kVP-5p-0bq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vqk-DQ-ugQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3575" y="1814"/>
+        </scene>
         <!--Basics View Controller-->
         <scene sceneID="d10-Pe-wQ1">
             <objects>
@@ -1464,6 +1568,9 @@
                                 <state key="normal" title="Button" image="plus.app" catalog="system"/>
                                 <connections>
                                     <action selector="addDegreeButtonTapped:" destination="SIE-GQ-8Uu" eventType="touchUpInside" id="36S-2x-Dq3"/>
+                                    <segue destination="8Ve-j7-fIC" kind="popoverPresentation" popoverAnchorView="hUt-1p-A24" id="MpX-g4-2tz">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>

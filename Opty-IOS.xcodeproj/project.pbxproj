@@ -30,6 +30,7 @@
 		5E6CEDA426B41168009C86D7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA326B41168009C86D7 /* Award.swift */; };
 		5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */; };
 		5E890FE526B7BF8D005B718C /* AddTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E890FE426B7BF8D005B718C /* AddTagsViewController.swift */; };
+		5E890FE826B7DB83005B718C /* AddSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E890FE726B7DB83005B718C /* AddSkillViewController.swift */; };
 		5EB1E5EF26B79E09005FA6F0 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5EE26B79E09005FA6F0 /* Skill.swift */; };
 		5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		5E6CEDA326B41168009C86D7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDegreeViewController.swift; sourceTree = "<group>"; };
 		5E890FE426B7BF8D005B718C /* AddTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagsViewController.swift; sourceTree = "<group>"; };
+		5E890FE726B7DB83005B718C /* AddSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillViewController.swift; sourceTree = "<group>"; };
 		5EB1E5EE26B79E09005FA6F0 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				5E890FE426B7BF8D005B718C /* AddTagsViewController.swift */,
+				5E890FE726B7DB83005B718C /* AddSkillViewController.swift */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				5E890FE526B7BF8D005B718C /* AddTagsViewController.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,
 				5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */,
+				5E890FE826B7DB83005B718C /* AddSkillViewController.swift in Sources */,
 				5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */,
 				5E3E8B8F26B6EDA400B0CA16 /* SkillsViewController.swift in Sources */,
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,
