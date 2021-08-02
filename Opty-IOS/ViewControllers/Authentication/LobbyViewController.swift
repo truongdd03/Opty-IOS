@@ -14,6 +14,8 @@ class LobbyViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setToolbarHidden(true, animated: false)
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidLoad() {

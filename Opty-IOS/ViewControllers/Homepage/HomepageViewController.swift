@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HomepageViewController: UIViewController {
 
@@ -25,7 +26,18 @@ class HomepageViewController: UIViewController {
     }
 
     @objc func logOut() {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+            return
+        }
         
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "Lobby")
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
