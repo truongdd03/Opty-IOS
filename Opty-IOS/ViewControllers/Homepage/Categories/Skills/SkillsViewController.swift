@@ -26,9 +26,10 @@ class SkillsViewController: MyViewController {
         
         TagsCollectionView.delegate = self
         TagsCollectionView.dataSource = self
-        
-        fetchData()
-        
+        TagsCollectionView.layer.borderWidth = 1
+        TagsCollectionView.layer.borderColor = UIColor.systemBlue.cgColor
+        TagsCollectionView.layer.cornerRadius = 5
+                
         NotificationCenter.default.addObserver(self, selector: #selector(loadSkillTags), name: NSNotification.Name(rawValue: "loadSkillTags"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadSkills), name: NSNotification.Name(rawValue: "loadSkills"), object: nil)
 
@@ -40,10 +41,6 @@ class SkillsViewController: MyViewController {
     
     @objc func loadSkillTags() {
         TagsCollectionView.reloadData()
-    }
-    
-    func fetchData() {
-
     }
     
     func addTagTo(array: [String], tag: String) -> [String] {

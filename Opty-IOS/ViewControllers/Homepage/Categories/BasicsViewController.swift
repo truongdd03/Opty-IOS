@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class BasicsViewController: MyViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var DatePicker: UIDatePicker!
@@ -15,11 +15,12 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var CityTextField: UITextField!
     @IBOutlet weak var StateTextField: UITextField!
     @IBOutlet weak var PhoneTextField: UITextField!
-    @IBOutlet weak var SaveButton: UIButton!
     
-    @IBOutlet weak var NationLabel: UILabel!
-    @IBOutlet weak var CountryLabel: UILabel!
-    @IBOutlet weak var PickerViewButton: UIButton!
+    @IBOutlet weak var CountryInput: UITextField!
+    @IBOutlet weak var NationInput: UITextField!
+    
+    var countryPickerView = UIPickerView()
+    var nationPickerView = UIPickerView()
     
     var countries: [String] = []
     let screenWidth = UIScreen.main.bounds.width - 10
@@ -30,18 +31,42 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchCountries()
-        
+                
         title = "Basics"
+        setUp()
+        
+        CountryInput.inputView = countryPickerView
+        countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        CountryInput.delegate = self
+        
+        NationInput.inputView = nationPickerView
+        nationPickerView.delegate = self
+        nationPickerView.dataSource = self
+        NationInput.delegate = self
+    
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let birth = DatePicker.date
+        
+        BasicsViewController.basicInfo = Info(name: nameTextField.text, birth: birth, nation: NationInput.text, address: AddressTextField.text!, city: CityTextField.text, state: StateTextField.text, country: CountryInput.text, phone: PhoneTextField.text)
+    }
+    
+    func setUp() {
         Utilities.styleTextField(nameTextField)
         Utilities.styleTextField(AddressTextField)
         Utilities.styleTextField(CityTextField)
         Utilities.styleTextField(StateTextField)
         Utilities.styleTextField(PhoneTextField)
-        Utilities.styleFilledButton(SaveButton)
         
         showFields()
+        fetchCountries()
+
     }
     
     func showFields() {
@@ -52,8 +77,8 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         AddressTextField.text = info.address
         CityTextField.text = info.city
         StateTextField.text = info.state
-        CountryLabel.text = info.country
-        NationLabel.text = info.nation
+        CountryInput.text = info.country
+        NationInput.text = info.nation
     }
     
     func fetchCountries() {
@@ -65,59 +90,9 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    func alert(title: String, message: String) {
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
-            self.navigationController?.popViewController(animated: true)
-        }))
-        present(ac, animated: true)
-    }
-    
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        let birth = DatePicker.date
-        
-        BasicsViewController.basicInfo = Info(name: nameTextField.text, birth: birth, nation: NationLabel.text, address: AddressTextField.text!, city: CityTextField.text, state: StateTextField.text, country: CountryLabel.text, phone: PhoneTextField.text)
-        
-        alert(title: "Saved", message: "")
-    }
-    
-    @IBAction func ChooseNationButtonTapped(_ sender: Any) {
-        let vc = UIViewController()
-        vc.preferredContentSize = CGSize(width: screenWidth, height: screenHeight)
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
-        pickerView.dataSource = self
-        pickerView.delegate = self
-        
-        pickerView.selectRow(selectedRow, inComponent: 0, animated: false)
-        
-        vc.view.addSubview(pickerView)
-        pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
-        pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
-        
-        let alert = UIAlertController(title: "Select country", message: "", preferredStyle: .actionSheet)
-        
-        alert.popoverPresentationController?.sourceView = PickerViewButton
-        alert.popoverPresentationController?.sourceRect = PickerViewButton.bounds
+}
 
-        alert.setValue(vc, forKey: "contentViewController")
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
-            let button = sender as! UIButton
-            self.selectedRow = pickerView.selectedRow(inComponent: 0)
-            if (button.tag == 0) {
-                self.NationLabel.text = self.countries[self.selectedRow]
-            } else {
-                self.CountryLabel.text = self.countries[self.selectedRow]
-            }
-
-        }))
-        
-        self.present(alert, animated: true)
-
-    }
-    
-    // MARK: Picker View
+extension BasicsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -133,4 +108,11 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
         return label
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView == countryPickerView) {
+            CountryInput.text = countries[row]
+        } else {
+            NationInput.text = countries[row]
+        }
+    }
 }

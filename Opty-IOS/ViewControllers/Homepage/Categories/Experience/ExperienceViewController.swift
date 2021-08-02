@@ -7,10 +7,9 @@
 
 import UIKit
 
-class ExperienceViewController: MyViewController, UITableViewDelegate, UITableViewDataSource {
+class ExperienceViewController: MyViewController {
 
     @IBOutlet weak var ExperienceTableView: UITableView!
-    @IBOutlet weak var AddButton: UIButton!
     
     static var jobs: [Job] = []
     
@@ -25,21 +24,44 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadExperience), name: NSNotification.Name(rawValue: "loadExperience"), object: nil)
         
-        Utilities.styleFilledButton(AddButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addExperience))
         
-        fetchData()
+    }
+    
+    @objc func addExperience() {
+        let storyBoard = UIStoryboard(name: "Homepage", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "AddExperience")
+        vc.modalPresentationStyle = .popover
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func loadExperience() {
         ExperienceTableView.reloadData()
     }
     
-    func fetchData() {
-        
+}
+
+extension ExperienceViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return ExperienceViewController.jobs[collectionView.tag].tags.count
     }
     
-    // MARK: Table view
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tag", for: indexPath) as! TagCollectionViewCell
+        
+        cell.setLabel(tag: ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = Utilities.sizeOfLabel(ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item])
+        
+        return CGSize(width: width + 15, height: 20)
+    }
+}
 
+extension ExperienceViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ExperienceViewController.jobs.count
     }
@@ -62,26 +84,5 @@ class ExperienceViewController: MyViewController, UITableViewDelegate, UITableVi
             self.ExperienceTableView.deleteRows(at: [indexPath], with: .automatic)
             self.ExperienceTableView.reloadData()
         }
-    }
-}
-
-// MARK: Collection view
-extension ExperienceViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ExperienceViewController.jobs[collectionView.tag].tags.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tag", for: indexPath) as! TagCollectionViewCell
-        
-        cell.setLabel(tag: ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Utilities.sizeOfLabel(ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item])
-        
-        return CGSize(width: width + 15, height: 20)
     }
 }
