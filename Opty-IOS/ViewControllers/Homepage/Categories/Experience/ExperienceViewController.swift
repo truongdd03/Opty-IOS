@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExperienceViewController: MyViewController {
+class ExperienceViewController: UIViewController {
 
     @IBOutlet weak var ExperienceTableView: UITableView!
     

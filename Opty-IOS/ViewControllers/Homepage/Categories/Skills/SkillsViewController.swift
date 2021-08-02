@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SkillsViewController: MyViewController {
+class SkillsViewController: UIViewController {
 
     @IBOutlet weak var TagsCollectionView: UICollectionView!
     @IBOutlet weak var SkillsTableView: UITableView!

@@ -10,7 +10,6 @@
 		065501075C689E82D003514C /* Pods_Opty_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */; };
 		5E27841926B2D74F00469AB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E27841826B2D74E00469AB5 /* GoogleService-Info.plist */; };
 		5E27841C26B2E51B00469AB5 /* Newsfeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E27841B26B2E51B00469AB5 /* Newsfeed.storyboard */; };
-		5E27842026B2E83D00469AB5 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27841F26B2E83D00469AB5 /* MyCollectionViewController.swift */; };
 		5E27842326B2E99700469AB5 /* Homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E27842226B2E99700469AB5 /* Homepage.storyboard */; };
 		5E27842826B2EA1C00469AB5 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27842726B2EA1C00469AB5 /* NewsfeedViewController.swift */; };
 		5E27842C26B2EAE500469AB5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E27842B26B2EAE500469AB5 /* Message.storyboard */; };
@@ -55,7 +54,6 @@
 		2AB9146D0E7217B6FFC72E92 /* Pods-Opty-IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.debug.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5E27841826B2D74E00469AB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E27841B26B2E51B00469AB5 /* Newsfeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Newsfeed.storyboard; sourceTree = "<group>"; };
-		5E27841F26B2E83D00469AB5 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		5E27842226B2E99700469AB5 /* Homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Homepage.storyboard; sourceTree = "<group>"; };
 		5E27842726B2EA1C00469AB5 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
 		5E27842B26B2EAE500469AB5 /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 		5E27841E26B2E81000469AB5 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
-				5E27841F26B2E83D00469AB5 /* MyCollectionViewController.swift */,
 				5E6CED9C26B4026D009C86D7 /* MyViewController.swift */,
 				5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */,
 				5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */,
@@ -460,7 +457,6 @@
 				5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */,
 				5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */,
 				5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */,
-				5E27842026B2E83D00469AB5 /* MyCollectionViewController.swift in Sources */,
 				5E4268EF26B50695007D25FD /* Info.swift in Sources */,
 				5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */,
 				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,

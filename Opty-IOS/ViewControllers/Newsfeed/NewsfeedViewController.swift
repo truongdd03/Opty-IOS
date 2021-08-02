@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class NewsfeedViewController: MyCollectionViewController {
+class NewsfeedViewController: UICollectionViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         //navigationController?.setNavigationBarHidden(true, animated: false)

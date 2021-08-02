@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BasicsViewController: MyViewController, UITextFieldDelegate {
+class BasicsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var DatePicker: UIDatePicker!
@@ -44,7 +44,7 @@ class BasicsViewController: MyViewController, UITextFieldDelegate {
         nationPickerView.delegate = self
         nationPickerView.dataSource = self
         NationInput.delegate = self
-    
+
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

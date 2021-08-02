@@ -7,16 +7,12 @@
 
 import UIKit
 
-class HomepageViewController: MyViewController, UITableViewDataSource, UITableViewDelegate {
+class HomepageViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     let parts = ["Basics", "Education", "Experience", "Skills"];
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //navigationController?.setNavigationBarHidden(true, animated: false)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +21,15 @@ class HomepageViewController: MyViewController, UITableViewDataSource, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.right.doc.on.clipboard"), style: .plain, target: self, action: #selector(logOut))
     }
 
-    // MARK: Table view
+    @objc func logOut() {
+        
+    }
+}
+
+extension HomepageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return parts.count
     }

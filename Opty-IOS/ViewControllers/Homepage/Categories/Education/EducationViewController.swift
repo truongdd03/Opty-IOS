@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EducationViewController: MyViewController, UITableViewDataSource, UITableViewDelegate {
+class EducationViewController: UIViewController {
     
     @IBOutlet weak var DegreeTableView: UITableView!
     @IBOutlet weak var AwardTableView: UITableView!
@@ -35,9 +35,7 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         
         DegreeTableView.allowsSelection = false
         AwardTableView.allowsSelection = false
-        
-        fetchData()
-        
+                
         NotificationCenter.default.addObserver(self, selector: #selector(loadDegree), name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadAward), name: NSNotification.Name(rawValue: "loadAward"), object: nil)
 
@@ -51,19 +49,15 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
         self.AwardTableView.reloadData()
     }
     
-    func fetchData() {
-        /*for _ in 0...5 {
-            EducationViewController.degrees.append(Degree(school: "Michigan State University", degree: "BS in Computer Science", startDate: "Sep 21", endDate: "Jun 25"))
-            EducationViewController.awards.append(Award(name: "You are welcome here", content: "Hi! This is your scholarship"))
-        }*/
-    }
-    
     @IBAction func addDegreeButtonTapped(_ sender: Any) {
         let vc = UIViewController()
         vc.preferredContentSize = CGSize(width: screenWidth, height: screenHeight)
 
     }
-    // MARK: Table view
+
+}
+
+extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == DegreeTableView) {
             return EducationViewController.degrees.count
@@ -103,5 +97,4 @@ class EducationViewController: MyViewController, UITableViewDataSource, UITableV
             
         }
     }
-
 }
