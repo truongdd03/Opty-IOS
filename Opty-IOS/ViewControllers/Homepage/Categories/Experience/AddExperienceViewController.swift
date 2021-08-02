@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
+class AddExperienceViewController: PopUpViewController, UISearchBarDelegate {
     @IBOutlet weak var CompanyInput: UITextField!
     @IBOutlet weak var RoleInput: UITextField!
     @IBOutlet weak var DuarationInput: UITextField!
@@ -85,9 +85,10 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    // MARK: Collection view
+}
+
+extension AddExperienceViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == TagsCollectionView) {
             return selectedTags.count
@@ -147,18 +148,14 @@ class AddExperienceViewController: PopUpViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if (collectionView == TagsCollectionView) {
-            let label = UILabel()
-            label.text = selectedTags[indexPath.item]
-            
-            return CGSize(width: label.intrinsicContentSize.width + 15, height: 20)
+            return CGSize(width: Utilities.sizeOfLabel(selectedTags[indexPath.item]) + 15, height: 20)
         } else {
             let label = UILabel()
             label.text = deselectedTags[indexPath.item]
             
-            return CGSize(width: label.intrinsicContentSize.width + 20, height: 25)
+            return CGSize(width: Utilities.sizeOfLabel(deselectedTags[indexPath.item]) + 20, height: 25)
         }
         
     }
-    
 
 }

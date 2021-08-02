@@ -60,4 +60,11 @@ class Utilities {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
+    
+    static func sizeOfLabel(_ str: String) -> CGFloat {
+        let label = UILabel()
+        label.text = str
+            
+        return label.intrinsicContentSize.width
+    }
 }

@@ -22,7 +22,7 @@ class BasicsViewController: MyViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var CountryLabel: UILabel!
     @IBOutlet weak var PickerViewButton: UIButton!
     
-    var countries: [String] = ["Vietnam", "USA", "UK", "South Korea"]
+    var countries: [String] = []
     let screenWidth = UIScreen.main.bounds.width - 10
     let screenHeight = UIScreen.main.bounds.height / 2
     var selectedRow = 0

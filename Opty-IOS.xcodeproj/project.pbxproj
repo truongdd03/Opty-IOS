@@ -21,6 +21,7 @@
 		5E3856FB26B3D874008EBAE8 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3856FA26B3D874008EBAE8 /* EducationViewController.swift */; };
 		5E3856FF26B3E6F0008EBAE8 /* countries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5E3856FE26B3E6F0008EBAE8 /* countries.txt */; };
 		5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */; };
+		5E3E8B8F26B6EDA400B0CA16 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3E8B8E26B6EDA400B0CA16 /* SkillsViewController.swift */; };
 		5E4268E926B4EF6C007D25FD /* AddAwardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */; };
 		5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */; };
 		5E4268EF26B50695007D25FD /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268EE26B50695007D25FD /* Info.swift */; };
@@ -28,6 +29,8 @@
 		5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA026B41073009C86D7 /* Degree.swift */; };
 		5E6CEDA426B41168009C86D7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA326B41168009C86D7 /* Award.swift */; };
 		5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */; };
+		5EB1E5EF26B79E09005FA6F0 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5EE26B79E09005FA6F0 /* Skill.swift */; };
+		5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
 		5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */; };
 		5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6385026B2BFC7007B6FBF /* LobbyViewController.swift */; };
@@ -60,6 +63,7 @@
 		5E3856FA26B3D874008EBAE8 /* EducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
 		5E3856FE26B3E6F0008EBAE8 /* countries.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = countries.txt; sourceTree = "<group>"; };
 		5E38570426B3EF8F008EBAE8 /* DegreeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DegreeTableViewCell.swift; sourceTree = "<group>"; };
+		5E3E8B8E26B6EDA400B0CA16 /* SkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
 		5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAwardViewController.swift; sourceTree = "<group>"; };
 		5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		5E4268EE26B50695007D25FD /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		5E6CEDA026B41073009C86D7 /* Degree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		5E6CEDA326B41168009C86D7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDegreeViewController.swift; sourceTree = "<group>"; };
+		5EB1E5EE26B79E09005FA6F0 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				5E27841F26B2E83D00469AB5 /* MyCollectionViewController.swift */,
 				5E6CED9C26B4026D009C86D7 /* MyViewController.swift */,
 				5E4268EB26B4F55F007D25FD /* PopUpViewController.swift */,
+				5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 				5E3856F726B394D2008EBAE8 /* BasicsViewController.swift */,
 				5E38570326B3EF67008EBAE8 /* Education */,
 				5EB830D126B548A500F63ABC /* Experience */,
+				5EB1E5F126B79E9F005FA6F0 /* Skills */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -189,8 +197,18 @@
 				5E4268EE26B50695007D25FD /* Info.swift */,
 				5E6CEDA326B41168009C86D7 /* Award.swift */,
 				5EB830D626B560E200F63ABC /* Job.swift */,
+				5EB1E5EE26B79E09005FA6F0 /* Skill.swift */,
 			);
 			path = Variables;
+			sourceTree = "<group>";
+		};
+		5EB1E5F126B79E9F005FA6F0 /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+				5E3E8B8E26B6EDA400B0CA16 /* SkillsViewController.swift */,
+				5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */,
+			);
+			path = Skills;
 			sourceTree = "<group>";
 		};
 		5EB6384026B2BFC7007B6FBF = {
@@ -293,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */,
-				5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */,
 			);
 			path = ExperienceCell;
 			sourceTree = "<group>";
@@ -431,6 +448,8 @@
 				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,
 				5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */,
+				5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */,
+				5E3E8B8F26B6EDA400B0CA16 /* SkillsViewController.swift in Sources */,
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,
 				5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */,
 				5E4268E926B4EF6C007D25FD /* AddAwardViewController.swift in Sources */,
@@ -438,6 +457,7 @@
 				5EB830D426B548CA00F63ABC /* ExperienceViewController.swift in Sources */,
 				5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */,
 				5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */,
+				5EB1E5EF26B79E09005FA6F0 /* Skill.swift in Sources */,
 				5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */,
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
 				5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */,

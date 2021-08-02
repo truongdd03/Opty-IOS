@@ -86,9 +86,8 @@ extension ExperienceViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let label = UILabel()
-        label.text = ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item]
+        let width = Utilities.sizeOfLabel(ExperienceViewController.jobs[collectionView.tag].tags[indexPath.item])
         
-        return CGSize(width: label.intrinsicContentSize.width + 15, height: 20)
+        return CGSize(width: width + 15, height: 20)
     }
 }
