@@ -243,8 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				5E3856FD26B3E6D2008EBAE8 /* Storage */,
-				5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */,
-				5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */,
 				5EB6386926B2C4BD007B6FBF /* ViewControllers */,
 				5EB6386326B2C26D007B6FBF /* Support */,
 				5EB6386126B2BFDA007B6FBF /* Storyboards */,
@@ -271,6 +269,8 @@
 		5EB6386326B2C26D007B6FBF /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */,
+				5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */,
 				5EB6386426B2C293007B6FBF /* Utilities.swift */,
 				5E6CED9F26B41032009C86D7 /* Variables */,
 			);
