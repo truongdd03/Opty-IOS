@@ -37,7 +37,6 @@ Backend
 Fullstack
 Data scientist
 Software tester
-Web Developer
 Systems analyst
 Software engineer
 Network architect

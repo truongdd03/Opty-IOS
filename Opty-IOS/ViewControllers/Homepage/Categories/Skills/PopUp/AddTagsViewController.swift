@@ -13,8 +13,8 @@ class AddTagsViewController: PopUpViewController, UISearchBarDelegate {
     @IBOutlet weak var TagsCollectionView: UICollectionView!
     @IBOutlet weak var BackButton: UIButton!
     
-    var tags: [String] = []
-    var filter: [String] = []
+    static var tags: [String] = []
+    static var filter: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,15 @@ class AddTagsViewController: PopUpViewController, UISearchBarDelegate {
         TagsCollectionView.dataSource = self
         searchBar.delegate = self
         
-        tags = fetchTags()
-        filter = tags
+        if (SkillsViewController.tags.count == 0) {
+            AddTagsViewController.tags = fetchTags()
+            AddTagsViewController.filter = AddTagsViewController.tags
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filter = searchText.isEmpty ? tags : tags.filter { (item: String) -> Bool in
+        let tmp = AddTagsViewController.tags
+        AddTagsViewController.filter = searchText.isEmpty ? tmp : tmp.filter { (item: String) -> Bool in
             return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
         TagsCollectionView.reloadData()
@@ -45,17 +48,26 @@ class AddTagsViewController: PopUpViewController, UISearchBarDelegate {
 extension AddTagsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filter.count
+        return AddTagsViewController.filter.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCollectionViewCell
-        cell.setLabel(tag: filter[indexPath.item])
+        cell.setLabel(tag: AddTagsViewController.filter[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Utilities.sizeOfLabel(filter[indexPath.item]) + 15, height: 20)
+        return CGSize(width: Utilities.sizeOfLabel(AddTagsViewController.filter[indexPath.item]) + 15, height: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tag = AddTagsViewController.filter[indexPath.item]
+        AddTagsViewController.filter.remove(at: indexPath.item)
+        collectionView.reloadData()
+        
+        SkillsViewController.tags.insert(tag, at: 0)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadSkillTags"), object: nil)
     }
     
 }

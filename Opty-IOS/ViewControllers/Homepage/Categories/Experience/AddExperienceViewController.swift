@@ -96,23 +96,6 @@ extension AddExperienceViewController: UICollectionViewDelegate, UICollectionVie
         return cell
     }
     
-    func addTagTo(array: [String], tag: String) -> [String] {
-        var arr = array
-        if (arr.count == 0) {
-            arr.append(tag)
-            return arr
-        }
-        
-        for i in 0..<arr.count-1 {
-            if (tag > arr[i] && tag < arr[i+1]) {
-                arr.insert(tag, at: i+1)
-                return arr
-            }
-        }
-        arr.insert(tag, at: 0)
-        return arr
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView == TagsCollectionView) {
             let tag = selectedTags[indexPath.item]

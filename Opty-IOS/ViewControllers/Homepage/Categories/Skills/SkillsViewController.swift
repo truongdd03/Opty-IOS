@@ -14,7 +14,7 @@ class SkillsViewController: MyViewController {
     @IBOutlet weak var BackButton: UIButton!
     
     static var skills: [Skill] = []
-    static var tags: [String] = ["Javascript", "C", "Swift"]
+    static var tags: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,13 @@ class SkillsViewController: MyViewController {
         TagsCollectionView.dataSource = self
         
         fetchData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadSkillTags), name: NSNotification.Name(rawValue: "loadSkillTags"), object: nil)
+
+    }
+    
+    @objc func loadSkillTags() {
+        TagsCollectionView.reloadData()
     }
     
     func fetchData() {
@@ -40,6 +47,23 @@ class SkillsViewController: MyViewController {
     
     @IBAction func BackButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func addTagTo(array: [String], tag: String) -> [String] {
+        var arr = array
+        if (arr.count == 0) {
+            arr.append(tag)
+            return arr
+        }
+        
+        for i in 0..<arr.count-1 {
+            if (tag > arr[i] && tag < arr[i+1]) {
+                arr.insert(tag, at: i+1)
+                return arr
+            }
+        }
+        arr.insert(tag, at: 0)
+        return arr
     }
     
 }
@@ -74,5 +98,14 @@ extension SkillsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = Utilities.sizeOfLabel(SkillsViewController.tags[indexPath.item])
         return CGSize(width: width + 15, height: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tag = SkillsViewController.tags[indexPath.item]
+        SkillsViewController.tags.remove(at: indexPath.item)
+        collectionView.reloadData()
+        
+        AddTagsViewController.tags = addTagTo(array: AddTagsViewController.tags, tag: tag)
+        AddTagsViewController.filter = addTagTo(array: AddTagsViewController.filter, tag: tag)
     }
 }
