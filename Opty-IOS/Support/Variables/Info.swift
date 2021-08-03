@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Info: NSObject {
     var name = ""
@@ -28,4 +29,6 @@ class Info: NSObject {
         self.state = state ?? ""
     }
     
+    func uploadData() {
+    }
 }

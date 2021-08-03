@@ -9,5 +9,6 @@ target 'Opty-IOS' do
 
 	pod 'Firebase/Auth'
 	pod 'GoogleSignIn'
+	pod 'Firebase/Firestore'
 
 end

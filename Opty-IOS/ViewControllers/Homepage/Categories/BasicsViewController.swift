@@ -55,6 +55,7 @@ class BasicsViewController: UIViewController, UITextFieldDelegate {
         let birth = DatePicker.date
         
         BasicsViewController.basicInfo = Info(name: nameTextField.text, birth: birth, nation: NationInput.text, address: AddressTextField.text!, city: CityTextField.text, state: StateTextField.text, country: CountryInput.text, phone: PhoneTextField.text)
+        
     }
     
     func setUp() {
