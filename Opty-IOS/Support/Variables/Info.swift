@@ -39,12 +39,15 @@ class Info: NSObject {
                 return
             }
             
-            let dict = snapshot?.data() as! [String: String]
+            var dict = [String: String]()
+            if let tmp = snapshot?.data() as? [String: String] {
+                dict = tmp
+            }
             
             print(dict)
             
             self.name = dict["name"] ?? ""
-            self.birth = Date()
+            self.birth = self.reformatStringToDate(str: dict["birth"] ?? "")
             self.address = dict["address"] ?? ""
             self.country = dict["country"] ?? ""
             self.nation = dict["nation"] ?? ""
@@ -57,9 +60,10 @@ class Info: NSObject {
     func uploadData() {
         let db = Firestore.firestore()
         
+        print(self.birth)
         db.collection("Basics").document(Auth.auth().currentUser!.uid).setData([
             "name": self.name,
-            "birth": "23102003",
+            "birth": reformatDateToString(date: self.birth),
             "address": self.address,
             "country": self.country,
             "nation": self.nation,
@@ -67,5 +71,19 @@ class Info: NSObject {
             "city": self.city,
             "state": self.state
         ])
+    }
+    
+    func reformatDateToString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return formatter.string(from: date)
+    }
+    
+    func reformatStringToDate(str: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = formatter.date(from: str) ?? Date()
+        return date
     }
 }
