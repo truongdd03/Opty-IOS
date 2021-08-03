@@ -29,6 +29,43 @@ class Info: NSObject {
         self.state = state ?? ""
     }
     
+    func fetchData() {
+        let uid = Auth.auth().currentUser!.uid
+        let db = Firestore.firestore()
+        
+        db.collection("Basics").document(uid).getDocument { (snapshot, err) in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+            
+            let dict = snapshot?.data() as! [String: String]
+            
+            print(dict)
+            
+            self.name = dict["name"] ?? ""
+            self.birth = Date()
+            self.address = dict["address"] ?? ""
+            self.country = dict["country"] ?? ""
+            self.nation = dict["nation"] ?? ""
+            self.phone = dict["phone"] ?? ""
+            self.city = dict["city"] ?? ""
+            self.state = dict["state"] ?? ""
+        }
+    }
+    
     func uploadData() {
+        let db = Firestore.firestore()
+        
+        db.collection("Basics").document(Auth.auth().currentUser!.uid).setData([
+            "name": self.name,
+            "birth": "23102003",
+            "address": self.address,
+            "country": self.country,
+            "nation": self.nation,
+            "phone": self.phone,
+            "city": self.city,
+            "state": self.state
+        ])
     }
 }

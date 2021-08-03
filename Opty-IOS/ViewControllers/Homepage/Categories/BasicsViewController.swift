@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class BasicsViewController: UIViewController, UITextFieldDelegate {
 
@@ -27,7 +28,7 @@ class BasicsViewController: UIViewController, UITextFieldDelegate {
     let screenHeight = UIScreen.main.bounds.height / 2
     var selectedRow = 0
     
-    static var basicInfo = Info(name: "", birth: Date(), nation: "", address: "", city: "", state: "", country: "", phone: "")
+    static var basicInfo: Info?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +57,10 @@ class BasicsViewController: UIViewController, UITextFieldDelegate {
         
         BasicsViewController.basicInfo = Info(name: nameTextField.text, birth: birth, nation: NationInput.text, address: AddressTextField.text!, city: CityTextField.text, state: StateTextField.text, country: CountryInput.text, phone: PhoneTextField.text)
         
+        BasicsViewController.basicInfo!.uploadData()
     }
     
-    func setUp() {
+    func setUp() {    
         Utilities.styleTextField(nameTextField)
         Utilities.styleTextField(AddressTextField)
         Utilities.styleTextField(CityTextField)
@@ -71,7 +73,7 @@ class BasicsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func showFields() {
-        let info = BasicsViewController.basicInfo
+        let info = BasicsViewController.basicInfo!
         nameTextField.text = info.name
         PhoneTextField.text = info.phone
         DatePicker.date = info.birth

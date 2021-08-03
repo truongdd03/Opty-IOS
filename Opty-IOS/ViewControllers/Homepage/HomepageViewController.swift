@@ -23,6 +23,10 @@ class HomepageViewController: UIViewController {
         tableView.dataSource = self
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.right.doc.on.clipboard"), style: .plain, target: self, action: #selector(logOut))
+        
+        BasicsViewController.basicInfo = Info(name: "", birth: Date(), nation: "", address: "", city: "", state: "", country: "", phone: "")
+        BasicsViewController.basicInfo!.fetchData()
+
     }
 
     @objc func logOut() {
