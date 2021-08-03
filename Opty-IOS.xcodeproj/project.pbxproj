@@ -30,6 +30,7 @@
 		5E890FE526B7BF8D005B718C /* AddTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E890FE426B7BF8D005B718C /* AddTagsViewController.swift */; };
 		5E890FE826B7DB83005B718C /* AddSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E890FE726B7DB83005B718C /* AddSkillViewController.swift */; };
 		5E890FF026B7F590005B718C /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E890FEF26B7F590005B718C /* TabBar.storyboard */; };
+		5EA56A4826B8E5CE00BDD468 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA56A4726B8E5CE00BDD468 /* MessageTableViewCell.swift */; };
 		5EB1E5EF26B79E09005FA6F0 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5EE26B79E09005FA6F0 /* Skill.swift */; };
 		5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		5E890FE426B7BF8D005B718C /* AddTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagsViewController.swift; sourceTree = "<group>"; };
 		5E890FE726B7DB83005B718C /* AddSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillViewController.swift; sourceTree = "<group>"; };
 		5E890FEF26B7F590005B718C /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		5EA56A4726B8E5CE00BDD468 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5EB1E5EE26B79E09005FA6F0 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				5E27842F26B2EBE000469AB5 /* MessageViewController.swift */,
+				5EA56A4726B8E5CE00BDD468 /* MessageTableViewCell.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				5EB830D426B548CA00F63ABC /* ExperienceViewController.swift in Sources */,
 				5EB6387026B2C516007B6FBF /* LogInViewController.swift in Sources */,
 				5E3856F826B394D2008EBAE8 /* BasicsViewController.swift in Sources */,
+				5EA56A4826B8E5CE00BDD468 /* MessageTableViewCell.swift in Sources */,
 				5EB1E5EF26B79E09005FA6F0 /* Skill.swift in Sources */,
 				5E4268EC26B4F560007D25FD /* PopUpViewController.swift in Sources */,
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
