@@ -25,4 +25,11 @@ class Remover {
             db.document(uid).collection("Awards").document(id).delete()
         }
     }
+    
+    static func removeJob(job: Job) {
+        let uid = Auth.auth().currentUser!.uid
+        if let id = job.id {
+            db.document(uid).collection("Jobs").document(id).delete()
+        }
+    }
 }

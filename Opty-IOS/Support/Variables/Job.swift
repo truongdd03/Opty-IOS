@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestoreSwift
 
-class Job: NSObject {
+class Job: NSObject, Codable {
+    @DocumentID var id: String?
     var company = ""
     var role = ""
     var content = ""

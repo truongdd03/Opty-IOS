@@ -31,4 +31,14 @@ class Writer {
             print("Error")
         }
     }
+    
+    static func writeJob(job: Job) {
+        let uid = Auth.auth().currentUser!.uid
+        
+        do {
+            let _ = try db.document(uid).collection("Jobs").addDocument(from: job)
+        } catch {
+            print("Error")
+        }
+    }
 }

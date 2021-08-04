@@ -40,6 +40,10 @@ class HomepageViewController: UIViewController {
         if EducationViewController.awards == nil {
             Fetcher.fetchAwards()
         }
+        
+        if ExperienceViewController.jobs == nil {
+            Fetcher.fetchJobs()
+        }
     }
 
     @objc func logOut() {

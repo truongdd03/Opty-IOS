@@ -67,7 +67,9 @@ class AddExperienceViewController: PopUpViewController, UISearchBarDelegate {
         if (!validateInputs()) { return }
         
         let tmp = Job(company: CompanyInput.text!, role: RoleInput.text!, tags: selectedTags, content: JobDescriptionInput.text!, duration: DuarationInput.text!)
-        ExperienceViewController.jobs.append(tmp)
+        
+        ExperienceViewController.jobs!.insert(tmp, at: 0)
+        Writer.writeJob(job: tmp)
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadExperience"), object: nil)
 

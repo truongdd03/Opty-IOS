@@ -52,4 +52,22 @@ class Fetcher {
             }
         }
     }
+    
+    static func fetchJobs() {
+        let uid = Auth.auth().currentUser!.uid
+        ExperienceViewController.jobs = []
+        
+        db.document(uid).collection("Jobs").getDocuments { (snapshot, err) in
+            
+            if let documents = snapshot?.documents {
+                ExperienceViewController.jobs! = documents.compactMap({ (querySnapshot) -> Job? in
+                    let tmp = try? querySnapshot.data(as: Job.self)
+                    if tmp != nil {
+                        tmp!.id = querySnapshot.documentID
+                    }
+                    return tmp
+                })
+            }
+        }
+    }
 }
