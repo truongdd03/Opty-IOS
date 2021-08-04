@@ -59,7 +59,7 @@ class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPick
         let startDate = reformatDate(date: StartDate)
         let endDate = reformatDate(date: EndDate)
         
-        EducationViewController.degrees.append(Degree(school: schoolInput.text!, degree: degree, startDate: startDate, endDate: endDate))
+        EducationViewController.degrees!.append(Degree(school: schoolInput.text!, degree: degree, startDate: startDate, endDate: endDate))
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
                 

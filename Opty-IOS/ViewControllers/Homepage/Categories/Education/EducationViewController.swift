@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
 class EducationViewController: UIViewController {
     
     @IBOutlet weak var DegreeTableView: UITableView!
     @IBOutlet weak var AwardTableView: UITableView!
     
-    static var degrees: [Degree] = []
-    static var awards: [Award] = []
+    static var degrees: [Degree]?
+    static var awards: [Award]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,10 @@ class EducationViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(loadDegree), name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(loadAward), name: NSNotification.Name(rawValue: "loadAward"), object: nil)
 
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
     }
     
     func setUp() {
@@ -55,15 +60,15 @@ class EducationViewController: UIViewController {
 extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (tableView == DegreeTableView) {
-            return EducationViewController.degrees.count
+            return EducationViewController.degrees!.count
         }
-        return EducationViewController.awards.count
+        return EducationViewController.awards!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (tableView == DegreeTableView) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DegreeCell") as! DegreeTableViewCell
-            let tmp: Degree = EducationViewController.degrees[indexPath.row]
+            let tmp: Degree = EducationViewController.degrees![indexPath.row]
             cell.schoolName = tmp.school
             cell.degreeName = tmp.degree
             cell.startDate = tmp.startDate
@@ -72,8 +77,8 @@ extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AwardCell")!
-        cell.textLabel?.text = EducationViewController.awards[indexPath.row].name
-        cell.detailTextLabel?.text = EducationViewController.awards[indexPath.row].content
+        cell.textLabel?.text = EducationViewController.awards![indexPath.row].name
+        cell.detailTextLabel?.text = EducationViewController.awards![indexPath.row].content
         return cell
     }
     
@@ -81,11 +86,11 @@ extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
         if (editingStyle == .delete) {
         
             if (tableView == DegreeTableView) {
-                EducationViewController.degrees.remove(at: indexPath.row)
+                EducationViewController.degrees?.remove(at: indexPath.row)
                 self.DegreeTableView.deleteRows(at: [indexPath], with: .automatic)
                 self.DegreeTableView.reloadData()
             } else {
-                EducationViewController.awards.remove(at: indexPath.row)
+                EducationViewController.awards!.remove(at: indexPath.row)
                 self.AwardTableView.deleteRows(at: [indexPath], with: .automatic)
                 self.AwardTableView.reloadData()
             }

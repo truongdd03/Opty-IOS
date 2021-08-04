@@ -46,6 +46,7 @@
 		5EB830D726B560E200F63ABC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D626B560E200F63ABC /* Job.swift */; };
 		5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */; };
 		5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */; };
+		5EF5B1B326BA793B007E587C /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1B226BA793B007E587C /* Fetcher.swift */; };
 		5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */; };
 		5EFF111826B6ACC10040DC86 /* tags.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EFF111726B6ACC10040DC86 /* tags.txt */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		5EB830D626B560E200F63ABC /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EF5B1B226BA793B007E587C /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
 		5EFF111726B6ACC10040DC86 /* tags.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = tags.txt; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,8 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				5E6CEDA026B41073009C86D7 /* Degree.swift */,
-				5E4268EE26B50695007D25FD /* Info.swift */,
 				5E6CEDA326B41168009C86D7 /* Award.swift */,
+				5E4268EE26B50695007D25FD /* Info.swift */,
 				5EB830D626B560E200F63ABC /* Job.swift */,
 				5EB1E5EE26B79E09005FA6F0 /* Skill.swift */,
 			);
@@ -275,6 +277,7 @@
 				5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */,
 				5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */,
 				5EB6386426B2C293007B6FBF /* Utilities.swift */,
+				5EF5B1B226BA793B007E587C /* Fetcher.swift */,
 				5E6CED9F26B41032009C86D7 /* Variables */,
 			);
 			path = Support;
@@ -463,6 +466,7 @@
 				5E890FE526B7BF8D005B718C /* AddTagsViewController.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,
 				5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */,
+				5EF5B1B326BA793B007E587C /* Fetcher.swift in Sources */,
 				5E890FE826B7DB83005B718C /* AddSkillViewController.swift in Sources */,
 				5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */,
 				5E3E8B8F26B6EDA400B0CA16 /* SkillsViewController.swift in Sources */,

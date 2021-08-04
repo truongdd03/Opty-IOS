@@ -11,5 +11,5 @@ target 'Opty-IOS' do
 	pod 'GoogleSignIn'
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Database'
-
+	pod 'FirebaseFirestoreSwift', '> 7.0-beta'
 end

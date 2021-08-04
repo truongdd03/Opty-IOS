@@ -7,48 +7,25 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
-class Degree: NSObject {
-    var school = ""
-    var startDate = ""
-    var endDate = ""
-    var degree = ""
+class Degree: NSObject, Codable {
+    var school: String
+    var startDate: String
+    var endDate: String
+    var degree: String
     
+    enum CodingKeys: String, CodingKey {
+        case school
+        case startDate
+        case endDate
+        case degree
+    }
+        
     init(school: String, degree: String, startDate: String, endDate: String) {
         self.school = school
         self.degree = degree
         self.startDate = startDate
         self.endDate = endDate
-    }
-    
-    func fetchData() {
-        let db = Firestore.firestore()
-
-        db.collection("Degrees").document(Auth.auth().currentUser!.uid).getDocument { (snapshot, err) in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            }
-            var dict = [String: String]()
-            if let tmp = snapshot?.data() as? [String: String] {
-                dict = tmp
-            }
-            
-            self.school = dict["school"]!
-            self.startDate = dict["startDate"]!
-            self.endDate = dict["endDate"]!
-            self.degree = dict["degree"]!
-        }
-    }
-    
-    func uploadData() {
-        let db = Firestore.firestore()
-        
-        db.collection("Degrees").document(Auth.auth().currentUser!.uid).setData([
-            "school": self.school,
-            "startDate": self.startDate,
-            "endDate": self.endDate,
-            "degree": self.degree
-        ])
     }
 }

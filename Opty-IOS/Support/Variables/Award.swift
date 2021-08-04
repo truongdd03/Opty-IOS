@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import FirebaseFirestoreSwift
 
-class Award: NSObject {
-    var name = ""
-    var content = ""
+class Award: NSObject, Codable {
+    var name: String
+    var content: String
+    
     init(name: String, content: String) {
         self.name = name
         self.content = content
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case content
     }
 }

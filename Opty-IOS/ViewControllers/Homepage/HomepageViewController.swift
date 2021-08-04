@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestoreSwift
 
 class HomepageViewController: UIViewController {
 
@@ -24,9 +25,21 @@ class HomepageViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.right.doc.on.clipboard"), style: .plain, target: self, action: #selector(logOut))
         
-        BasicsViewController.basicInfo = Info(name: "", birth: Date(), nation: "", address: "", city: "", state: "", country: "", phone: "")
-        BasicsViewController.basicInfo!.fetchData()
+        fetchData()
+    }
 
+    func fetchData() {
+        if BasicsViewController.basicInfo == nil {
+            Fetcher.fetchInfo()
+        }
+        
+        if EducationViewController.degrees == nil {
+            Fetcher.fetchDegrees()
+        }
+        
+        if EducationViewController.awards == nil {
+            EducationViewController.awards = []
+        }
     }
 
     @objc func logOut() {

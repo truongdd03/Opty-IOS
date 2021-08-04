@@ -18,6 +18,8 @@ class Info: NSObject {
     var city = ""
     var state = ""
     
+    override init() {}
+    
     init(name: String?, birth: Date, nation: String?, address: String?, city: String?, state: String?, country: String?, phone: String?) {
         self.name = name ?? ""
         self.birth = birth
@@ -38,20 +40,22 @@ class Info: NSObject {
                 print(err.localizedDescription)
                 return
             }
-            
-            var dict = [String: String]()
-            if let tmp = snapshot?.data() as? [String: String] {
+                        
+            var dict = [String: Any]()
+            if let tmp = snapshot?.data() {
                 dict = tmp
             }
-                        
-            self.name = dict["name"] ?? ""
-            self.birth = self.reformatStringToDate(str: dict["birth"] ?? "")
-            self.address = dict["address"] ?? ""
-            self.country = dict["country"] ?? ""
-            self.nation = dict["nation"] ?? ""
-            self.phone = dict["phone"] ?? ""
-            self.city = dict["city"] ?? ""
-            self.state = dict["state"] ?? ""
+                                    
+            let tmp = dict["birth"] as? Timestamp
+            self.birth = tmp?.dateValue() ?? Date()
+            
+            self.name = dict["name"] as? String ?? ""
+            self.address = dict["address"] as? String ?? ""
+            self.country = dict["country"] as? String ?? ""
+            self.nation = dict["nation"] as? String ?? ""
+            self.phone = dict["phone"] as? String ?? ""
+            self.city = dict["city"] as? String ?? ""
+            self.state = dict["state"] as? String ?? ""
         }
     }
     
@@ -60,7 +64,7 @@ class Info: NSObject {
         
         db.collection("Basics").document(Auth.auth().currentUser!.uid).setData([
             "name": self.name,
-            "birth": reformatDateToString(date: self.birth),
+            "birth": self.birth, //reformatDateToString(date: self.birth),
             "address": self.address,
             "country": self.country,
             "nation": self.nation,
@@ -68,19 +72,5 @@ class Info: NSObject {
             "city": self.city,
             "state": self.state
         ])
-    }
-    
-    func reformatDateToString(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return formatter.string(from: date)
-    }
-    
-    func reformatStringToDate(str: String) -> Date {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let date = formatter.date(from: str) ?? Date()
-        return date
     }
 }

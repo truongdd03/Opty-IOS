@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class Utilities {
     
@@ -66,5 +67,30 @@ class Utilities {
         label.text = str
             
         return label.intrinsicContentSize.width
+    }
+    
+    static func getSizeOf(name: String, completion: () -> Void) -> Int {
+        let uid = Auth.auth().currentUser!.uid
+        let ref = Database.database().reference()
+        var ans = 0
+        ref.child("Size").child(uid).child(name).getData { (err, snapshot) in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+            
+            print(snapshot)
+            ans = snapshot.value as? Int ?? 0
+        }
+        
+        completion()
+        
+        return ans
+    }
+    
+    static func upLoadSizeOf(name: String, size: Int) {
+        let uid = Auth.auth().currentUser!.uid
+        let ref = Database.database().reference()
+        ref.child("Size").child(uid).child(name).setValue(size)
     }
 }
