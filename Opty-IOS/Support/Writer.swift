@@ -41,4 +41,26 @@ class Writer {
             print("Error")
         }
     }
+    
+    static func writeSkill(skill: Skill) {
+        let uid = Auth.auth().currentUser!.uid
+        
+        do {
+            let _ = try db.document(uid).collection("Skills").addDocument(from: skill)
+        } catch {
+            print("Error")
+        }
+    }
+    
+    static func writeTags() {
+        let uid = Auth.auth().currentUser!.uid
+        
+        /*if let id = SkillsViewController.documentID {
+            db.document(uid).collection("Tags").document(id).delete()
+        }*/
+        
+        db.document(uid).collection("Tags").document("Tags").setData([
+            "Tags": SkillsViewController.tags!
+        ])
+    }
 }

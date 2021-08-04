@@ -13,7 +13,7 @@ class AddTagsViewController: PopUpViewController, UISearchBarDelegate {
     @IBOutlet weak var TagsCollectionView: UICollectionView!
     @IBOutlet weak var BackButton: UIButton!
     
-    static var tags: [String] = []
+    static var tags: [String]?
     static var filter: [String] = []
     
     override func viewDidLoad() {
@@ -25,14 +25,32 @@ class AddTagsViewController: PopUpViewController, UISearchBarDelegate {
         TagsCollectionView.dataSource = self
         searchBar.delegate = self
         
-        if (SkillsViewController.tags.count == 0) {
+        setUp()
+    }
+    
+    func setUp() {
+        if AddTagsViewController.tags == nil {
+        
             AddTagsViewController.tags = fetchTags()
-            AddTagsViewController.filter = AddTagsViewController.tags
+            
+            for tag in SkillsViewController.tags! {
+                var id = 0
+                
+                while id < AddTagsViewController.tags!.count {
+                    if AddTagsViewController.tags![id] == tag {
+                        AddTagsViewController.tags?.remove(at: id)
+                    } else {
+                        id += 1
+                    }
+                }
+            }
+            
+            AddTagsViewController.filter = AddTagsViewController.tags!
         }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let tmp = AddTagsViewController.tags
+        let tmp = AddTagsViewController.tags!
         AddTagsViewController.filter = searchText.isEmpty ? tmp : tmp.filter { (item: String) -> Bool in
             return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
@@ -66,7 +84,7 @@ extension AddTagsViewController: UICollectionViewDataSource, UICollectionViewDel
         AddTagsViewController.filter.remove(at: indexPath.item)
         collectionView.reloadData()
         
-        SkillsViewController.tags.insert(tag, at: 0)
+        SkillsViewController.tags!.insert(tag, at: 0)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadSkillTags"), object: nil)
     }
     

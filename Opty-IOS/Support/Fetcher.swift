@@ -70,4 +70,37 @@ class Fetcher {
             }
         }
     }
+    
+    static func fetchSkills() {
+        let uid = Auth.auth().currentUser!.uid
+        SkillsViewController.skills = []
+        
+        db.document(uid).collection("Skills").getDocuments { (snapshot, err) in
+            
+            if let documents = snapshot?.documents {
+                SkillsViewController.skills! = documents.compactMap({ (querySnapshot) -> Skill? in
+                    let tmp = try? querySnapshot.data(as: Skill.self)
+                    if tmp != nil {
+                        tmp!.id = querySnapshot.documentID
+                    }
+                    return tmp
+                })
+            }
+        }
+    }
+    
+    static func fetchTags() {
+        let uid = Auth.auth().currentUser!.uid
+        SkillsViewController.tags = []
+        
+        db.document(uid).collection("Tags").document("Tags").getDocument { (snapshot, err) in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+            let dict = snapshot?.data() as? [String: [String]] ?? [String: [String]]()
+            
+            SkillsViewController.tags = dict["Tags"] ?? []
+        }
+    }
 }

@@ -32,4 +32,11 @@ class Remover {
             db.document(uid).collection("Jobs").document(id).delete()
         }
     }
+    
+    static func removeSkill(skill: Skill) {
+        let uid = Auth.auth().currentUser!.uid
+        if let id = skill.id {
+            db.document(uid).collection("Skills").document(id).delete()
+        }
+    }
 }

@@ -38,7 +38,11 @@ class AddSkillViewController: PopUpViewController {
     @IBAction func addButtonTapped(_ sender: Any) {
         if (!validateInputs()) { return }
         
-        SkillsViewController.skills.append(Skill(name: SkillNameInput.text!, content: SkillContentTextView.text!))
+        let tmp = Skill(name: SkillNameInput.text!, content: SkillContentTextView.text!)
+        
+        SkillsViewController.skills!.append(tmp)
+        Writer.writeSkill(skill: tmp)
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadSkills"), object: nil)
 
         self.dismiss(animated: true, completion: nil)

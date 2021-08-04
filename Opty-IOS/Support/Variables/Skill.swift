@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseFirestoreSwift
 
-class Skill: NSObject {
+class Skill: NSObject, Codable {
+    @DocumentID var id: String?
     var name = ""
     var content = ""
+    
     init(name: String, content: String) {
         self.name = name
         self.content = content

@@ -35,14 +35,16 @@ class HomepageViewController: UIViewController {
         
         if EducationViewController.degrees == nil {
             Fetcher.fetchDegrees()
-        }
-        
-        if EducationViewController.awards == nil {
             Fetcher.fetchAwards()
         }
         
         if ExperienceViewController.jobs == nil {
             Fetcher.fetchJobs()
+        }
+        
+        if SkillsViewController.skills == nil {
+            Fetcher.fetchSkills()
+            Fetcher.fetchTags()
         }
     }
 
