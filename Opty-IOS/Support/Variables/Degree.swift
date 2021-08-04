@@ -10,17 +10,11 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class Degree: NSObject, Codable {
+    @DocumentID var id: String?
     var school: String
     var startDate: String
     var endDate: String
     var degree: String
-    
-    enum CodingKeys: String, CodingKey {
-        case school
-        case startDate
-        case endDate
-        case degree
-    }
         
     init(school: String, degree: String, startDate: String, endDate: String) {
         self.school = school

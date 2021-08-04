@@ -47,6 +47,8 @@
 		5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */; };
 		5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */; };
 		5EF5B1B326BA793B007E587C /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1B226BA793B007E587C /* Fetcher.swift */; };
+		5EF5B1B926BA7C37007E587C /* Writer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1B826BA7C37007E587C /* Writer.swift */; };
+		5EF5B1BC26BA8BEA007E587C /* Remover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1BB26BA8BEA007E587C /* Remover.swift */; };
 		5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */; };
 		5EFF111826B6ACC10040DC86 /* tags.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EFF111726B6ACC10040DC86 /* tags.txt */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,8 @@
 		5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EF5B1B226BA793B007E587C /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		5EF5B1B826BA7C37007E587C /* Writer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writer.swift; sourceTree = "<group>"; };
+		5EF5B1BB26BA8BEA007E587C /* Remover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remover.swift; sourceTree = "<group>"; };
 		5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExperienceViewController.swift; sourceTree = "<group>"; };
 		5EFF111726B6ACC10040DC86 /* tags.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = tags.txt; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 				5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */,
 				5EB6386426B2C293007B6FBF /* Utilities.swift */,
 				5EF5B1B226BA793B007E587C /* Fetcher.swift */,
+				5EF5B1B826BA7C37007E587C /* Writer.swift */,
+				5EF5B1BB26BA8BEA007E587C /* Remover.swift */,
 				5E6CED9F26B41032009C86D7 /* Variables */,
 			);
 			path = Support;
@@ -457,12 +463,14 @@
 				5EB830D726B560E200F63ABC /* Job.swift in Sources */,
 				5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */,
 				5E38570526B3EF8F008EBAE8 /* DegreeTableViewCell.swift in Sources */,
+				5EF5B1B926BA7C37007E587C /* Writer.swift in Sources */,
 				5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */,
 				5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */,
 				5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */,
 				5E4268EF26B50695007D25FD /* Info.swift in Sources */,
 				5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */,
 				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,
+				5EF5B1BC26BA8BEA007E587C /* Remover.swift in Sources */,
 				5E890FE526B7BF8D005B718C /* AddTagsViewController.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,
 				5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */,

@@ -25,7 +25,11 @@ class Fetcher {
             
             if let documents = snapshot?.documents {
                 EducationViewController.degrees! = documents.compactMap({ (querySnapshot) -> Degree? in
-                    return try? querySnapshot.data(as: Degree.self)
+                    let tmp = try? querySnapshot.data(as: Degree.self)
+                    if tmp != nil {
+                        tmp!.id = querySnapshot.documentID
+                    }
+                    return tmp
                 })
             }
         }

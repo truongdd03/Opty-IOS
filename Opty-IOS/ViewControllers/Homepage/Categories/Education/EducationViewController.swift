@@ -86,6 +86,8 @@ extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
         if (editingStyle == .delete) {
         
             if (tableView == DegreeTableView) {
+                Remover.removeDegree(degree: EducationViewController.degrees![indexPath.row])
+
                 EducationViewController.degrees?.remove(at: indexPath.row)
                 self.DegreeTableView.deleteRows(at: [indexPath], with: .automatic)
                 self.DegreeTableView.reloadData()

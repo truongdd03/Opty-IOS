@@ -18,13 +18,17 @@ class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var EndDate: UIDatePicker!
     
     let degreeTypes: [String] = ["Associate's Degree", "Bachelor's Degree", "Master's Degree", "Professional Degree", "Doctoral Degree"]
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         DegreePicker.delegate = self
         DegreePicker.dataSource = self
 
+        setUp()
+    }
+    
+    func setUp() {
         Utilities.styleFilledButton(AddButton)
         Utilities.styleHollowButton(CancelButton)
         Utilities.styleTextField(schoolInput)
@@ -59,7 +63,10 @@ class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPick
         let startDate = reformatDate(date: StartDate)
         let endDate = reformatDate(date: EndDate)
         
-        EducationViewController.degrees!.append(Degree(school: schoolInput.text!, degree: degree, startDate: startDate, endDate: endDate))
+        let tmp = Degree(school: schoolInput.text!, degree: degree, startDate: startDate, endDate: endDate)
+        
+        EducationViewController.degrees!.insert(tmp, at: 0)
+        Writer.writeDegree(degree: tmp)
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
                 
