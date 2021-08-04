@@ -43,13 +43,7 @@ class AddAwardViewController: PopUpViewController {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAward"), object: nil)
         
-        updateFirebase()
-
         self.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: Firebase
-    func updateFirebase() {
-        // To do
-    }
 }

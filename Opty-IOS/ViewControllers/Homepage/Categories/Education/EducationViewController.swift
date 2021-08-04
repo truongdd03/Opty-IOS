@@ -15,14 +15,19 @@ class EducationViewController: UIViewController {
     static var degrees: [Degree] = []
     static var awards: [Award] = []
     
-    let screenWidth = UIScreen.main.bounds.width - 10
-    let screenHeight = UIScreen.main.bounds.height / 2
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Education"
         
+        setUp()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadDegree), name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadAward), name: NSNotification.Name(rawValue: "loadAward"), object: nil)
+
+    }
+    
+    func setUp() {
         DegreeTableView.layer.borderWidth = 1
         DegreeTableView.layer.borderColor = UIColor.systemBlue.cgColor
         AwardTableView.layer.borderWidth = 1
@@ -35,10 +40,6 @@ class EducationViewController: UIViewController {
         
         DegreeTableView.allowsSelection = false
         AwardTableView.allowsSelection = false
-                
-        NotificationCenter.default.addObserver(self, selector: #selector(loadDegree), name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(loadAward), name: NSNotification.Name(rawValue: "loadAward"), object: nil)
-
     }
     
     @objc func loadDegree() {
@@ -47,12 +48,6 @@ class EducationViewController: UIViewController {
     
     @objc func loadAward() {
         self.AwardTableView.reloadData()
-    }
-    
-    @IBAction func addDegreeButtonTapped(_ sender: Any) {
-        let vc = UIViewController()
-        vc.preferredContentSize = CGSize(width: screenWidth, height: screenHeight)
-
     }
 
 }

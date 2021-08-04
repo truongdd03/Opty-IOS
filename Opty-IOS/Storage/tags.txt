@@ -3,7 +3,6 @@ Bash
 C
 C#
 C++
-C++14
 Haskell
 Java
 Objective-C
@@ -11,7 +10,6 @@ Pascal
 Perl
 PHP
 Python
-Python 3
 Ruby
 SQLite
 Swift
@@ -35,23 +33,8 @@ Personal project
 Frontend
 Backend
 Fullstack
-Data scientist
-Software tester
-Systems analyst
-Software engineer
-Network architect
-Software developer
-Engineer manager
-UI designer
-Database administrator
-Cloud computing engineer
-Web developer
-Business analyst
-Computer hardware engineer
-Information security analyst
-Cyber security
-IT project manager
-IT support
+UI
+Web
 Firebase
 AWS
 Parse

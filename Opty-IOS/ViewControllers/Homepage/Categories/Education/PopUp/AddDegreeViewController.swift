@@ -62,15 +62,8 @@ class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPick
         EducationViewController.degrees.append(Degree(school: schoolInput.text!, degree: degree, startDate: startDate, endDate: endDate))
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadDegree"), object: nil)
-        
-        updateFirebase()
-        
+                
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: Firebase
-    func updateFirebase() {
-        // To do
     }
     
     // MARK: Picker view

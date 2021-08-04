@@ -38,6 +38,9 @@ class HomepageViewController: UIViewController {
             return
         }
         
+        let defaults = UserDefaults.standard
+        defaults.setValue(false, forKey: "isLoggedIn")
+        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "Lobby")
         vc.modalPresentationStyle = .fullScreen

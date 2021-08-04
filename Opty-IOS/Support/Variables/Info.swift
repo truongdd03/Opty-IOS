@@ -43,9 +43,7 @@ class Info: NSObject {
             if let tmp = snapshot?.data() as? [String: String] {
                 dict = tmp
             }
-            
-            print(dict)
-            
+                        
             self.name = dict["name"] ?? ""
             self.birth = self.reformatStringToDate(str: dict["birth"] ?? "")
             self.address = dict["address"] ?? ""
@@ -60,7 +58,6 @@ class Info: NSObject {
     func uploadData() {
         let db = Firestore.firestore()
         
-        print(self.birth)
         db.collection("Basics").document(Auth.auth().currentUser!.uid).setData([
             "name": self.name,
             "birth": reformatDateToString(date: self.birth),

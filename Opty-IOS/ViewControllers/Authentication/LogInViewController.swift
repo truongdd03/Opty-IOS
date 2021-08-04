@@ -54,10 +54,12 @@ class LogInViewController: UIViewController {
             
             self.transitToNewsfeed()
         }
-        //transitToNewsfeed()
     }
     
     func transitToNewsfeed() {
+        let defaults = UserDefaults.standard
+        defaults.setValue(true, forKey: "isLoggedIn")
+    
         let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "Main") as! UITabBarController
         navigationController?.setNavigationBarHidden(true, animated: false)
