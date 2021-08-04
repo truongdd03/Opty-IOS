@@ -39,7 +39,10 @@ class AddAwardViewController: PopUpViewController {
     @IBAction func addButtonTapped(_ sender: Any) {
         if (!validateInputs()) { return }
         
-        EducationViewController.awards!.append(Award(name: AwardNameInput.text!, content: DescriptionInput.text!))
+        let tmp = Award(name: AwardNameInput.text!, content: DescriptionInput.text!)
+        
+        EducationViewController.awards!.insert(tmp, at: 0)
+        Writer.writeAward(award: tmp)
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadAward"), object: nil)
         

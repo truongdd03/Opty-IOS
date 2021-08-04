@@ -28,10 +28,6 @@ class EducationViewController: UIViewController {
 
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-    }
-    
     func setUp() {
         DegreeTableView.layer.borderWidth = 1
         DegreeTableView.layer.borderColor = UIColor.systemBlue.cgColor
@@ -92,6 +88,8 @@ extension EducationViewController: UITableViewDataSource, UITableViewDelegate {
                 self.DegreeTableView.deleteRows(at: [indexPath], with: .automatic)
                 self.DegreeTableView.reloadData()
             } else {
+                Remover.removeAward(award: EducationViewController.awards![indexPath.row])
+            
                 EducationViewController.awards!.remove(at: indexPath.row)
                 self.AwardTableView.deleteRows(at: [indexPath], with: .automatic)
                 self.AwardTableView.reloadData()

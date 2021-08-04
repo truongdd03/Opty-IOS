@@ -38,7 +38,7 @@ class HomepageViewController: UIViewController {
         }
         
         if EducationViewController.awards == nil {
-            EducationViewController.awards = []
+            Fetcher.fetchAwards()
         }
     }
 

@@ -9,6 +9,7 @@ import UIKit
 import FirebaseFirestoreSwift
 
 class Award: NSObject, Codable {
+    @DocumentID var id: String?
     var name: String
     var content: String
     

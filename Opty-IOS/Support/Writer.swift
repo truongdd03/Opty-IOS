@@ -21,4 +21,14 @@ class Writer {
             print("Error")
         }
     }
+    
+    static func writeAward(award: Award) {
+        let uid = Auth.auth().currentUser!.uid
+        
+        do {
+            let _ = try db.document(uid).collection("Awards").addDocument(from: award)
+        } catch {
+            print("Error")
+        }
+    }
 }
