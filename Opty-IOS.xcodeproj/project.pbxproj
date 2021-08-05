@@ -280,10 +280,7 @@
 			children = (
 				5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */,
 				5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */,
-				5EB6386426B2C293007B6FBF /* Utilities.swift */,
-				5EF5B1B226BA793B007E587C /* Fetcher.swift */,
-				5EF5B1B826BA7C37007E587C /* Writer.swift */,
-				5EF5B1BB26BA8BEA007E587C /* Remover.swift */,
+				5EC7431026BB8312006DB2AF /* Firebase */,
 				5E6CED9F26B41032009C86D7 /* Variables */,
 			);
 			path = Support;
@@ -319,6 +316,17 @@
 				5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */,
 			);
 			path = Experience;
+			sourceTree = "<group>";
+		};
+		5EC7431026BB8312006DB2AF /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5EB6386426B2C293007B6FBF /* Utilities.swift */,
+				5EF5B1B226BA793B007E587C /* Fetcher.swift */,
+				5EF5B1B826BA7C37007E587C /* Writer.swift */,
+				5EF5B1BB26BA8BEA007E587C /* Remover.swift */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		5EFF111326B63EC20040DC86 /* PopUp */ = {
