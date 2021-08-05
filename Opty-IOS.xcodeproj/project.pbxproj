@@ -46,6 +46,8 @@
 		5EB830D726B560E200F63ABC /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D626B560E200F63ABC /* Job.swift */; };
 		5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */; };
 		5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */; };
+		5EC7431426BB8512006DB2AF /* NewpostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7431326BB8512006DB2AF /* NewpostViewController.swift */; };
+		5EC7431826BB8527006DB2AF /* Newpost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC7431726BB8527006DB2AF /* Newpost.storyboard */; };
 		5EF5B1B326BA793B007E587C /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1B226BA793B007E587C /* Fetcher.swift */; };
 		5EF5B1B926BA7C37007E587C /* Writer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1B826BA7C37007E587C /* Writer.swift */; };
 		5EF5B1BC26BA8BEA007E587C /* Remover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1BB26BA8BEA007E587C /* Remover.swift */; };
@@ -95,6 +97,8 @@
 		5EB830D626B560E200F63ABC /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EC7431326BB8512006DB2AF /* NewpostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewpostViewController.swift; sourceTree = "<group>"; };
+		5EC7431726BB8527006DB2AF /* Newpost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Newpost.storyboard; sourceTree = "<group>"; };
 		5EF5B1B226BA793B007E587C /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		5EF5B1B826BA7C37007E587C /* Writer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writer.swift; sourceTree = "<group>"; };
 		5EF5B1BB26BA8BEA007E587C /* Remover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remover.swift; sourceTree = "<group>"; };
@@ -267,10 +271,11 @@
 			isa = PBXGroup;
 			children = (
 				5EB6385226B2BFC7007B6FBF /* Main.storyboard */,
+				5E890FEF26B7F590005B718C /* TabBar.storyboard */,
 				5E27842B26B2EAE500469AB5 /* Message.storyboard */,
 				5E27841B26B2E51B00469AB5 /* Newsfeed.storyboard */,
-				5E890FEF26B7F590005B718C /* TabBar.storyboard */,
 				5E27842226B2E99700469AB5 /* Homepage.storyboard */,
+				5EC7431726BB8527006DB2AF /* Newpost.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			children = (
 				5EB6387226B2C54E007B6FBF /* Authentication */,
 				5E27842626B2EA0400469AB5 /* Newsfeed */,
+				5EC7431226BB84EF006DB2AF /* Newpost */,
 				5E27843226B2EC4400469AB5 /* Homepage */,
 				5E27842E26B2EBC300469AB5 /* Message */,
 			);
@@ -327,6 +333,14 @@
 				5EF5B1BB26BA8BEA007E587C /* Remover.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		5EC7431226BB84EF006DB2AF /* Newpost */ = {
+			isa = PBXGroup;
+			children = (
+				5EC7431326BB8512006DB2AF /* NewpostViewController.swift */,
+			);
+			path = Newpost;
 			sourceTree = "<group>";
 		};
 		5EFF111326B63EC20040DC86 /* PopUp */ = {
@@ -406,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EB6385926B2BFCA007B6FBF /* LaunchScreen.storyboard in Resources */,
+				5EC7431826BB8527006DB2AF /* Newpost.storyboard in Resources */,
 				5E27841926B2D74F00469AB5 /* GoogleService-Info.plist in Resources */,
 				5EB6385626B2BFCA007B6FBF /* Assets.xcassets in Resources */,
 				5E27841C26B2E51B00469AB5 /* Newsfeed.storyboard in Resources */,
@@ -500,6 +515,7 @@
 				5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */,
 				5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */,
 				5E27842826B2EA1C00469AB5 /* NewsfeedViewController.swift in Sources */,
+				5EC7431426BB8512006DB2AF /* NewpostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
