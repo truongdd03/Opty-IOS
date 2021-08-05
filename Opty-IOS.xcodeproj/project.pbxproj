@@ -278,10 +278,11 @@
 		5EB6386326B2C26D007B6FBF /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5E6CED9F26B41032009C86D7 /* Variables */,
+				5EC7431026BB8312006DB2AF /* Firebase */,
+				5E27841E26B2E81000469AB5 /* Templates */,
 				5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */,
 				5EB6384E26B2BFC7007B6FBF /* SceneDelegate.swift */,
-				5EC7431026BB8312006DB2AF /* Firebase */,
-				5E6CED9F26B41032009C86D7 /* Variables */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -293,7 +294,6 @@
 				5E27842626B2EA0400469AB5 /* Newsfeed */,
 				5E27843226B2EC4400469AB5 /* Homepage */,
 				5E27842E26B2EBC300469AB5 /* Message */,
-				5E27841E26B2E81000469AB5 /* Templates */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
