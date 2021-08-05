@@ -11,7 +11,6 @@
 		5E27841926B2D74F00469AB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E27841826B2D74E00469AB5 /* GoogleService-Info.plist */; };
 		5E27841C26B2E51B00469AB5 /* Newsfeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E27841B26B2E51B00469AB5 /* Newsfeed.storyboard */; };
 		5E27842326B2E99700469AB5 /* Homepage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E27842226B2E99700469AB5 /* Homepage.storyboard */; };
-		5E27842826B2EA1C00469AB5 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27842726B2EA1C00469AB5 /* NewsfeedViewController.swift */; };
 		5E27842C26B2EAE500469AB5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E27842B26B2EAE500469AB5 /* Message.storyboard */; };
 		5E27843026B2EBE000469AB5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27842F26B2EBE000469AB5 /* MessageViewController.swift */; };
 		5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27843326B2EC6400469AB5 /* HomepageViewController.swift */; };
@@ -48,6 +47,9 @@
 		5EB830DE26B57E5000F63ABC /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */; };
 		5EC7431426BB8512006DB2AF /* NewpostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7431326BB8512006DB2AF /* NewpostViewController.swift */; };
 		5EC7431826BB8527006DB2AF /* Newpost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EC7431726BB8527006DB2AF /* Newpost.storyboard */; };
+		5EC7431D26BB8729006DB2AF /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7431C26BB8729006DB2AF /* NewsfeedViewController.swift */; };
+		5EC7432026BB9F46006DB2AF /* NewsfeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC7431F26BB9F45006DB2AF /* NewsfeedTableViewCell.swift */; };
+		5EF1787826BBC15600B33CA3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1787726BBC15600B33CA3 /* Post.swift */; };
 		5EF5B1B326BA793B007E587C /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1B226BA793B007E587C /* Fetcher.swift */; };
 		5EF5B1B926BA7C37007E587C /* Writer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1B826BA7C37007E587C /* Writer.swift */; };
 		5EF5B1BC26BA8BEA007E587C /* Remover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1BB26BA8BEA007E587C /* Remover.swift */; };
@@ -60,7 +62,6 @@
 		5E27841826B2D74E00469AB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E27841B26B2E51B00469AB5 /* Newsfeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Newsfeed.storyboard; sourceTree = "<group>"; };
 		5E27842226B2E99700469AB5 /* Homepage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Homepage.storyboard; sourceTree = "<group>"; };
-		5E27842726B2EA1C00469AB5 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
 		5E27842B26B2EAE500469AB5 /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		5E27842F26B2EBE000469AB5 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		5E27843326B2EC6400469AB5 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +100,9 @@
 		5EB830DD26B57E5000F63ABC /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EC7431326BB8512006DB2AF /* NewpostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewpostViewController.swift; sourceTree = "<group>"; };
 		5EC7431726BB8527006DB2AF /* Newpost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Newpost.storyboard; sourceTree = "<group>"; };
+		5EC7431C26BB8729006DB2AF /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
+		5EC7431F26BB9F45006DB2AF /* NewsfeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedTableViewCell.swift; sourceTree = "<group>"; };
+		5EF1787726BBC15600B33CA3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		5EF5B1B226BA793B007E587C /* Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
 		5EF5B1B826BA7C37007E587C /* Writer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writer.swift; sourceTree = "<group>"; };
 		5EF5B1BB26BA8BEA007E587C /* Remover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remover.swift; sourceTree = "<group>"; };
@@ -149,7 +153,8 @@
 		5E27842626B2EA0400469AB5 /* Newsfeed */ = {
 			isa = PBXGroup;
 			children = (
-				5E27842726B2EA1C00469AB5 /* NewsfeedViewController.swift */,
+				5EC7431C26BB8729006DB2AF /* NewsfeedViewController.swift */,
+				5EC7431F26BB9F45006DB2AF /* NewsfeedTableViewCell.swift */,
 			);
 			path = Newsfeed;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				5E4268EE26B50695007D25FD /* Info.swift */,
 				5EB830D626B560E200F63ABC /* Job.swift */,
 				5EB1E5EE26B79E09005FA6F0 /* Skill.swift */,
+				5EF1787726BBC15600B33CA3 /* Post.swift */,
 			);
 			path = Variables;
 			sourceTree = "<group>";
@@ -318,7 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB830D326B548CA00F63ABC /* ExperienceViewController.swift */,
-				5EFF111526B63EF90040DC86 /* ExperienceCell */,
+				5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */,
 				5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */,
 			);
 			path = Experience;
@@ -350,14 +356,6 @@
 				5E4268E826B4EF6C007D25FD /* AddAwardViewController.swift */,
 			);
 			path = PopUp;
-			sourceTree = "<group>";
-		};
-		5EFF111526B63EF90040DC86 /* ExperienceCell */ = {
-			isa = PBXGroup;
-			children = (
-				5EB830D926B56CF200F63ABC /* ExperienceTableViewCell.swift */,
-			);
-			path = ExperienceCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,9 +491,11 @@
 				5E4268EF26B50695007D25FD /* Info.swift in Sources */,
 				5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */,
 				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,
+				5EC7432026BB9F46006DB2AF /* NewsfeedTableViewCell.swift in Sources */,
 				5EF5B1BC26BA8BEA007E587C /* Remover.swift in Sources */,
 				5E890FE526B7BF8D005B718C /* AddTagsViewController.swift in Sources */,
 				5E27843826B2F8B200469AB5 /* DetailsTableViewCell.swift in Sources */,
+				5EF1787826BBC15600B33CA3 /* Post.swift in Sources */,
 				5EB830DA26B56CF200F63ABC /* ExperienceTableViewCell.swift in Sources */,
 				5EF5B1B326BA793B007E587C /* Fetcher.swift in Sources */,
 				5E890FE826B7DB83005B718C /* AddSkillViewController.swift in Sources */,
@@ -503,6 +503,7 @@
 				5E3E8B8F26B6EDA400B0CA16 /* SkillsViewController.swift in Sources */,
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,
 				5EB6386526B2C293007B6FBF /* Utilities.swift in Sources */,
+				5EC7431D26BB8729006DB2AF /* NewsfeedViewController.swift in Sources */,
 				5E4268E926B4EF6C007D25FD /* AddAwardViewController.swift in Sources */,
 				5E3856FB26B3D874008EBAE8 /* EducationViewController.swift in Sources */,
 				5EB830D426B548CA00F63ABC /* ExperienceViewController.swift in Sources */,
@@ -514,7 +515,6 @@
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
 				5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */,
 				5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */,
-				5E27842826B2EA1C00469AB5 /* NewsfeedViewController.swift in Sources */,
 				5EC7431426BB8512006DB2AF /* NewpostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
