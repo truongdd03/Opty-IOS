@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -216,13 +217,15 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRZ-5h-uur">
-                                <rect key="frame" x="350" y="110" width="20" height="20"/>
+                                <rect key="frame" x="345" y="107.66666666666667" width="25" height="25.000000000000014"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="Tfs-t9-sXe"/>
-                                    <constraint firstAttribute="height" constant="20" id="eG1-Sl-Ybe"/>
+                                    <constraint firstAttribute="width" constant="25" id="TqP-sE-HBF"/>
+                                    <constraint firstAttribute="height" constant="25" id="nGX-1u-9de"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Button" image="plus" catalog="system"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <segue destination="rnQ-fH-OhN" kind="popoverPresentation" popoverAnchorView="mRZ-5h-uur" id="GvI-6N-xmT">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -230,13 +233,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dT-eO-vza">
-                                <rect key="frame" x="350" y="446.66666666666669" width="20" height="20"/>
+                                <rect key="frame" x="345" y="444" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="0oH-mp-Q0H"/>
-                                    <constraint firstAttribute="height" constant="20" id="p16-zV-uj2"/>
+                                    <constraint firstAttribute="width" constant="25" id="0oH-mp-Q0H"/>
+                                    <constraint firstAttribute="height" constant="25" id="p16-zV-uj2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Button" image="plus" catalog="system"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <segue destination="o5r-g8-cJg" kind="popoverPresentation" popoverAnchorView="6dT-eO-vza" id="Our-U0-BQN">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -1397,13 +1402,15 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGd-OS-qs0">
-                                <rect key="frame" x="360" y="110" width="20" height="20"/>
+                                <rect key="frame" x="355" y="107.66666666666667" width="25" height="25.000000000000014"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="Log-VL-ydm"/>
-                                    <constraint firstAttribute="width" constant="20" id="kio-R3-Nrf"/>
+                                    <constraint firstAttribute="height" constant="25" id="Log-VL-ydm"/>
+                                    <constraint firstAttribute="width" constant="25" id="kio-R3-Nrf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Button" image="plus" catalog="system"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <segue destination="KOf-fG-8ay" kind="popoverPresentation" popoverAnchorView="VGd-OS-qs0" id="Tpv-Ct-dWS">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -1411,13 +1418,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUt-1p-A24">
-                                <rect key="frame" x="360" y="264" width="20" height="20"/>
+                                <rect key="frame" x="355" y="261.66666666666669" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="UTR-Ip-BRJ"/>
-                                    <constraint firstAttribute="height" constant="20" id="oBT-Lk-QjE"/>
+                                    <constraint firstAttribute="width" constant="25" id="UTR-Ip-BRJ"/>
+                                    <constraint firstAttribute="height" constant="25" id="oBT-Lk-QjE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Button" image="plus" catalog="system"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <segue destination="8Ve-j7-fIC" kind="popoverPresentation" popoverAnchorView="hUt-1p-A24" id="MpX-g4-2tz">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>

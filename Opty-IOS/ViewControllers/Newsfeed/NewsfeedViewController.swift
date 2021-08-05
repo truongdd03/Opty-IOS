@@ -25,10 +25,10 @@ class NewsfeedViewController: UIViewController {
         NewsfeedTableView.allowsSelection = false
         
         for _ in 0...3 {
-            NewsfeedViewController.posts?.append(Post(userName: "Don Truong", date: "23/10/21", companyName: "Facebook", content: "We need a software developer", tags: ["iOS", "Swift", "Front-end"]))
+            NewsfeedViewController.posts?.append(Post(userName: "Don Truong", date: "23/10/21", companyName: "Facebook", content: "We need a software developer", hasSent: false, tags: ["iOS", "Swift", "Front-end"]))
         }
         
-        NewsfeedViewController.posts?.append(Post(userName: "Don Truong", date: "23/10/21", companyName: "Facebook", content: "We need a software developer has at least 1 month experience. Know how to use computer, Word, and Excel. Salary will vary between $25,000 to $30,000 each month. Housing and food will also included in the salary", tags: ["iOS", "Swift", "Front-end", "Back-end", "Software engineer", "Freshman", "Senior", "Personal project"]))
+        NewsfeedViewController.posts?.append(Post(userName: "Don Truong", date: "23/10/21", companyName: "Facebook", content: "We need a software developer has at least 1 month experience. Know how to use computer, Word, and Excel. Salary will vary between $25,000 to $30,000 each month. Housing and food will also included in the salary", hasSent: false, tags: ["iOS", "Swift", "Front-end", "Back-end", "Software engineer", "Freshman", "Senior", "Personal project"]))
     }
     
     @objc func searchTapped() {
@@ -48,6 +48,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.date = tmp.date
         cell.company = tmp.companyName
         cell.content = tmp.content
+        cell.hasSent = tmp.hasSent
         
         return cell
     }

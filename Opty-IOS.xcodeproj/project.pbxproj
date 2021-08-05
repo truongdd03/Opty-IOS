@@ -289,6 +289,7 @@
 		5EB6386326B2C26D007B6FBF /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5EB6386426B2C293007B6FBF /* Utilities.swift */,
 				5E6CED9F26B41032009C86D7 /* Variables */,
 				5EC7431026BB8312006DB2AF /* Firebase */,
 				5E27841E26B2E81000469AB5 /* Templates */,
@@ -333,7 +334,6 @@
 		5EC7431026BB8312006DB2AF /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				5EB6386426B2C293007B6FBF /* Utilities.swift */,
 				5EF5B1B226BA793B007E587C /* Fetcher.swift */,
 				5EF5B1B826BA7C37007E587C /* Writer.swift */,
 				5EF5B1BB26BA8BEA007E587C /* Remover.swift */,

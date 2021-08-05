@@ -14,7 +14,8 @@ class NewsfeedTableViewCell: UITableViewCell {
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var CompanyLabel: UILabel!
     @IBOutlet weak var ContentLabel: UILabel!
-
+    @IBOutlet weak var SendResumeButton: UIButton!
+    
     @IBOutlet weak var TagsCollection: UICollectionView!
     
     var name: String? {
@@ -37,6 +38,17 @@ class NewsfeedTableViewCell: UITableViewCell {
             ContentLabel.text = content
         }
     }
+    var hasSent: Bool? {
+        didSet {
+            if hasSent == true {
+                SendResumeButton.setTitle("Sent", for: .normal)
+                Utilities.styleHollowButton(SendResumeButton)
+            } else {
+                SendResumeButton.setTitle("Send Resume", for: .normal)
+                Utilities.styleFilledButton(SendResumeButton)
+            }
+        }
+    }
 
     func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
         TagsCollection.delegate = dataSourceDelegate
@@ -44,7 +56,11 @@ class NewsfeedTableViewCell: UITableViewCell {
         TagsCollection.tag = row
         TagsCollection.reloadData()
     }
-
+    
+    @IBAction func sendResumeButtonTapped(_ sender: Any) {
+        hasSent = true
+    }
+    
     @IBAction func MessageButtonTapped(_ sender: Any) {
     }
 }

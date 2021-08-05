@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -56,16 +57,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D8o-dT-9bD">
-                                                    <rect key="frame" x="50" y="10" width="314" height="30"/>
+                                                    <rect key="frame" x="50" y="10" width="209" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don Truong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHJ-Da-WbL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="314" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="209" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" systemColor="systemBlueColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Aug 5th, 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLE-wA-ZDr">
-                                                            <rect key="frame" x="0.0" y="17" width="314" height="13"/>
+                                                            <rect key="frame" x="0.0" y="17" width="209" height="13"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -131,30 +132,46 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-zk-Hl1">
-                                                    <rect key="frame" x="374" y="15" width="20" height="20"/>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-zk-Hl1">
+                                                    <rect key="frame" x="379" y="13" width="25" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="NMf-66-bC9"/>
-                                                        <constraint firstAttribute="height" constant="20" id="wY8-Vk-5uK"/>
+                                                        <constraint firstAttribute="width" constant="25" id="NMf-66-bC9"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <state key="normal" image="message.circle" catalog="system"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal">
+                                                        <imageReference key="image" image="message.circle" catalog="system" symbolScale="large"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="MessageButtonTapped:" destination="Cy7-WR-EtJ" eventType="touchUpInside" id="e91-Qw-7Ja"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-dj-Wmi">
+                                                    <rect key="frame" x="269" y="13" width="100" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="2NJ-hh-6RH"/>
+                                                        <constraint firstAttribute="height" constant="24" id="dgO-cP-7Pe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="Send Resume"/>
+                                                    <connections>
+                                                        <action selector="sendResumeButtonTapped:" destination="Cy7-WR-EtJ" eventType="touchUpInside" id="JYN-g3-fLO"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="bWJ-dj-Wmi" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="1Od-DL-PeY"/>
                                                 <constraint firstAttribute="bottom" secondItem="hXb-o0-oxx" secondAttribute="bottom" constant="10" id="471-XI-sNh"/>
-                                                <constraint firstItem="IrV-zk-Hl1" firstAttribute="leading" secondItem="D8o-dT-9bD" secondAttribute="trailing" constant="10" id="9p9-H7-qam"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" constant="10" id="GFI-KV-xyK"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="HA6-9b-NDv"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="J5L-y2-Kd3"/>
+                                                <constraint firstItem="IrV-zk-Hl1" firstAttribute="height" secondItem="bWJ-dj-Wmi" secondAttribute="height" id="Lwu-b9-gEA"/>
                                                 <constraint firstItem="hXb-o0-oxx" firstAttribute="top" secondItem="mx3-qC-YBa" secondAttribute="bottom" constant="10" id="NVV-bu-2yn"/>
                                                 <constraint firstAttribute="trailing" secondItem="hXb-o0-oxx" secondAttribute="trailing" constant="10" id="OdZ-tr-QcW"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="Qe5-OC-UzH"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="SZb-iD-EmC"/>
-                                                <constraint firstAttribute="trailing" secondItem="IrV-zk-Hl1" secondAttribute="trailing" constant="20" id="ceu-1h-A4v"/>
+                                                <constraint firstItem="IrV-zk-Hl1" firstAttribute="leading" secondItem="bWJ-dj-Wmi" secondAttribute="trailing" constant="10" id="Shx-qz-vOU"/>
+                                                <constraint firstAttribute="trailing" secondItem="IrV-zk-Hl1" secondAttribute="trailing" constant="10" id="ggV-hV-yiM"/>
+                                                <constraint firstItem="bWJ-dj-Wmi" firstAttribute="leading" secondItem="D8o-dT-9bD" secondAttribute="trailing" constant="10" id="gwb-5p-z0C"/>
                                                 <constraint firstItem="hXb-o0-oxx" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="kF3-0t-VcT"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hk2-Yd-WSa" secondAttribute="trailing" constant="10" id="kw5-jp-vuF"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="top" secondItem="Hk2-Yd-WSa" secondAttribute="bottom" constant="10" id="lP5-qY-hhQ"/>
@@ -170,6 +187,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                             <outlet property="ContentLabel" destination="hXb-o0-oxx" id="Fa4-Yy-0Bm"/>
                                             <outlet property="DateLabel" destination="fLE-wA-ZDr" id="jIc-wM-xb5"/>
                                             <outlet property="NameLabel" destination="rHJ-Da-WbL" id="mw0-KN-KVM"/>
+                                            <outlet property="SendResumeButton" destination="bWJ-dj-Wmi" id="DDw-fj-gkQ"/>
                                             <outlet property="TagsCollection" destination="Hk2-Yd-WSa" id="FhB-jE-0TK"/>
                                         </connections>
                                     </tableViewCell>
