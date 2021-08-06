@@ -47,28 +47,28 @@
                                     <action selector="AddTagButtonTapped:" destination="5bp-za-UDN" eventType="touchUpInside" id="EL9-un-IKd"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KPK-25-pOi">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KPK-25-pOi">
                                 <rect key="frame" x="20" y="182.5" width="374" height="20"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="seF-lc-xXB"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bjg-e8-ZQp">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bjg-e8-ZQp">
                                     <size key="itemSize" width="128" height="20"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="flz-Cb-LuH">
-                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="17"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Tag" id="flz-Cb-LuH" customClass="TagCollectionViewCell" customModule="Opty_IOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4yL-a7-yNl">
-                                            <rect key="frame" x="0.0" y="0.0" width="66.5" height="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javascript" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np0-mK-kxC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="66.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javascript" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np0-mK-kxC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="20"/>
                                                     <color key="backgroundColor" systemColor="systemTealColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,6 +82,10 @@
                                                 <constraint firstItem="np0-mK-kxC" firstAttribute="leading" secondItem="4yL-a7-yNl" secondAttribute="leading" id="irP-E8-jDD"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="20"/>
+                                        <connections>
+                                            <outlet property="tagName" destination="np0-mK-kxC" id="BZl-OP-Iql"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
