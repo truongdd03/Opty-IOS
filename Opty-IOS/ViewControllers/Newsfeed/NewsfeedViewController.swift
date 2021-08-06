@@ -52,22 +52,20 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.company = tmp.companyName
         cell.content = tmp.content
         cell.hasSent = tmp.hasSent
+        cell.selectionStyle = .none
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.beginUpdates()
-        
         if index == indexPath.row {
             clicked = !clicked
         } else {
             clicked = false
         }
         index = indexPath.row
-        
         tableView.endUpdates()
-        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
