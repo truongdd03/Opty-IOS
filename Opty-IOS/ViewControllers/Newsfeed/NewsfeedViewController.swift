@@ -13,6 +13,9 @@ class NewsfeedViewController: UIViewController {
     
     static var posts: [Post]? = []
     
+    var index = -1
+    var clicked = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +25,7 @@ class NewsfeedViewController: UIViewController {
         
         NewsfeedTableView.delegate = self
         NewsfeedTableView.dataSource = self
-        NewsfeedTableView.allowsSelection = false
+        //NewsfeedTableView.allowsSelection = false
         
         for _ in 0...3 {
             NewsfeedViewController.posts?.append(Post(userName: "Don Truong", date: "23/10/21", companyName: "Facebook", content: "We need a software developer", hasSent: false, tags: ["iOS", "Swift", "Front-end"]))
@@ -54,6 +57,16 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.beginUpdates()
+        
+        if index == indexPath.row {
+            clicked = !clicked
+        } else {
+            clicked = false
+        }
+        index = indexPath.row
+        
+        tableView.endUpdates()
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
@@ -61,7 +74,27 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
         let tableCell = cell as! NewsfeedTableViewCell
         tableCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let str = NewsfeedViewController.posts![indexPath.row].content
+        let width = view.frame.size.width - 20
+        let height = str.height(withConstrainedWidth: width, font: .systemFont(ofSize: 17))
+        
+        if index == indexPath.row && !clicked {
+            return height + 150
+        }
+        return min(height + 150, 300)
+    }
 
+}
+
+extension String {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+    
+        return ceil(boundingBox.height)
+    }
 }
 
 extension NewsfeedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

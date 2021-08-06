@@ -133,10 +133,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-o0-oxx">
-                                                    <rect key="frame" x="10" y="110.5" width="394" height="150"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="gwX-wa-Vlh"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="10" y="110.5" width="394" height="164.5"/>
                                                     <string key="text">Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.
 
 Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.</string>
@@ -195,6 +192,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                 <constraint firstItem="hXb-o0-oxx" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="kF3-0t-VcT"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hk2-Yd-WSa" secondAttribute="trailing" constant="10" id="kw5-jp-vuF"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="top" secondItem="Hk2-Yd-WSa" secondAttribute="bottom" constant="10" id="lP5-qY-hhQ"/>
+                                                <constraint firstItem="fNQ-qX-XW4" firstAttribute="top" secondItem="hXb-o0-oxx" secondAttribute="bottom" constant="10" id="oaD-XL-4RI"/>
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="top" secondItem="lzM-fY-WaS" secondAttribute="bottom" constant="10" id="qmV-cE-QxY"/>
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="tAI-4N-W47"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="leading" secondItem="lzM-fY-WaS" secondAttribute="trailing" constant="10" id="vWj-dq-PgS"/>
