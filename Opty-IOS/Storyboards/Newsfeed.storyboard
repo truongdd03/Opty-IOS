@@ -38,12 +38,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-PV-ZZk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-PV-ZZk">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="zbC-Yu-7Ox">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.81500273940000001" green="0.83505421879999997" blue="0.85581451649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="15" id="Upl-PJ-k1U"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsfeedCell" rowHeight="300" id="Cy7-WR-EtJ" customClass="NewsfeedTableViewCell" customModule="Opty_IOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="43" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cy7-WR-EtJ" id="Vwm-6I-fLO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -78,7 +87,7 @@
                                                 </stackView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hk2-Yd-WSa">
                                                     <rect key="frame" x="10" y="50" width="394" height="20"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="pgY-46-TlL"/>
                                                     </constraints>
@@ -117,14 +126,17 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx3-qC-YBa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx3-qC-YBa">
                                                     <rect key="frame" x="10" y="80" width="394" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemBlueColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-o0-oxx">
-                                                    <rect key="frame" x="10" y="110.5" width="394" height="179.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-o0-oxx">
+                                                    <rect key="frame" x="10" y="110.5" width="394" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="gwX-wa-Vlh"/>
+                                                    </constraints>
                                                     <string key="text">Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.
 
 Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.</string>
@@ -157,16 +169,24 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                         <action selector="sendResumeButtonTapped:" destination="Cy7-WR-EtJ" eventType="touchUpInside" id="JYN-g3-fLO"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNQ-qX-XW4">
+                                                    <rect key="frame" x="0.0" y="285" width="414" height="15"/>
+                                                    <color key="backgroundColor" red="0.8165890462873886" green="0.83371301158998212" blue="0.85564037867564768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="hsr-8x-YZf"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bWJ-dj-Wmi" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="1Od-DL-PeY"/>
-                                                <constraint firstAttribute="bottom" secondItem="hXb-o0-oxx" secondAttribute="bottom" constant="10" id="471-XI-sNh"/>
-                                                <constraint firstItem="lzM-fY-WaS" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" constant="10" id="GFI-KV-xyK"/>
+                                                <constraint firstItem="lzM-fY-WaS" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" constant="10" id="9cx-Pn-LDD"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="HA6-9b-NDv"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="J5L-y2-Kd3"/>
+                                                <constraint firstItem="fNQ-qX-XW4" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" id="KQ7-NA-Bcz"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="height" secondItem="bWJ-dj-Wmi" secondAttribute="height" id="Lwu-b9-gEA"/>
                                                 <constraint firstItem="hXb-o0-oxx" firstAttribute="top" secondItem="mx3-qC-YBa" secondAttribute="bottom" constant="10" id="NVV-bu-2yn"/>
                                                 <constraint firstAttribute="trailing" secondItem="hXb-o0-oxx" secondAttribute="trailing" constant="10" id="OdZ-tr-QcW"/>
+                                                <constraint firstAttribute="bottom" secondItem="fNQ-qX-XW4" secondAttribute="bottom" id="PXn-RY-nAa"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="Qe5-OC-UzH"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="SZb-iD-EmC"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="leading" secondItem="bWJ-dj-Wmi" secondAttribute="trailing" constant="10" id="Shx-qz-vOU"/>
@@ -179,6 +199,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="tAI-4N-W47"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="leading" secondItem="lzM-fY-WaS" secondAttribute="trailing" constant="10" id="vWj-dq-PgS"/>
                                                 <constraint firstAttribute="trailing" secondItem="mx3-qC-YBa" secondAttribute="trailing" constant="10" id="wsL-dS-Afx"/>
+                                                <constraint firstAttribute="trailing" secondItem="fNQ-qX-XW4" secondAttribute="trailing" id="zN0-dW-a7b"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
