@@ -76,12 +76,12 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let str = NewsfeedViewController.posts![indexPath.row].content
         let width = view.frame.size.width - 20
-        let height = str.height(withConstrainedWidth: width, font: .systemFont(ofSize: 17))
+        let height = str.height(withConstrainedWidth: width, font: .systemFont(ofSize: 14))
         
         if index == indexPath.row && !clicked {
-            return height + 150
+            return height + 160
         }
-        return min(height + 150, 300)
+        return min(height + 160, 300)
     }
 
 }
@@ -91,7 +91,7 @@ extension String {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
     
-        return ceil(boundingBox.height)
+        return boundingBox.height
     }
 }
 

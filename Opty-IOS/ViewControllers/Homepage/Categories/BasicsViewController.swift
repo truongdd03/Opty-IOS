@@ -66,6 +66,8 @@ class BasicsViewController: UIViewController, UITextFieldDelegate {
         Utilities.styleTextField(CityTextField)
         Utilities.styleTextField(StateTextField)
         Utilities.styleTextField(PhoneTextField)
+        Utilities.styleSimpleTextField(textField: CountryInput)
+        Utilities.styleSimpleTextField(textField: NationInput)
         
         showFields()
         fetchCountries()

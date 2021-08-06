@@ -128,16 +128,19 @@
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx3-qC-YBa">
                                                     <rect key="frame" x="10" y="80" width="394" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="4nx-gY-8F4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemBlueColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-o0-oxx">
-                                                    <rect key="frame" x="10" y="110.5" width="394" height="164.5"/>
+                                                    <rect key="frame" x="10" y="131.5" width="394" height="143.5"/>
                                                     <string key="text">Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.
 
 Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -173,18 +176,28 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                         <constraint firstAttribute="height" constant="15" id="hsr-8x-YZf"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="500 Unknown Street, East Lansing, Michigan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-2y-2gt">
+                                                    <rect key="frame" x="10" y="105.5" width="394" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="m8x-d4-YpM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bWJ-dj-Wmi" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="1Od-DL-PeY"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" constant="10" id="9cx-Pn-LDD"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="HA6-9b-NDv"/>
+                                                <constraint firstItem="m3c-2y-2gt" firstAttribute="top" secondItem="mx3-qC-YBa" secondAttribute="bottom" constant="5" id="HYd-yB-4LI"/>
+                                                <constraint firstAttribute="trailing" secondItem="m3c-2y-2gt" secondAttribute="trailing" constant="10" id="Hvv-xa-ZLs"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="J5L-y2-Kd3"/>
                                                 <constraint firstItem="fNQ-qX-XW4" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" id="KQ7-NA-Bcz"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="height" secondItem="bWJ-dj-Wmi" secondAttribute="height" id="Lwu-b9-gEA"/>
-                                                <constraint firstItem="hXb-o0-oxx" firstAttribute="top" secondItem="mx3-qC-YBa" secondAttribute="bottom" constant="10" id="NVV-bu-2yn"/>
                                                 <constraint firstAttribute="trailing" secondItem="hXb-o0-oxx" secondAttribute="trailing" constant="10" id="OdZ-tr-QcW"/>
                                                 <constraint firstAttribute="bottom" secondItem="fNQ-qX-XW4" secondAttribute="bottom" id="PXn-RY-nAa"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="Qe5-OC-UzH"/>
+                                                <constraint firstItem="hXb-o0-oxx" firstAttribute="top" secondItem="m3c-2y-2gt" secondAttribute="bottom" constant="10" id="Qyq-EK-7tE"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="SZb-iD-EmC"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="leading" secondItem="bWJ-dj-Wmi" secondAttribute="trailing" constant="10" id="Shx-qz-vOU"/>
                                                 <constraint firstAttribute="trailing" secondItem="IrV-zk-Hl1" secondAttribute="trailing" constant="10" id="ggV-hV-yiM"/>
@@ -194,6 +207,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="top" secondItem="Hk2-Yd-WSa" secondAttribute="bottom" constant="10" id="lP5-qY-hhQ"/>
                                                 <constraint firstItem="fNQ-qX-XW4" firstAttribute="top" secondItem="hXb-o0-oxx" secondAttribute="bottom" constant="10" id="oaD-XL-4RI"/>
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="top" secondItem="lzM-fY-WaS" secondAttribute="bottom" constant="10" id="qmV-cE-QxY"/>
+                                                <constraint firstItem="m3c-2y-2gt" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="sgV-4s-wTu"/>
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="tAI-4N-W47"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="leading" secondItem="lzM-fY-WaS" secondAttribute="trailing" constant="10" id="vWj-dq-PgS"/>
                                                 <constraint firstAttribute="trailing" secondItem="mx3-qC-YBa" secondAttribute="trailing" constant="10" id="wsL-dS-Afx"/>
