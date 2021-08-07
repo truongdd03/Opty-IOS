@@ -69,5 +69,17 @@ class Utilities {
             
         return label.intrinsicContentSize.width
     }
-    
+ 
+     static func fetchCountries() -> [String] {
+        var countries: [String] = []
+        let file = "countries"
+        
+        if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: textFile) {
+                countries = fileContents.components(separatedBy: "\n")
+            }
+        }
+        
+        return countries
+    }
 }

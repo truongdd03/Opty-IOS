@@ -14,13 +14,22 @@ class Post: NSObject {
     var content: String
     var hasSent: Bool
     var tags: [String]
+    var address: String
     
-    init(userName: String, date: String, companyName: String, content: String, hasSent: Bool, tags: [String]) {
+    init(userName: String, date: String, companyName: String, content: String, hasSent: Bool, tags: [String], address: String) {
         self.userName = userName
         self.date = date
         self.companyName = companyName
         self.content = content
         self.hasSent = hasSent
         self.tags = tags
+        self.address = address
+    }
+    
+    func updateDate() {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        self.date = formatter.string(from: date)
     }
 }

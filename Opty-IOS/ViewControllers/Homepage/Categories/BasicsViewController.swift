@@ -107,8 +107,8 @@ extension BasicsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 30))
-        label.text = Array(countries)[row]
+        let label = UILabel()
+        label.text = countries[row]
         label.sizeToFit()
         return label
     }

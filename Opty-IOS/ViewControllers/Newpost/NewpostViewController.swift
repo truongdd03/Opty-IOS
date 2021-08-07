@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewpostViewController: UIViewController {
+class NewpostViewController: PopUpViewController, UITextFieldDelegate {
 
     @IBOutlet weak var CompanyInput: UITextField!
     @IBOutlet weak var TagsCollection: UICollectionView!
@@ -19,10 +19,18 @@ class NewpostViewController: UIViewController {
     @IBOutlet weak var PostButton: UIButton!
     
     static var selectedTags: [String]? = ["Javascript", "C", "C++"]
+    static var username: String?
+    
+    var countries: [String] = []
+    var countryPickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if NewpostViewController.username == nil {
+            Fetcher.fetchUsername()
+        }
+        
         title = "New post"
         
         TagsCollection.delegate = self
@@ -39,13 +47,38 @@ class NewpostViewController: UIViewController {
         Utilities.styleSimpleTextField(textField: CountryInput)
         Utilities.styleTextView(textView: ContentInput)
         Utilities.styleFilledButton(PostButton)
+        
+        countries = Utilities.fetchCountries()
+        
+        CountryInput.inputView = countryPickerView
+        countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        CountryInput.delegate = self
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+    
+    func validateInputs() -> Bool {
+        if (!CompanyInput.hasText || !StreetInput.hasText || !CityInput.hasText || !StateInput.hasText || !CountryInput.hasText || !ContentInput.hasText) {
+            showError(message: "Please fill all fields!")
+            return false
+        }
+        
+        return true
     }
     
     @IBAction func PostButtonTapped(_ sender: Any) {
-        
-    }
+        if !validateInputs() { return }
     
-    @IBAction func AddTagButtonTapped(_ sender: Any) {
+        var address = StreetInput.text! + ", " + CityInput.text! + ", " + StateInput.text! + ", "
+        address += CountryInput.text!
+    
+        let post = Post(userName: NewpostViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, hasSent: false, tags: NewpostViewController.selectedTags!, address: address)
+        post.updateDate()
+        
+        print(post)
     }
     
 }
@@ -66,5 +99,26 @@ extension NewpostViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         return CGSize(width: width + 15, height: 20)
     }
-
 }
+
+extension NewpostViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countries.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        label.text = countries[row]
+        label.sizeToFit()
+        return label
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        CountryInput.text = countries[row]
+    }
+}
+
