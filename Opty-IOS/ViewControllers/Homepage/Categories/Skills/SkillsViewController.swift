@@ -64,6 +64,13 @@ class SkillsViewController: UIViewController {
         return arr
     }
     
+    @IBAction func addTagsButtonTapped(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Homepage", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "AddTags") as! AddTagsViewController
+        vc.modalPresentationStyle = .popover
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension SkillsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -108,11 +115,7 @@ extension SkillsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let tag = SkillsViewController.tags![indexPath.item]
         SkillsViewController.tags!.remove(at: indexPath.item)
-        collectionView.reloadData()
-        
-        AddTagsViewController.tags = addTagTo(array: AddTagsViewController.tags!, tag: tag)
-        AddTagsViewController.filter = addTagTo(array: AddTagsViewController.filter, tag: tag)
+        collectionView.reloadData()        
     }
 }

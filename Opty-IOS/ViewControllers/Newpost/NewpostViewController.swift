@@ -18,7 +18,7 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
     @IBOutlet weak var ContentInput: UITextView!
     @IBOutlet weak var PostButton: UIButton!
     
-    static var selectedTags: [String]? = ["Javascript", "C", "C++"]
+    static var tags: [String] = ["Javascript", "C", "C++"]
     static var username: String?
     
     var countries: [String] = []
@@ -36,7 +36,13 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         TagsCollection.delegate = self
         TagsCollection.dataSource = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(loadPostTags), name: NSNotification.Name(rawValue: "loadPostTags"), object: nil)
+        
         setUp()
+    }
+    
+    @objc func loadPostTags() {
+        TagsCollection.reloadData()
     }
     
     func setUp() {
@@ -75,30 +81,20 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         var address = StreetInput.text! + ", " + CityInput.text! + ", " + StateInput.text! + ", "
         address += CountryInput.text!
     
-        let post = Post(userName: NewpostViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, hasSent: false, tags: NewpostViewController.selectedTags!, address: address)
+        let post = Post(userName: NewpostViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, hasSent: false, tags: NewpostViewController.tags, address: address)
         post.updateDate()
         
         print(post)
     }
     
-}
-
-extension NewpostViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NewpostViewController.selectedTags!.count
+    @IBAction func addTagsButtonTapped(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Homepage", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "AddTags") as! AddTagsViewController
+        vc.modalPresentationStyle = .popover
+        vc.type = 1
+        self.present(vc, animated: true, completion: nil)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tag", for: indexPath) as! TagCollectionViewCell
-        cell.setLabel(tag: NewpostViewController.selectedTags![indexPath.item])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Utilities.sizeOfLabel(NewpostViewController.selectedTags![indexPath.item])
-        
-        return CGSize(width: width + 15, height: 20)
-    }
 }
 
 extension NewpostViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -122,3 +118,25 @@ extension NewpostViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
+extension NewpostViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return NewpostViewController.tags.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCollectionViewCell
+        cell.setLabel(tag: NewpostViewController.tags[indexPath.item])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = Utilities.sizeOfLabel(NewpostViewController.tags[indexPath.item])
+        return CGSize(width: width + 15, height: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        NewpostViewController.tags.remove(at: indexPath.item)
+        collectionView.reloadData()
+    }
+}
