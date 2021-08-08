@@ -215,6 +215,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="AddressLabel" destination="m3c-2y-2gt" id="Vkj-y1-aY4"/>
                                             <outlet property="AvatarView" destination="lzM-fY-WaS" id="GuR-df-Eg8"/>
                                             <outlet property="CompanyLabel" destination="mx3-qC-YBa" id="Sk5-4L-Faf"/>
                                             <outlet property="ContentLabel" destination="hXb-o0-oxx" id="Fa4-Yy-0Bm"/>

@@ -52,6 +52,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.company = tmp.companyName
         cell.content = tmp.content
         cell.hasSent = tmp.hasSent
+        cell.address = tmp.address
         cell.selectionStyle = .none
         
         return cell

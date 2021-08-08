@@ -18,7 +18,7 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
     @IBOutlet weak var ContentInput: UITextView!
     @IBOutlet weak var PostButton: UIButton!
     
-    static var tags: [String] = ["Javascript", "C", "C++"]
+    static var tags: [String] = []
     static var username: String?
     
     var countries: [String] = []

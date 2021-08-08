@@ -15,7 +15,7 @@ class NewsfeedTableViewCell: UITableViewCell {
     @IBOutlet weak var CompanyLabel: UILabel!
     @IBOutlet weak var ContentLabel: UILabel!
     @IBOutlet weak var SendResumeButton: UIButton!
-    
+    @IBOutlet weak var AddressLabel: UILabel!
     @IBOutlet weak var TagsCollection: UICollectionView!
     
     var name: String? {
@@ -47,6 +47,11 @@ class NewsfeedTableViewCell: UITableViewCell {
                 SendResumeButton.setTitle("Send Resume", for: .normal)
                 Utilities.styleFilledButton(SendResumeButton)
             }
+        }
+    }
+    var address: String? {
+        didSet {
+            AddressLabel.text = address
         }
     }
 
