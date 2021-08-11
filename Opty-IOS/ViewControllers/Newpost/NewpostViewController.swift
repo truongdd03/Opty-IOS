@@ -31,7 +31,9 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
             Fetcher.fetchUsername()
         }
         
-        title = "New post"
+        title = "Posts"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "archivebox"), style: .plain, target: self, action: #selector(showPosts))
         
         TagsCollection.delegate = self
         TagsCollection.dataSource = self
@@ -39,6 +41,12 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(loadPostTags), name: NSNotification.Name(rawValue: "loadPostTags"), object: nil)
         
         setUp()
+    }
+    
+    @objc func showPosts() {
+        let storyBoard = UIStoryboard(name: "Newpost", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "Posts")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func loadPostTags() {
