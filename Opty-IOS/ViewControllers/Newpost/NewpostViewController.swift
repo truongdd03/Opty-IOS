@@ -75,16 +75,30 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         return true
     }
     
+    func resetInputs() {
+        CompanyInput.text = ""
+        StreetInput.text = ""
+        CityInput.text = ""
+        StateInput.text = ""
+        CountryInput.text = ""
+        ContentInput.text = ""
+        
+        NewpostViewController.tags.removeAll()
+    }
+    
     @IBAction func PostButtonTapped(_ sender: Any) {
         if !validateInputs() { return }
     
         var address = StreetInput.text! + ", " + CityInput.text! + ", " + StateInput.text! + ", "
         address += CountryInput.text!
     
-        let post = Post(userName: NewpostViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, hasSent: false, tags: NewpostViewController.tags, address: address)
+        let post = Post(userName: NewpostViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, tags: NewpostViewController.tags, address: address)
         post.updateDate()
         
-        print(post)
+        Writer.writePost(post: post)
+        
+        resetInputs()
+        alert(title: "Successfully posted!", message: "")
     }
     
     @IBAction func addTagsButtonTapped(_ sender: Any) {

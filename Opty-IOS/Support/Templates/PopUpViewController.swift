@@ -20,6 +20,12 @@ class PopUpViewController: UIViewController {
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(ac, animated: true)
     }
+    
+    func alert(title: String, message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true)
+    }
 
     func fetchTags() -> [String] {
         var tags = [String]()

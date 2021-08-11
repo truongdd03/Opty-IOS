@@ -59,4 +59,12 @@ class Writer {
             "Tags": SkillsViewController.tags!
         ])
     }
+    
+    static func writePost(post: Post) {
+        do {
+            let _ = try Firestore.firestore().collection("Posts").addDocument(from: post)
+        } catch {
+            print("Error")
+        }
+    }
 }
