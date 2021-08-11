@@ -25,7 +25,6 @@ class NewsfeedViewController: UIViewController {
         
         NewsfeedTableView.delegate = self
         NewsfeedTableView.dataSource = self
-        //NewsfeedTableView.allowsSelection = false
         
         for _ in 0...3 {
             NewsfeedViewController.posts?.append(Post(userName: "Don Truong", date: "23/10/21", companyName: "Facebook", content: "We need a software developer", hasSent: false, tags: ["iOS", "Swift", "Front-end"], address: ""))

@@ -55,10 +55,6 @@ class Writer {
     static func writeTags() {
         let uid = Auth.auth().currentUser!.uid
         
-        /*if let id = SkillsViewController.documentID {
-            db.document(uid).collection("Tags").document(id).delete()
-        }*/
-        
         db.document(uid).collection("Tags").document("Tags").setData([
             "Tags": SkillsViewController.tags!
         ])

@@ -26,9 +26,6 @@ class Fetcher {
             if let documents = snapshot?.documents {
                 EducationViewController.degrees! = documents.compactMap({ (querySnapshot) -> Degree? in
                     let tmp = try? querySnapshot.data(as: Degree.self)
-                    if tmp != nil {
-                        tmp!.id = querySnapshot.documentID
-                    }
                     return tmp
                 })
             }
@@ -44,9 +41,6 @@ class Fetcher {
             if let documents = snapshot?.documents {
                 EducationViewController.awards! = documents.compactMap({ (querySnapshot) -> Award? in
                     let tmp = try? querySnapshot.data(as: Award.self)
-                    if tmp != nil {
-                        tmp!.id = querySnapshot.documentID
-                    }
                     return tmp
                 })
             }
@@ -62,9 +56,6 @@ class Fetcher {
             if let documents = snapshot?.documents {
                 ExperienceViewController.jobs! = documents.compactMap({ (querySnapshot) -> Job? in
                     let tmp = try? querySnapshot.data(as: Job.self)
-                    if tmp != nil {
-                        tmp!.id = querySnapshot.documentID
-                    }
                     return tmp
                 })
             }
@@ -80,9 +71,6 @@ class Fetcher {
             if let documents = snapshot?.documents {
                 SkillsViewController.skills! = documents.compactMap({ (querySnapshot) -> Skill? in
                     let tmp = try? querySnapshot.data(as: Skill.self)
-                    if tmp != nil {
-                        tmp!.id = querySnapshot.documentID
-                    }
                     return tmp
                 })
             }
