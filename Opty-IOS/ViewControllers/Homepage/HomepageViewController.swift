@@ -25,29 +25,8 @@ class HomepageViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.right.doc.on.clipboard"), style: .plain, target: self, action: #selector(logOut))
         
-        fetchData()
     }
-
-    func fetchData() {
-        if BasicsViewController.basicInfo == nil {
-            Fetcher.fetchInfo()
-        }
-        
-        if EducationViewController.degrees == nil {
-            Fetcher.fetchDegrees()
-            Fetcher.fetchAwards()
-        }
-        
-        if ExperienceViewController.jobs == nil {
-            Fetcher.fetchJobs()
-        }
-        
-        if SkillsViewController.skills == nil {
-            Fetcher.fetchSkills()
-            Fetcher.fetchTags()
-        }
-    }
-
+    
     @objc func logOut() {
         let firebaseAuth = Auth.auth()
         do {

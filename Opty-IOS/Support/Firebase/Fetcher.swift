@@ -105,4 +105,34 @@ class Fetcher {
             NewpostViewController.username = dict["username"] ?? ""
         }
     }
+    
+    static func fetchMyPosts() {
+        let uid = Auth.auth().currentUser!.uid
+        let ref = Database.database().reference()
+        let ddb = Firestore.firestore().collection("Posts")
+        AllPostsViewController.myPosts = []
+
+        ref.child("Posts").child(uid).getData { (err, snapshot) in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+                        
+            for child in snapshot.children {
+                let documentID = (child as! DataSnapshot).value as! String
+                ddb.document(documentID).getDocument { (snapshot, err) in
+                    if let err = err {
+                        print(err.localizedDescription)
+                        return
+                    }
+                    
+                    let tmp = try? snapshot?.data(as: Post.self)
+                    if let tm = tmp {
+                        AllPostsViewController.myPosts?.append(tm)
+                    }
+                }
+                
+            }
+        }
+    }
 }

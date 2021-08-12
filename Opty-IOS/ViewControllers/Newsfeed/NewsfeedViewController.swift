@@ -31,7 +31,34 @@ class NewsfeedViewController: UIViewController {
         }
         
         NewsfeedViewController.posts?.append(Post(userName: "Don Truong", date: "23/10/21", companyName: "Facebook", content: "Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.", tags: ["iOS", "Swift", "Front-end", "Back-end", "Software engineer", "Freshman", "Senior", "Personal project"], address: "", applicantsNumber: 0))
+        
+        fetchData()
     }
+    
+    func fetchData() {
+        if AllPostsViewController.myPosts == nil {
+            Fetcher.fetchMyPosts()
+        }
+    
+        if BasicsViewController.basicInfo == nil {
+            Fetcher.fetchInfo()
+        }
+        
+        if EducationViewController.degrees == nil {
+            Fetcher.fetchDegrees()
+            Fetcher.fetchAwards()
+        }
+        
+        if ExperienceViewController.jobs == nil {
+            Fetcher.fetchJobs()
+        }
+        
+        if SkillsViewController.skills == nil {
+            Fetcher.fetchSkills()
+            Fetcher.fetchTags()
+        }
+    }
+
     
     @objc func searchTapped() {
         

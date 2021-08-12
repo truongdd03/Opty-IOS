@@ -61,8 +61,12 @@ class Writer {
     }
     
     static func writePost(post: Post) {
+        let uid = Auth.auth().currentUser!.uid
         do {
-            let _ = try Firestore.firestore().collection("Posts").addDocument(from: post)
+            let id = try Firestore.firestore().collection("Posts").addDocument(from: post).documentID
+            let ref = Database.database().reference()
+            AllPostsViewController.myPosts!.append(post)
+            ref.child("Posts").child(uid).setValue([id: id])
         } catch {
             print("Error")
         }

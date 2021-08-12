@@ -8,7 +8,7 @@
 import UIKit
 
 class AllPostsViewController: UIViewController {
-    static var myPosts: [Post]? = []
+    static var myPosts: [Post]?
     
     @IBOutlet weak var PostsTableView: UITableView!
     
@@ -19,10 +19,7 @@ class AllPostsViewController: UIViewController {
         
         PostsTableView.delegate = self
         PostsTableView.dataSource = self
-        
-        for _ in 0...3 {
-            AllPostsViewController.myPosts?.append(Post(userName: "Don", date: "23/10/2003", companyName: "Facebook", content: "Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.", tags: [], address: "dkfja", applicantsNumber: 100))
-        }        
+            
     }
 }
 
@@ -57,6 +54,14 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
         let storyBoard = UIStoryboard(name: "Newpost", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "Applicants") as! ApplicantsViewController
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let id = AllPostsViewController.myPosts![indexPath.row].id
+            AllPostsViewController.myPosts!.remove(at: indexPath.row)
+            
+        }
     }
     
 }

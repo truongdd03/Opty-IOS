@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import FirebaseFirestoreSwift
 
 class Post: NSObject, Codable {
+    @DocumentID var id: String?
     var userName: String
     var date: String
     var companyName: String
