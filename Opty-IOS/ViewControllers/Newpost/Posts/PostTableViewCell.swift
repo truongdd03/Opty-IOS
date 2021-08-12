@@ -14,15 +14,35 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var CompanyLabel: UILabel!
     @IBOutlet weak var AddressLabel: UILabel!
     @IBOutlet weak var ContentLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+
+    var applicantsNumber: Int? {
+        didSet {
+            ApplicantsNumberLabel.text = String(applicantsNumber!)
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    var date: String? {
+        didSet {
+            DateLabel.text = date
+        }
+    }
+    
+    var company: String? {
+        didSet {
+            CompanyLabel.text = company
+        }
+    }
+    
+    var address: String? {
+        didSet {
+            AddressLabel.text = address
+        }
+    }
+    
+    var content: String? {
+        didSet {
+            ContentLabel.text = content
+        }
     }
 
 }

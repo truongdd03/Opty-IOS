@@ -14,14 +14,16 @@ class Post: NSObject, Codable {
     var content: String
     var tags: [String]
     var address: String
+    var applicantsNumber: Int
     
-    init(userName: String, date: String, companyName: String, content: String, tags: [String], address: String) {
+    init(userName: String, date: String, companyName: String, content: String, tags: [String], address: String, applicantsNumber: Int) {
         self.userName = userName
         self.date = date
         self.companyName = companyName
         self.content = content
         self.tags = tags
         self.address = address
+        self.applicantsNumber = applicantsNumber
     }
     
     func updateDate() {
