@@ -26,6 +26,7 @@
 		5E44342826C410D100BFF936 /* AllPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44342726C410D100BFF936 /* AllPostsViewController.swift */; };
 		5E44342B26C417FD00BFF936 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44342A26C417FD00BFF936 /* PostTableViewCell.swift */; };
 		5E44343126C4195A00BFF936 /* ApplicantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44343026C4195A00BFF936 /* ApplicantsViewController.swift */; };
+		5E5221D826C6B19500BD5B63 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5221D726C6B19500BD5B63 /* Index.swift */; };
 		5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA026B41073009C86D7 /* Degree.swift */; };
 		5E6CEDA426B41168009C86D7 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA326B41168009C86D7 /* Award.swift */; };
 		5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */; };
@@ -80,6 +81,7 @@
 		5E44342726C410D100BFF936 /* AllPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostsViewController.swift; sourceTree = "<group>"; };
 		5E44342A26C417FD00BFF936 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		5E44343026C4195A00BFF936 /* ApplicantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantsViewController.swift; sourceTree = "<group>"; };
+		5E5221D726C6B19500BD5B63 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		5E6CEDA026B41073009C86D7 /* Degree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		5E6CEDA326B41168009C86D7 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		5E6E6F4326B43DC80037E167 /* AddDegreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDegreeViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,14 @@
 			path = Applicants;
 			sourceTree = "<group>";
 		};
+		5E5221D626C6B15600BD5B63 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				5E5221D726C6B19500BD5B63 /* Index.swift */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
 		5E6CED9F26B41032009C86D7 /* Variables */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB6386426B2C293007B6FBF /* Utilities.swift */,
+				5E5221D626C6B15600BD5B63 /* Index */,
 				5E6CED9F26B41032009C86D7 /* Variables */,
 				5EC7431026BB8312006DB2AF /* Firebase */,
 				5E27841E26B2E81000469AB5 /* Templates */,
@@ -543,6 +554,7 @@
 				5EB6384F26B2BFC7007B6FBF /* SceneDelegate.swift in Sources */,
 				5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */,
 				5E6E6F4426B43DC80037E167 /* AddDegreeViewController.swift in Sources */,
+				5E5221D826C6B19500BD5B63 /* Index.swift in Sources */,
 				5EC7431426BB8512006DB2AF /* NewpostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -68,11 +68,14 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let id = AllPostsViewController.myPosts![indexPath.row].id
+            let post = AllPostsViewController.myPosts![indexPath.row]
+            
             AllPostsViewController.myPosts!.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            Remover.removePost(id: id!)
+            
+            Remover.removePost(id: post.id!)
+            Index.removePost(tags: post.tags, content: post.content, postID: post.id!)
         }
     }
-    
+        
 }

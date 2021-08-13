@@ -78,8 +78,4 @@ class Writer {
         let uid = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("Usernames").document(uid).setData(["Username": username])
     }
-    
-    static func updateDict(word: String, times: Int, postID: String) {
-        Database.database().reference().child("Dict").child(word).child(postID).setValue(times)
-    }
 }
