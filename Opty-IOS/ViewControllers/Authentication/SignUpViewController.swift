@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: PopUpViewController {
 
     @IBOutlet weak var FirstNameInput: UITextField!
     @IBOutlet weak var LastNameInput: UITextField!
@@ -30,7 +31,49 @@ class SignUpViewController: UIViewController {
         Utilities.styleFilledButton(SignUpButton)
     }
     
-    @IBAction func SignUpTapped(_ sender: Any) {
+    func validateInputs() -> Bool {
+        if FirstNameInput.text == nil || LastNameInput.text == nil || EmailInput.text == nil || PasswordInput.text == nil || PasswordInput1.text == nil {
+            showError(message: "Please fill all fields")
+            return false
+        }
+        
+        if PasswordInput.text != PasswordInput1.text {
+            showError(message: "Password and confirm password don't match")
+            return false
+        }
+        
+        if FirstNameInput.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || LastNameInput.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            showError(message: "Invalid first/last name")
+        }
+        
+        return true
     }
+    
+    func transitToNewsfeed() {
+        let defaults = UserDefaults.standard
+        defaults.setValue(true, forKey: "isLoggedIn")
+    
+        let storyBoard = UIStoryboard(name: "TabBar", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "Main") as! UITabBarController
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func SignUpTapped(_ sender: Any) {
+        if !validateInputs() { return }
+        
+        let email = EmailInput.text!
+        let username = FirstNameInput.text! + " " + LastNameInput.text!
+        let password = PasswordInput.text!
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (res, err) in
+            if let err = err {
+                self.showError(message: err.localizedDescription)
+                return
+            }
 
+            Writer.writeUsername(username: username)
+            self.transitToNewsfeed()
+        }
+    }
 }

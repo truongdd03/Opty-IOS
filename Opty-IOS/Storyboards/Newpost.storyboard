@@ -330,6 +330,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                     </view>
                     <navigationItem key="navigationItem" id="4py-A8-s2v"/>
                     <connections>
+                        <outlet property="BottomView" destination="Gem-yz-LJy" id="2zK-Je-Yhe"/>
                         <outlet property="PostsTableView" destination="Gem-yz-LJy" id="uWP-TT-4pV"/>
                         <outlet property="TopView" destination="sAx-w2-esg" id="QkT-En-2wL"/>
                         <segue destination="IRb-QH-lfP" kind="push" id="P9i-gq-aZg"/>

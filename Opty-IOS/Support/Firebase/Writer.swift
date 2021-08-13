@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class Writer {
-    static let db = Firestore.firestore().collection("Education")
+    static let db = Firestore.firestore().collection("Information")
 
     static func writeDegree(degree: Degree) {
         let uid = Auth.auth().currentUser!.uid
@@ -70,5 +70,10 @@ class Writer {
         } catch {
             print("Error")
         }
+    }
+    
+    static func writeUsername(username: String) {
+        let uid = Auth.auth().currentUser!.uid
+        Firestore.firestore().collection("Usernames").document(uid).setData(["Username": username])
     }
 }

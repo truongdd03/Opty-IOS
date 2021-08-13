@@ -93,16 +93,14 @@ class Fetcher {
     }
     
     static func fetchUsername() {
-        let ddb = Firestore.firestore().collection("Usernames")
         let uid = Auth.auth().currentUser!.uid
-        
-        ddb.document(uid).getDocument { (snapshot, err) in
+        Firestore.firestore().collection("Usernames").document(uid).getDocument { (snapshot, err) in
             if let err = err {
                 print(err.localizedDescription)
                 return
             }
-            let dict = snapshot?.data() as? [String: String] ?? [String: String]()
-            NewpostViewController.username = dict["username"] ?? ""
+            let dict = snapshot?.data() as! [String: String]
+            HomepageViewController.username = dict["Username"]
         }
     }
     

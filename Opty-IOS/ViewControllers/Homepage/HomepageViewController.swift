@@ -15,6 +15,7 @@ class HomepageViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let parts = ["Basics", "Education", "Experience", "Skills"];
+    static var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class HomepageViewController: UIViewController {
         title = "Account"
         tableView.delegate = self
         tableView.dataSource = self
+        
+        nameLabel.text = HomepageViewController.username ?? ""
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.right.doc.on.clipboard"), style: .plain, target: self, action: #selector(logOut))
         

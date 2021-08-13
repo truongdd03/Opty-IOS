@@ -43,20 +43,12 @@ class NewsfeedViewController: UIViewController {
     
         if BasicsViewController.basicInfo == nil {
             Fetcher.fetchInfo()
-        }
-        
-        if EducationViewController.degrees == nil {
             Fetcher.fetchDegrees()
             Fetcher.fetchAwards()
-        }
-        
-        if ExperienceViewController.jobs == nil {
             Fetcher.fetchJobs()
-        }
-        
-        if SkillsViewController.skills == nil {
             Fetcher.fetchSkills()
             Fetcher.fetchTags()
+            Fetcher.fetchUsername()
         }
     }
 

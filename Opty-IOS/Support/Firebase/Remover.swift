@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class Remover {
-    static let db = Firestore.firestore().collection("Education")
+    static let db = Firestore.firestore().collection("Information")
 
     static func removeDegree(degree: Degree) {
         let uid = Auth.auth().currentUser!.uid

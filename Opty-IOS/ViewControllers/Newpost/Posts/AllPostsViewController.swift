@@ -12,6 +12,7 @@ class AllPostsViewController: UIViewController {
     
     @IBOutlet weak var PostsTableView: UITableView!
     @IBOutlet weak var TopView: UIView!
+    @IBOutlet weak var BottomView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,10 @@ class AllPostsViewController: UIViewController {
         
         if AllPostsViewController.myPosts!.count == 0 {
             TopView.isHidden = true
+            BottomView.isHidden = true
         } else {
             TopView.isHidden = false
+            BottomView.isHidden = false
         }
     }
 }
