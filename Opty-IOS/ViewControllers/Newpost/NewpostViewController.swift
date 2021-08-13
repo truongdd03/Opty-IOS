@@ -87,6 +87,7 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         ContentInput.text = ""
         
         NewpostViewController.tags.removeAll()
+        TagsCollection.reloadData()
     }
     
     @IBAction func PostButtonTapped(_ sender: Any) {
@@ -97,9 +98,9 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
     
         let post = Post(userName: HomepageViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, tags: NewpostViewController.tags, address: address, applicantsNumber: 0)
         post.updateDate()
+        post.id = Writer.writePost(post: post)
         
-        Writer.writePost(post: post)
-        
+        updateDict(postID: post.id!)
         resetInputs()
         alert(title: "Successfully posted!", message: "")
     }
@@ -110,6 +111,12 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         vc.modalPresentationStyle = .popover
         vc.type = 1
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    func updateDict(postID: String) {
+        for tag in NewpostViewController.tags {
+            Writer.updateDict(word: tag, times: 10, postID: postID)
+        }
     }
     
 }

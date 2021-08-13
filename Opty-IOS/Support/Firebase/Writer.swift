@@ -60,20 +60,26 @@ class Writer {
         ])
     }
     
-    static func writePost(post: Post) {
+    static func writePost(post: Post) -> String? {
         let uid = Auth.auth().currentUser!.uid
         do {
             let id = try Firestore.firestore().collection("Posts").addDocument(from: post).documentID
             let ref = Database.database().reference()
             AllPostsViewController.myPosts!.append(post)
             ref.child("Posts").child(uid).child(id).setValue(id)
+            return id
         } catch {
             print("Error")
+            return nil
         }
     }
     
     static func writeUsername(username: String) {
         let uid = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("Usernames").document(uid).setData(["Username": username])
+    }
+    
+    static func updateDict(word: String, times: Int, postID: String) {
+        Database.database().reference().child("Dict").child(word).child(postID).setValue(times)
     }
 }
