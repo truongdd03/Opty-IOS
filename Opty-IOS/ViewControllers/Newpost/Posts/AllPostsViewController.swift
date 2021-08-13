@@ -60,7 +60,8 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             let id = AllPostsViewController.myPosts![indexPath.row].id
             AllPostsViewController.myPosts!.remove(at: indexPath.row)
-            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            Remover.removePost(id: id!)
         }
     }
     
