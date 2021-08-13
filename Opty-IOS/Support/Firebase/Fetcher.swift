@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class Fetcher {
-    static let db = Firestore.firestore().collection("Education")
+    static let db = Firestore.firestore().collection("Information")
 
     static func fetchInfo() {
         BasicsViewController.basicInfo = Info()
