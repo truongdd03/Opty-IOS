@@ -19,17 +19,12 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
     @IBOutlet weak var PostButton: UIButton!
     
     static var tags: [String] = []
-    static var username: String?
     
     var countries: [String] = []
     var countryPickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if NewpostViewController.username == nil {
-            Fetcher.fetchUsername()
-        }
         
         title = "Posts"
         
@@ -100,7 +95,7 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         var address = StreetInput.text! + ", " + CityInput.text! + ", " + StateInput.text! + ", "
         address += CountryInput.text!
     
-        let post = Post(userName: NewpostViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, tags: NewpostViewController.tags, address: address, applicantsNumber: 0)
+        let post = Post(userName: HomepageViewController.username!, date: "", companyName: CompanyInput.text!, content: ContentInput.text, tags: NewpostViewController.tags, address: address, applicantsNumber: 0)
         post.updateDate()
         
         Writer.writePost(post: post)
