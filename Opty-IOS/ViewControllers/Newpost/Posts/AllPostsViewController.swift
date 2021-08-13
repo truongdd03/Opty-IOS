@@ -11,6 +11,7 @@ class AllPostsViewController: UIViewController {
     static var myPosts: [Post]?
     
     @IBOutlet weak var PostsTableView: UITableView!
+    @IBOutlet weak var TopView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,13 @@ class AllPostsViewController: UIViewController {
         
         PostsTableView.delegate = self
         PostsTableView.dataSource = self
-            
+        PostsTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        if AllPostsViewController.myPosts!.count == 0 {
+            TopView.isHidden = true
+        } else {
+            TopView.isHidden = false
+        }
     }
 }
 

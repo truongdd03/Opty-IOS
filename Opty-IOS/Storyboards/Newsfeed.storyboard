@@ -42,22 +42,37 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="zbC-Yu-7Ox">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="15"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="KCu-12-bqk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="7"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.81500273940000001" green="0.83505421879999997" blue="0.85581451649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.81658904629999995" green="0.8337130116" blue="0.85564037869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="15" id="Upl-PJ-k1U"/>
+                                        <constraint firstAttribute="height" constant="7" id="HiZ-Ub-yhs"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="IHQ-Ap-2Ab">
+                                    <rect key="frame" x="0.0" y="363" width="414" height="7"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.81658904629999995" green="0.8337130116" blue="0.85564037869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="7" id="wMk-Ie-oKG"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsfeedCell" rowHeight="300" id="Cy7-WR-EtJ" customClass="NewsfeedTableViewCell" customModule="Opty_IOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="43" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="35" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cy7-WR-EtJ" id="Vwm-6I-fLO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxK-22-NiX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="7"/>
+                                                    <color key="backgroundColor" red="0.81658904629999995" green="0.8337130116" blue="0.85564037869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="7" id="Hfw-9t-NK6"/>
+                                                    </constraints>
+                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undefined_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-fY-WaS">
                                                     <rect key="frame" x="10" y="10" width="30" height="30"/>
                                                     <constraints>
@@ -136,7 +151,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-o0-oxx">
-                                                    <rect key="frame" x="10" y="131.5" width="394" height="143.5"/>
+                                                    <rect key="frame" x="10" y="131.5" width="394" height="151.5"/>
                                                     <string key="text">Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.
 
 Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.</string>
@@ -170,10 +185,10 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNQ-qX-XW4">
-                                                    <rect key="frame" x="0.0" y="285" width="414" height="15"/>
+                                                    <rect key="frame" x="0.0" y="293" width="414" height="7"/>
                                                     <color key="backgroundColor" red="0.8165890462873886" green="0.83371301158998212" blue="0.85564037867564768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="15" id="hsr-8x-YZf"/>
+                                                        <constraint firstAttribute="height" constant="7" id="hsr-8x-YZf"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="500 Unknown Street, East Lansing, Michigan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-2y-2gt">
@@ -188,12 +203,14 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                             <constraints>
                                                 <constraint firstItem="bWJ-dj-Wmi" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="1Od-DL-PeY"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" constant="10" id="9cx-Pn-LDD"/>
+                                                <constraint firstAttribute="trailing" secondItem="fxK-22-NiX" secondAttribute="trailing" id="BOa-Ng-Xom"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="HA6-9b-NDv"/>
                                                 <constraint firstItem="m3c-2y-2gt" firstAttribute="top" secondItem="mx3-qC-YBa" secondAttribute="bottom" constant="5" id="HYd-yB-4LI"/>
                                                 <constraint firstAttribute="trailing" secondItem="m3c-2y-2gt" secondAttribute="trailing" constant="10" id="Hvv-xa-ZLs"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="J5L-y2-Kd3"/>
                                                 <constraint firstItem="fNQ-qX-XW4" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" id="KQ7-NA-Bcz"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="height" secondItem="bWJ-dj-Wmi" secondAttribute="height" id="Lwu-b9-gEA"/>
+                                                <constraint firstItem="fxK-22-NiX" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" id="OQW-2Z-lNt"/>
                                                 <constraint firstAttribute="trailing" secondItem="hXb-o0-oxx" secondAttribute="trailing" constant="10" id="OdZ-tr-QcW"/>
                                                 <constraint firstAttribute="bottom" secondItem="fNQ-qX-XW4" secondAttribute="bottom" id="PXn-RY-nAa"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="Qe5-OC-UzH"/>
@@ -204,6 +221,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                 <constraint firstItem="bWJ-dj-Wmi" firstAttribute="leading" secondItem="D8o-dT-9bD" secondAttribute="trailing" constant="10" id="gwb-5p-z0C"/>
                                                 <constraint firstItem="hXb-o0-oxx" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="kF3-0t-VcT"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hk2-Yd-WSa" secondAttribute="trailing" constant="10" id="kw5-jp-vuF"/>
+                                                <constraint firstItem="fxK-22-NiX" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" id="l3B-lx-ouG"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="top" secondItem="Hk2-Yd-WSa" secondAttribute="bottom" constant="10" id="lP5-qY-hhQ"/>
                                                 <constraint firstItem="fNQ-qX-XW4" firstAttribute="top" secondItem="hXb-o0-oxx" secondAttribute="bottom" constant="10" id="oaD-XL-4RI"/>
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="top" secondItem="lzM-fY-WaS" secondAttribute="bottom" constant="10" id="qmV-cE-QxY"/>
