@@ -64,9 +64,8 @@ class Writer {
         let uid = Auth.auth().currentUser!.uid
         do {
             let id = try Firestore.firestore().collection("Posts").addDocument(from: post).documentID
-            let ref = Database.database().reference()
             AllPostsViewController.myPosts!.append(post)
-            ref.child("Posts").child(uid).child(id).setValue(id)
+            Database.database().reference().child("Posts").child(uid).child(id).setValue(id)
             return id
         } catch {
             print("Error")

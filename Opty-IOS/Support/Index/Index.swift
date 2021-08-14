@@ -75,7 +75,6 @@ class Index {
         words.append("~_~")
         var times = 1
         
-        print(words)
         for id in 1..<words.count {
             if words[id] != words[id-1] {
                 if !isDelete {

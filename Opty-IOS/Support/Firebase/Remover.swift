@@ -42,7 +42,7 @@ class Remover {
     
     static func removePost(id: String) {
         let uid = Auth.auth().currentUser!.uid
-        Firestore.firestore().collection("Posts").document(id).delete()
+        Firestore.firestore().collection("Posts").document(id).delete()        
         Database.database().reference().child("Posts").child(uid).child(id).removeValue()
     }
 }

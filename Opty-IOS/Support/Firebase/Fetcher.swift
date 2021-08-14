@@ -104,10 +104,23 @@ class Fetcher {
         }
     }
     
+    static func fetchPost(id: String, completion: @escaping (Post) -> Void) {
+        Firestore.firestore().collection("Posts").document(id).getDocument { (snapshot, err) in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+            
+            let tmp = try? snapshot?.data(as: Post.self)
+            if tmp != nil {
+                completion(tmp!)
+            }
+        }
+    }
+    
     static func fetchMyPosts() {
         let uid = Auth.auth().currentUser!.uid
         let ref = Database.database().reference()
-        let ddb = Firestore.firestore().collection("Posts")
         AllPostsViewController.myPosts = []
 
         ref.child("Posts").child(uid).getData { (err, snapshot) in
@@ -118,19 +131,12 @@ class Fetcher {
                         
             for child in snapshot.children {
                 let documentID = (child as! DataSnapshot).value as! String
-                ddb.document(documentID).getDocument { (snapshot, err) in
-                    if let err = err {
-                        print(err.localizedDescription)
-                        return
-                    }
-                    
-                    let tmp = try? snapshot?.data(as: Post.self)
-                    if let tm = tmp {
-                        AllPostsViewController.myPosts?.append(tm)
-                    }
+                fetchPost(id: documentID) { (post) in
+                    AllPostsViewController.myPosts?.append(post)
                 }
-                
             }
         }
     }
+    
+    
 }
