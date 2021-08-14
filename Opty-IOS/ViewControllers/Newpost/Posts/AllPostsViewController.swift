@@ -74,7 +74,7 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
             Remover.removePost(id: post.id!)
-            Index.removePost(tags: post.tags, content: post.content, postID: post.id!)
+            Index.updatePost(tags: post.tags, content: post.content, postID: post.id!, isDelete: true)
         }
     }
         

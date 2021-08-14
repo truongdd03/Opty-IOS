@@ -100,7 +100,7 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         post.updateDate()
         post.id = Writer.writePost(post: post)
 
-        Index.updatePost(tags: post.tags, content: post.content, postID: post.id!)
+        Index.updatePost(tags: post.tags, content: post.content, postID: post.id!, isDelete: false)
         
         resetInputs()
         alert(title: "Successfully posted!", message: "")
