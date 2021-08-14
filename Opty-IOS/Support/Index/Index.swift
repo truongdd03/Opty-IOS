@@ -11,9 +11,23 @@ import PorterStemmer2
 
 class Index {
     static let db = Database.database().reference().child("Dict")
+    static var stopWords: [String]?
+    
+    static func fetchStopWords() {
+        let file = "stopWords"
+        if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: textFile) {
+                stopWords = fileContents.components(separatedBy: "\n")
+            }
+        }
+    }
     
     static func validate(word: String) -> Bool {
-        if word.count <= 2 { return false }
+        if stopWords == nil {
+            fetchStopWords()
+        }
+    
+        if word.count <= 2 || stopWords!.contains(word) { return false }
         for chr in word {
             if !chr.isLetter {
                 return false

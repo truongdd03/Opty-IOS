@@ -34,6 +34,7 @@
 		5E890FE826B7DB83005B718C /* AddSkillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E890FE726B7DB83005B718C /* AddSkillViewController.swift */; };
 		5E890FF026B7F590005B718C /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E890FEF26B7F590005B718C /* TabBar.storyboard */; };
 		5EA56A4826B8E5CE00BDD468 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA56A4726B8E5CE00BDD468 /* MessageTableViewCell.swift */; };
+		5EA7EA2626C81730001BD07D /* stopWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EA2526C81730001BD07D /* stopWords.txt */; };
 		5EB1E5EF26B79E09005FA6F0 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5EE26B79E09005FA6F0 /* Skill.swift */; };
 		5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */; };
 		5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6384C26B2BFC7007B6FBF /* AppDelegate.swift */; };
@@ -89,6 +90,7 @@
 		5E890FE726B7DB83005B718C /* AddSkillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkillViewController.swift; sourceTree = "<group>"; };
 		5E890FEF26B7F590005B718C /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		5EA56A4726B8E5CE00BDD468 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		5EA7EA2526C81730001BD07D /* stopWords.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stopWords.txt; sourceTree = "<group>"; };
 		5EB1E5EE26B79E09005FA6F0 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		5EB1E5F326B79EC7005FA6F0 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		5EB6384926B2BFC7007B6FBF /* Opty-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Opty-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,7 @@
 			children = (
 				5E3856FE26B3E6F0008EBAE8 /* countries.txt */,
 				5EFF111726B6ACC10040DC86 /* tags.txt */,
+				5EA7EA2526C81730001BD07D /* stopWords.txt */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				5EC7431826BB8527006DB2AF /* Newpost.storyboard in Resources */,
 				5E27841926B2D74F00469AB5 /* GoogleService-Info.plist in Resources */,
 				5EB6385626B2BFCA007B6FBF /* Assets.xcassets in Resources */,
+				5EA7EA2626C81730001BD07D /* stopWords.txt in Resources */,
 				5E27841C26B2E51B00469AB5 /* Newsfeed.storyboard in Resources */,
 				5E27842326B2E99700469AB5 /* Homepage.storyboard in Resources */,
 				5EB6385426B2BFC7007B6FBF /* Main.storyboard in Resources */,
