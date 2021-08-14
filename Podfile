@@ -12,4 +12,5 @@ target 'Opty-IOS' do
 	pod 'Firebase/Firestore'
 	pod 'Firebase/Database'
 	pod 'FirebaseFirestoreSwift', '> 7.0-beta'
+	pod 'PorterStemmer2'
 end

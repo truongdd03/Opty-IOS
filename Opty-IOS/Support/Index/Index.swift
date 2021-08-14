@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import PorterStemmer2
 
 class Index {
     static let db = Database.database().reference().child("Dict")
@@ -28,7 +29,9 @@ class Index {
             if !validate(word: res[id]) {
                 res.remove(at: id)
             } else {
-                // stem here
+                if let stemmer = PorterStemmer(withLanguage: .English) {
+                    res[id] = stemmer.stem(res[id])
+                }
                 id += 1
             }
         }
@@ -53,6 +56,7 @@ class Index {
         
         res = simplify(words: res)
         res.sort()
+        
         return res
     }
     
