@@ -85,6 +85,7 @@ extension AddTagsViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let tag = filter[indexPath.item]
         filter.remove(at: indexPath.item)
+        tags.remove(at: tags.firstIndex(of: tag)!)
         collectionView.reloadData()
         
         if type == 0 {
