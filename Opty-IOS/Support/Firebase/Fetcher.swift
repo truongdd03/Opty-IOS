@@ -89,9 +89,7 @@ class Fetcher {
             let dict = snapshot?.data() as? [String: [String]] ?? [String: [String]]()
             
             SkillsViewController.tags = dict["Tags"] ?? []
-            fetchPostID { (dict) in
-                updatePostID(dict: dict)
-            }
+            fetchPostID()
         }
     }
     
@@ -141,7 +139,7 @@ class Fetcher {
         }
     }
     
-    static func fetchPostID(completion: @escaping ([String: Int]) -> Void) {
+    static func fetchPostID() {
         let tags = SkillsViewController.tags!
         let ddb = Database.database().reference().child("Dict")
         var dict = [String: Int]()
@@ -160,7 +158,7 @@ class Fetcher {
         }
         
         group.notify(queue: .main) {
-            completion(dict)
+            updatePostID(dict: dict)
         }
     }
     
@@ -169,8 +167,6 @@ class Fetcher {
         NewsfeedViewController.postsID.sort() {
             dict[$0]! > dict[$1]!
         }
-        
-        print(NewsfeedViewController.postsID)
         
         // Fetch unrelevant posts
         Firestore.firestore().collection("Posts").getDocuments { (snapshot, err) in
@@ -181,10 +177,11 @@ class Fetcher {
                         NewsfeedViewController.postsID.append(id)
                     }
                 }
-                
-                for i in 0...5 {
-                    NewsfeedViewController.loadNext(index: i)
-                }
+            }
+            
+            print(NewsfeedViewController.postsID)
+            for i in 0...5 {
+                NewsfeedViewController.loadNext(index: i)
             }
         }
     }

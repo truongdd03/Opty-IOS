@@ -18,6 +18,16 @@ class Post: NSObject, Codable {
     var address: String
     var applicantsNumber: Int
     
+    override init() {
+        self.userName = ""
+        self.date = ""
+        self.companyName = ""
+        self.content = ""
+        self.address = ""
+        self.applicantsNumber = 0
+        self.tags = []
+    }
+        
     init(userName: String, date: String, companyName: String, content: String, tags: [String], address: String, applicantsNumber: Int) {
         self.userName = userName
         self.date = date

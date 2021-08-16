@@ -81,6 +81,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsfeedCell", for: indexPath) as! NewsfeedTableViewCell
         let tmp = NewsfeedViewController.posts[indexPath.row]
+                
         cell.name = tmp.userName
         cell.date = tmp.date
         cell.company = tmp.companyName
@@ -126,10 +127,11 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         if index < NewsfeedViewController.posts.count { return }
         
         print(index)
-           
+        NewsfeedViewController.posts.append(Post())
+                
         Fetcher.fetchPost(id: NewsfeedViewController.postsID[index]) { (post) in
+            NewsfeedViewController.posts[index] = post
             DispatchQueue.main.async {
-                NewsfeedViewController.posts.append(post)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
             }
         }
