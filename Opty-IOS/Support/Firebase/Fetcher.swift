@@ -77,7 +77,7 @@ class Fetcher {
         }
     }
     
-    static func fetchTags(completion: @escaping () -> Void) {
+    static func fetchTags() {
         let uid = Auth.auth().currentUser!.uid
         SkillsViewController.tags = []
         
@@ -89,7 +89,9 @@ class Fetcher {
             let dict = snapshot?.data() as? [String: [String]] ?? [String: [String]]()
             
             SkillsViewController.tags = dict["Tags"] ?? []
-            fetchPostID(completion: completion)
+            fetchPostID { (dict) in
+                updatePostID(dict: dict)
+            }
         }
     }
     
@@ -139,24 +141,36 @@ class Fetcher {
         }
     }
     
-    static func fetchPostID(completion: @escaping () -> Void) {
+    static func fetchPostID(completion: @escaping ([String: Int]) -> Void) {
         let tags = SkillsViewController.tags!
         let ddb = Database.database().reference().child("Dict")
         var dict = [String: Int]()
         
+        let group = DispatchGroup()
+        
         for tag in tags {
+            group.enter()
             ddb.child(tag).getData { (err, snapshot) in
-                let data = snapshot.value as! [String: Int]
+                let data = snapshot.value as? [String: Int] ?? [String: Int]()
                 for key in data.keys {
                     dict[key] = (dict[key] ?? 0) + data[key]!
                 }
+                group.leave()
             }
         }
+        
+        group.notify(queue: .main) {
+            completion(dict)
+        }
+    }
     
+    static func updatePostID(dict: [String: Int]) {
         NewsfeedViewController.postsID = Array(dict.keys)
         NewsfeedViewController.postsID.sort() {
             dict[$0]! > dict[$1]!
         }
+        
+        print(NewsfeedViewController.postsID)
         
         // Fetch unrelevant posts
         Firestore.firestore().collection("Posts").getDocuments { (snapshot, err) in
@@ -168,8 +182,9 @@ class Fetcher {
                     }
                 }
                 
-                //print(NewsfeedViewController.postsID.count)
-                completion()
+                for i in 0...5 {
+                    NewsfeedViewController.loadNext(index: i)
+                }
             }
         }
     }

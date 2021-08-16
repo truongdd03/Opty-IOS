@@ -21,24 +21,29 @@ class NewsfeedViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass.circle"), style: .plain, target: self, action: #selector(searchTapped))
-                
         title = "Opty"
         
+        setUp()
+    }
+    
+    func setUp() {
         NewsfeedTableView.delegate = self
         NewsfeedTableView.dataSource = self
         NewsfeedTableView.prefetchDataSource = self
         NewsfeedTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        fetchData {
-            for i in 0...2 {
-                self.loadNext(index: i)
-            }
-        }
+        NotificationCenter.default.addObserver(self, selector: #selector(loadNewsfeed), name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
+        
+        fetchData()
     }
     
-    func fetchData(completion: @escaping () -> Void) {
+    @objc func loadNewsfeed() {
+        NewsfeedTableView.reloadData()
+    }
+    
+    func fetchData() {
         if BasicsViewController.basicInfo == nil {
-            Fetcher.fetchTags(completion: completion)
+            Fetcher.fetchTags()
             Fetcher.fetchInfo()
             Fetcher.fetchDegrees()
             Fetcher.fetchAwards()
@@ -61,7 +66,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
 
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for id in indexPaths {
-            loadNext(index: id.row)
+            NewsfeedViewController.loadNext(index: id.row)
         }
     }
     
@@ -75,7 +80,6 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         }
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsfeedCell", for: indexPath) as! NewsfeedTableViewCell
-        
         let tmp = NewsfeedViewController.posts[indexPath.row]
         cell.name = tmp.userName
         cell.date = tmp.date
@@ -117,7 +121,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         return 50
     }
 
-    func loadNext(index: Int) {
+    static func loadNext(index: Int) {
         if index >= NewsfeedViewController.postsID.count { return }
         if index < NewsfeedViewController.posts.count { return }
         
@@ -126,7 +130,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         Fetcher.fetchPost(id: NewsfeedViewController.postsID[index]) { (post) in
             DispatchQueue.main.async {
                 NewsfeedViewController.posts.append(post)
-                self.NewsfeedTableView.reloadData()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
             }
         }
     }
