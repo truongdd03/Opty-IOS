@@ -77,7 +77,7 @@ class Fetcher {
         }
     }
     
-    static func fetchTags() {
+    static func fetchTags(completion: @escaping () -> Void) {
         let uid = Auth.auth().currentUser!.uid
         SkillsViewController.tags = []
         
@@ -89,6 +89,7 @@ class Fetcher {
             let dict = snapshot?.data() as? [String: [String]] ?? [String: [String]]()
             
             SkillsViewController.tags = dict["Tags"] ?? []
+            fetchPostID(completion: completion)
         }
     }
     
@@ -138,4 +139,38 @@ class Fetcher {
         }
     }
     
+    static func fetchPostID(completion: @escaping () -> Void) {
+        let tags = SkillsViewController.tags!
+        let ddb = Database.database().reference().child("Dict")
+        var dict = [String: Int]()
+        
+        for tag in tags {
+            ddb.child(tag).getData { (err, snapshot) in
+                let data = snapshot.value as! [String: Int]
+                for key in data.keys {
+                    dict[key] = (dict[key] ?? 0) + data[key]!
+                }
+            }
+        }
+    
+        NewsfeedViewController.postsID = Array(dict.keys)
+        NewsfeedViewController.postsID.sort() {
+            dict[$0]! > dict[$1]!
+        }
+        
+        // Fetch unrelevant posts
+        Firestore.firestore().collection("Posts").getDocuments { (snapshot, err) in
+            if let documents = snapshot?.documents {
+                for document in documents {
+                    let id = document.documentID
+                    if dict[id] == nil {
+                        NewsfeedViewController.postsID.append(id)
+                    }
+                }
+                
+                //print(NewsfeedViewController.postsID.count)
+                completion()
+            }
+        }
+    }
 }
