@@ -179,7 +179,6 @@ class Fetcher {
                 }
             }
             
-            print(NewsfeedViewController.postsID)
             for i in 0...5 {
                 NewsfeedViewController.loadNext(index: i)
             }

@@ -10,15 +10,14 @@ Pascal
 Perl
 PHP
 Python
-Ruby
 SQLite
 Swift
-VB.net
+VBnet
 Go
 Javascript
-Node.js
+Nodejs
 Android
-Full-time
+Fulltime
 Intern
 iOS
 Junior
@@ -26,7 +25,7 @@ CSS
 Elixir
 Ruby
 Scala
-Part-time
+Parttime
 Remote
 Senior
 Personal project
@@ -43,3 +42,9 @@ Django
 React
 Git
 Mercurial
+Jquery
+HTML
+Ajax
+Docker
+Typescript
+Machine learning

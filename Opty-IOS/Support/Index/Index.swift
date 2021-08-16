@@ -104,7 +104,13 @@ class Index {
     }
     
     static func updateTags(tags: [String], postID: String, isDelete: Bool) {
-        for tag in tags {
+        for id in 0..<tags.count {
+        
+            var tag = tags[id]
+            if tag == "C#" { tag = "CC" }
+            if tag == "C++" { tag = "CPP" }
+            if tag == "Objective-C" { tag = "ObjectiveC" }
+            
             if !isDelete {
                 addWord(word: tag, times: 10, postID: postID)
             } else {
