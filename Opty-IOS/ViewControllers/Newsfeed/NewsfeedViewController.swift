@@ -30,7 +30,7 @@ class NewsfeedViewController: UIViewController {
         NewsfeedTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         fetchData {
-            for i in 0...0 {
+            for i in 0...2 {
                 self.loadNext(index: i)
             }
         }
@@ -66,12 +66,12 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NewsfeedViewController.posts.count
+        return NewsfeedViewController.posts.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == NewsfeedViewController.posts.count - 1 {
-            loadNext(index: indexPath.row + 1)
+        if indexPath.row == NewsfeedViewController.posts.count {
+            return UITableViewCell()
         }
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsfeedCell", for: indexPath) as! NewsfeedTableViewCell
@@ -99,6 +99,10 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == NewsfeedViewController.posts.count {
+            return 0
+        }
+    
         if indexPath.row < NewsfeedViewController.posts.count {
             let str = NewsfeedViewController.posts[indexPath.row].content
             let width = view.frame.size.width - 20
@@ -114,13 +118,12 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
     }
 
     func loadNext(index: Int) {
-        //print(NewsfeedViewController.postsID.count)
         if index >= NewsfeedViewController.postsID.count { return }
         if index < NewsfeedViewController.posts.count { return }
+        
         print(index)
-                
+           
         Fetcher.fetchPost(id: NewsfeedViewController.postsID[index]) { (post) in
-            print(post)
             DispatchQueue.main.async {
                 NewsfeedViewController.posts.append(post)
                 self.NewsfeedTableView.reloadData()
