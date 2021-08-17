@@ -206,38 +206,22 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="sAx-w2-esg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="7"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.81658904629999995" green="0.8337130116" blue="0.85564037869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="7" id="wPF-Ys-RD2"/>
-                                    </constraints>
-                                </view>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="eiv-O5-hmV">
-                                    <rect key="frame" x="0.0" y="363" width="414" height="7"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.81658904629999995" green="0.8337130116" blue="0.85564037869999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="7" id="kqA-FY-dj3"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="300" id="qzd-e5-SvS" customClass="PostTableViewCell" customModule="Opty_IOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qzd-e5-SvS" id="kmQ-1q-0I3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtF-bX-KLy">
-                                                    <rect key="frame" x="10" y="44" width="394" height="20.5"/>
+                                                    <rect key="frame" x="10" y="42" width="394" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemBlueColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ns-cM-8kQ">
-                                                    <rect key="frame" x="10" y="95.5" width="394" height="187.5"/>
+                                                    <rect key="frame" x="10" y="93.5" width="394" height="191.5"/>
                                                     <string key="text">Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.
 
 Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.</string>
@@ -246,40 +230,37 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ST-OF-aF8">
-                                                    <rect key="frame" x="0.0" y="293" width="414" height="7"/>
-                                                    <color key="backgroundColor" red="0.81500273940000001" green="0.83505421879999997" blue="0.85581451649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="7" id="kpg-O5-qMc"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="295" width="414" height="5"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="500 Unknown Street, East Lansing, Michigan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOm-3k-OzR">
-                                                    <rect key="frame" x="10" y="69.5" width="394" height="16"/>
+                                                    <rect key="frame" x="10" y="67.5" width="394" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="10/23/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzY-Ca-z4z">
-                                                    <rect key="frame" x="326" y="17" width="78" height="17"/>
+                                                    <rect key="frame" x="326" y="15" width="78" height="17"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Applicants:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNw-sz-sQH">
-                                                    <rect key="frame" x="10" y="17" width="79" height="17"/>
+                                                    <rect key="frame" x="10" y="15" width="79" height="17"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" systemColor="systemBlueColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2x-Lz-2gI">
-                                                    <rect key="frame" x="99" y="17" width="24" height="17"/>
+                                                    <rect key="frame" x="99" y="15" width="24" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTl-zU-gYt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="7"/>
-                                                    <color key="backgroundColor" red="0.81500273940000001" green="0.83505421879999997" blue="0.85581451649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="5"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="7" id="6Xu-OY-H74"/>
+                                                        <constraint firstAttribute="height" constant="5" id="6Xu-OY-H74"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -288,6 +269,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                 <constraint firstAttribute="trailing" secondItem="BtF-bX-KLy" secondAttribute="trailing" constant="10" id="5Sy-FV-OCE"/>
                                                 <constraint firstItem="BtF-bX-KLy" firstAttribute="top" secondItem="zzY-Ca-z4z" secondAttribute="bottom" constant="10" id="5Wx-Vi-908"/>
                                                 <constraint firstItem="eNw-sz-sQH" firstAttribute="centerY" secondItem="zzY-Ca-z4z" secondAttribute="centerY" id="BQA-ID-s3F"/>
+                                                <constraint firstItem="9ST-OF-aF8" firstAttribute="height" secondItem="qTl-zU-gYt" secondAttribute="height" id="ECr-Ih-hx8"/>
                                                 <constraint firstAttribute="trailing" secondItem="kOm-3k-OzR" secondAttribute="trailing" constant="10" id="Ivo-UN-ucq"/>
                                                 <constraint firstItem="eNw-sz-sQH" firstAttribute="leading" secondItem="kmQ-1q-0I3" secondAttribute="leading" constant="10" id="KSG-Nk-7Pz"/>
                                                 <constraint firstItem="BtF-bX-KLy" firstAttribute="leading" secondItem="kmQ-1q-0I3" secondAttribute="leading" constant="10" id="Kn0-GS-oqu"/>
@@ -332,7 +314,6 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                     <connections>
                         <outlet property="BottomView" destination="Gem-yz-LJy" id="2zK-Je-Yhe"/>
                         <outlet property="PostsTableView" destination="Gem-yz-LJy" id="uWP-TT-4pV"/>
-                        <outlet property="TopView" destination="sAx-w2-esg" id="QkT-En-2wL"/>
                         <segue destination="IRb-QH-lfP" kind="push" id="P9i-gq-aZg"/>
                     </connections>
                 </viewController>
