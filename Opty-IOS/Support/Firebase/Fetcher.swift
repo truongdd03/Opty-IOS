@@ -90,7 +90,7 @@ class Fetcher {
             let dict = snapshot?.data() as? [String: [String]] ?? [String: [String]]()
             
             SkillsViewController.tags = dict["Tags"] ?? []
-            fetchPostID()
+            fetchPostID(keywords: SkillsViewController.tags!)
         }
     }
     
@@ -149,14 +149,13 @@ class Fetcher {
         }
     }
     
-    static func fetchPostID() {
-        let tags = SkillsViewController.tags!
+    static func fetchPostID(keywords: [String]) {
         let ddb = Database.database().reference().child("Dict")
         var dict = [String: Int]()
         
         let group = DispatchGroup()
         
-        for tag in tags {
+        for tag in keywords {
             group.enter()
             ddb.child(tag).getData { (err, snapshot) in
                 let data = snapshot.value as? [String: Int] ?? [String: Int]()

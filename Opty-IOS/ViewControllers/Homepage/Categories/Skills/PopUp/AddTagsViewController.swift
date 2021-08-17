@@ -46,8 +46,10 @@ class AddTagsViewController: PopUpViewController, UISearchBarDelegate {
         tags = fetchTags()
         if type == 0 {
             filterTags(selectedTags: SkillsViewController.tags!)
-        } else {
+        } else if type == 1{
             filterTags(selectedTags: NewpostViewController.tags)
+        } else {
+            filterTags(selectedTags: NewsfeedSearchViewController.tags)
         }
         filter = tags
     }
@@ -91,9 +93,13 @@ extension AddTagsViewController: UICollectionViewDataSource, UICollectionViewDel
         if type == 0 {
             SkillsViewController.tags!.insert(tag, at: 0)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadSkillTags"), object: nil)
-        } else {
+        } else if type == 1 {
             NewpostViewController.tags.insert(tag, at: 0)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadPostTags"), object: nil)
+        } else {
+            NewsfeedSearchViewController.tags.insert(tag, at: 0)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadSearchPostTags"), object: nil)
+
         }
     }
     
