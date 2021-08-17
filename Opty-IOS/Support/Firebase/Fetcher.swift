@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 
 class Fetcher {
     static let db = Firestore.firestore().collection("Information")
+    static var posts = [String: Post]()
 
     static func fetchInfo() {
         BasicsViewController.basicInfo = Info()
@@ -106,14 +107,23 @@ class Fetcher {
     }
     
     static func fetchPost(id: String, completion: @escaping (Post) -> Void) {
+        if let post = posts[id] {
+            print(post)
+            completion(post)
+            return
+        }
+    
         Firestore.firestore().collection("Posts").document(id).getDocument { (snapshot, err) in
             if let err = err {
                 print(err.localizedDescription)
                 return
             }
             
+            print("Fetcing \(id)")
+            
             let tmp = try? snapshot?.data(as: Post.self)
             if tmp != nil {
+                posts[id] = tmp
                 completion(tmp!)
             }
         }

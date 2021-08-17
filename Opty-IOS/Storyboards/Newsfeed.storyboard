@@ -258,11 +258,35 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                     <navigationItem key="navigationItem" id="2yg-6q-hRk"/>
                     <connections>
                         <outlet property="NewsfeedTableView" destination="7PM-PV-ZZk" id="l1b-Mr-nKf"/>
+                        <segue destination="UAP-iB-Jr3" kind="push" id="spi-bw-vlF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdN-y7-hLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="89.855072463768124" y="79.6875"/>
+        </scene>
+        <!--Newsfeed Search View Controller-->
+        <scene sceneID="lFg-Qr-YUG">
+            <objects>
+                <viewController storyboardIdentifier="NewsfeedSearch" id="UAP-iB-Jr3" customClass="NewsfeedSearchViewController" customModule="Opty_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96l-8w-WMp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Type to search" translatesAutoresizingMaskIntoConstraints="NO" id="glK-Pt-aIG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wsi-ZW-FMV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WBn-aW-OYK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A8J-gK-wqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="80"/>
         </scene>
     </scenes>
     <resources>

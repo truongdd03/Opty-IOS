@@ -58,7 +58,9 @@ class NewsfeedViewController: UIViewController {
     }
     
     @objc func searchTapped() {
-        
+        let storyBoard = UIStoryboard(name: "Newsfeed", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "NewsfeedSearch")
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
