@@ -13,6 +13,16 @@ class Fetcher {
     static let db = Firestore.firestore().collection("Information")
     static var posts = [String: Post]()
 
+    static func fetchAll() {
+        fetchInfo()
+        fetchDegrees()
+        fetchAwards()
+        fetchJobs()
+        fetchSkills()
+        fetchUsername()
+        fetchMyPosts()
+    }
+
     static func fetchInfo() {
         BasicsViewController.basicInfo = Info()
         BasicsViewController.basicInfo!.fetchData()
@@ -78,29 +88,21 @@ class Fetcher {
         }
     }
     
-    static func fetchTags() {
+    static func fetchTags(completion: @escaping () -> Void) {
         let uid = Auth.auth().currentUser!.uid
         SkillsViewController.tags = []
         
         db.document(uid).collection("Tags").document("Tags").getDocument { (snapshot, err) in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            }
             let dict = snapshot?.data() as? [String: [String]] ?? [String: [String]]()
             
             SkillsViewController.tags = dict["Tags"] ?? []
-            fetchPostID(keywords: SkillsViewController.tags!)
+            completion()
         }
     }
     
     static func fetchUsername() {
         let uid = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("Usernames").document(uid).getDocument { (snapshot, err) in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            }
             let dict = snapshot?.data() as! [String: String]
             HomepageViewController.username = dict["Username"]
         }
@@ -108,19 +110,11 @@ class Fetcher {
     
     static func fetchPost(id: String, completion: @escaping (Post) -> Void) {
         if let post = posts[id] {
-            print(post)
             completion(post)
             return
         }
     
         Firestore.firestore().collection("Posts").document(id).getDocument { (snapshot, err) in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            }
-            
-            print("Fetcing \(id)")
-            
             let tmp = try? snapshot?.data(as: Post.self)
             if tmp != nil {
                 posts[id] = tmp
@@ -135,11 +129,6 @@ class Fetcher {
         AllPostsViewController.myPosts = []
 
         ref.child("Posts").child(uid).getData { (err, snapshot) in
-            if let err = err {
-                print(err.localizedDescription)
-                return
-            }
-                        
             for child in snapshot.children {
                 let documentID = (child as! DataSnapshot).value as! String
                 fetchPost(id: documentID) { (post) in
@@ -149,7 +138,7 @@ class Fetcher {
         }
     }
     
-    static func fetchPostID(keywords: [String]) {
+    static func fetchPostID(keywords: [String], completion: @escaping ([String]) -> Void) {
         let ddb = Database.database().reference().child("Dict")
         var dict = [String: Int]()
         
@@ -167,15 +156,17 @@ class Fetcher {
         }
         
         group.notify(queue: .main) {
-            updatePostID(dict: dict)
+            updatePostID(dict: dict, completion: completion)
         }
     }
     
-    static func updatePostID(dict: [String: Int]) {
-        NewsfeedViewController.postsID = Array(dict.keys)
-        NewsfeedViewController.postsID.sort() {
+    static func updatePostID(dict: [String: Int], completion: @escaping ([String]) -> Void) {
+        var postsID = Array(dict.keys)
+        postsID.sort() {
             dict[$0]! > dict[$1]!
         }
+        
+        print(postsID)
         
         // Fetch unrelevant posts
         Firestore.firestore().collection("Posts").getDocuments { (snapshot, err) in
@@ -183,13 +174,11 @@ class Fetcher {
                 for document in documents {
                     let id = document.documentID
                     if dict[id] == nil {
-                        NewsfeedViewController.postsID.append(id)
+                        postsID.append(id)
                     }
                 }
-            }
-            
-            for i in 0...5 {
-                NewsfeedViewController.loadNext(index: i)
+                
+                completion(postsID)
             }
         }
     }

@@ -11,8 +11,8 @@ class NewsfeedViewController: UIViewController {
 
     @IBOutlet weak var NewsfeedTableView: UITableView!
     
-    static var posts: [Post] = [Post]()
-    static var postsID: [String] = []
+    var posts: [Post] = [Post]()
+    var postsID: [String] = []
     
     var index = -1
     var clicked = false
@@ -42,18 +42,21 @@ class NewsfeedViewController: UIViewController {
     }
     
     func fetchData() {
-        if BasicsViewController.basicInfo == nil {
-            Fetcher.fetchTags()
-            Fetcher.fetchInfo()
-            Fetcher.fetchDegrees()
-            Fetcher.fetchAwards()
-            Fetcher.fetchJobs()
-            Fetcher.fetchSkills()
-            Fetcher.fetchUsername()
-        }
-        
-        if AllPostsViewController.myPosts == nil {
-            Fetcher.fetchMyPosts()
+        if SkillsViewController.tags == nil {
+            Fetcher.fetchTags {
+                Fetcher.fetchPostID(keywords: SkillsViewController.tags!) { (ids) in
+                    self.postsID = ids
+
+                    for i in 0...5 {
+                        self.loadNext(index: i)
+                    }
+                }
+            }
+            Fetcher.fetchAll()
+        } else {
+            for i in 0...5 {
+                self.loadNext(index: i)
+            }
         }
     }
     
@@ -68,21 +71,21 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
 
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for id in indexPaths {
-            NewsfeedViewController.loadNext(index: id.row)
+            loadNext(index: id.row)
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NewsfeedViewController.posts.count + 1
+        return posts.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == NewsfeedViewController.posts.count {
+        if indexPath.row == posts.count {
             return UITableViewCell()
         }
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsfeedCell", for: indexPath) as! NewsfeedTableViewCell
-        let tmp = NewsfeedViewController.posts[indexPath.row]
+        let tmp = posts[indexPath.row]
                 
         cell.name = tmp.userName
         cell.date = tmp.date
@@ -106,12 +109,12 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == NewsfeedViewController.posts.count {
+        if indexPath.row == posts.count {
             return 0
         }
     
-        if indexPath.row < NewsfeedViewController.posts.count {
-            let str = NewsfeedViewController.posts[indexPath.row].content
+        if indexPath.row < posts.count {
+            let str = posts[indexPath.row].content
             let width = view.frame.size.width - 20
             let height = str.height(withConstrainedWidth: width, font: .systemFont(ofSize: 14))
         
@@ -124,19 +127,39 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         return 50
     }
 
-    static func loadNext(index: Int) {
-        if index >= NewsfeedViewController.postsID.count { return }
-        if index < NewsfeedViewController.posts.count { return }
+    func loadNext(index: Int) {
+        if index >= postsID.count { return }
+        if index < posts.count { return }
         
-        print(index)
-        NewsfeedViewController.posts.append(Post())
+        //print(index)
+        posts.append(Post())
                 
-        Fetcher.fetchPost(id: NewsfeedViewController.postsID[index]) { (post) in
-            NewsfeedViewController.posts[index] = post
+        Fetcher.fetchPost(id: postsID[index]) { (post) in
+            self.posts[index] = post
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
             }
         }
+    }
+}
+
+extension NewsfeedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts[collectionView.tag].tags.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tag", for: indexPath) as! TagCollectionViewCell
+        
+        cell.setLabel(tag: posts[collectionView.tag].tags[indexPath.item])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = Utilities.sizeOfLabel(posts[collectionView.tag].tags[indexPath.item])
+        
+        return CGSize(width: width + 15, height: 20)
     }
 }
 
@@ -146,25 +169,5 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
     
         return boundingBox.height
-    }
-}
-
-extension NewsfeedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return NewsfeedViewController.posts[collectionView.tag].tags.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Tag", for: indexPath) as! TagCollectionViewCell
-        
-        cell.setLabel(tag: NewsfeedViewController.posts[collectionView.tag].tags[indexPath.item])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Utilities.sizeOfLabel(NewsfeedViewController.posts[collectionView.tag].tags[indexPath.item])
-        
-        return CGSize(width: width + 15, height: 20)
     }
 }

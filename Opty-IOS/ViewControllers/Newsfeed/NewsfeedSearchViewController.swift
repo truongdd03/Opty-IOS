@@ -39,7 +39,31 @@ class NewsfeedSearchViewController: UIViewController {
         TagsCollection.layer.cornerRadius = 5
     }
 
+    func splitKeywords() -> [String] {
+        let text = KeywordsSearchBar.text
+        var keywords = Index.splitContent(content: text!)
+        
+        var id = 1
+        while id < keywords.count {
+            if keywords[id] == keywords[id-1] {
+                keywords.remove(at: id)
+            } else {
+                id += 1
+            }
+        }
+        
+        keywords += NewsfeedSearchViewController.tags
+        return keywords
+    }
+
     @IBAction func searchButtonTapped(_ sender: Any) {
+        let keywords = splitKeywords()
+        let storyBoard = UIStoryboard(name: "Newsfeed", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "Newsfeed") as! NewsfeedViewController
+        Fetcher.fetchPostID(keywords: keywords) { (postsID) in
+            vc.postsID = postsID
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func addTagsButtonTapped(_ sender: Any) {
