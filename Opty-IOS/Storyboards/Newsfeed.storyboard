@@ -51,18 +51,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxK-22-NiX">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="8"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="8" id="cOg-Nw-QyQ"/>
+                                                    </constraints>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undefined_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="lzM-fY-WaS">
-                                                    <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                                    <rect key="frame" x="10" y="18" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Nx2-Or-Bs6"/>
                                                         <constraint firstAttribute="width" constant="30" id="cmE-O2-W2n"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D8o-dT-9bD">
-                                                    <rect key="frame" x="50" y="10" width="209" height="30"/>
+                                                    <rect key="frame" x="50" y="18" width="209" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don Truong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHJ-Da-WbL">
                                                             <rect key="frame" x="0.0" y="0.0" width="209" height="17"/>
@@ -82,7 +85,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hk2-Yd-WSa">
-                                                    <rect key="frame" x="10" y="50" width="394" height="20"/>
+                                                    <rect key="frame" x="10" y="58" width="394" height="20"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="pgY-46-TlL"/>
@@ -123,7 +126,7 @@
                                                     </cells>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx3-qC-YBa">
-                                                    <rect key="frame" x="10" y="80" width="394" height="20.5"/>
+                                                    <rect key="frame" x="10" y="88" width="394" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20.5" id="4nx-gY-8F4"/>
                                                     </constraints>
@@ -132,7 +135,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXb-o0-oxx">
-                                                    <rect key="frame" x="10" y="131.5" width="394" height="153.5"/>
+                                                    <rect key="frame" x="10" y="139.5" width="394" height="160.5"/>
                                                     <string key="text">Fetch Technology Vietnam is a comprehensive global provider of HR and Talent Acquisition Services, focusing primarily in the technology fields. Founded in 2016, Fetch Technology Vietnam helps foreign companies of all types and sizes reach their potential by providing the talent and support to efficiently build and scale a high-performing, distributed workforce in Vietnam.
 
 Our mission is to offer Vietnam’s most talented technologists a platform to connect with some of the world’s leading tech companies and build their expertise on a global scale. Over 4 years, Fetch has built a good reputation and is trusted by many Vietnamese and foreign companies; And Fetch will continue its good work to bridge the divide between the World and the Vietnam Tech sector.</string>
@@ -141,7 +144,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-zk-Hl1">
-                                                    <rect key="frame" x="379" y="13" width="25" height="24"/>
+                                                    <rect key="frame" x="379" y="21" width="25" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="NMf-66-bC9"/>
                                                     </constraints>
@@ -154,7 +157,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-dj-Wmi">
-                                                    <rect key="frame" x="269" y="13" width="100" height="24"/>
+                                                    <rect key="frame" x="269" y="21" width="100" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="2NJ-hh-6RH"/>
                                                         <constraint firstAttribute="height" constant="24" id="dgO-cP-7Pe"/>
@@ -165,15 +168,8 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                         <action selector="sendResumeButtonTapped:" destination="Cy7-WR-EtJ" eventType="touchUpInside" id="JYN-g3-fLO"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNQ-qX-XW4">
-                                                    <rect key="frame" x="0.0" y="295" width="414" height="5"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="5" id="hsr-8x-YZf"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="500 Unknown Street, East Lansing, Michigan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-2y-2gt">
-                                                    <rect key="frame" x="10" y="105.5" width="394" height="16"/>
+                                                    <rect key="frame" x="10" y="113.5" width="394" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="m8x-d4-YpM"/>
                                                     </constraints>
@@ -183,35 +179,31 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bWJ-dj-Wmi" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="1Od-DL-PeY"/>
-                                                <constraint firstItem="lzM-fY-WaS" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" constant="10" id="9cx-Pn-LDD"/>
+                                                <constraint firstItem="lzM-fY-WaS" firstAttribute="top" secondItem="fxK-22-NiX" secondAttribute="bottom" constant="10" id="9cx-Pn-LDD"/>
                                                 <constraint firstAttribute="trailing" secondItem="fxK-22-NiX" secondAttribute="trailing" id="BOa-Ng-Xom"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="HA6-9b-NDv"/>
                                                 <constraint firstItem="m3c-2y-2gt" firstAttribute="top" secondItem="mx3-qC-YBa" secondAttribute="bottom" constant="5" id="HYd-yB-4LI"/>
                                                 <constraint firstAttribute="trailing" secondItem="m3c-2y-2gt" secondAttribute="trailing" constant="10" id="Hvv-xa-ZLs"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="J5L-y2-Kd3"/>
-                                                <constraint firstItem="fNQ-qX-XW4" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" id="KQ7-NA-Bcz"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="height" secondItem="bWJ-dj-Wmi" secondAttribute="height" id="Lwu-b9-gEA"/>
                                                 <constraint firstItem="fxK-22-NiX" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" id="OQW-2Z-lNt"/>
                                                 <constraint firstAttribute="trailing" secondItem="hXb-o0-oxx" secondAttribute="trailing" constant="10" id="OdZ-tr-QcW"/>
-                                                <constraint firstAttribute="bottom" secondItem="fNQ-qX-XW4" secondAttribute="bottom" id="PXn-RY-nAa"/>
                                                 <constraint firstItem="lzM-fY-WaS" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="Qe5-OC-UzH"/>
                                                 <constraint firstItem="hXb-o0-oxx" firstAttribute="top" secondItem="m3c-2y-2gt" secondAttribute="bottom" constant="10" id="Qyq-EK-7tE"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="centerY" secondItem="lzM-fY-WaS" secondAttribute="centerY" id="SZb-iD-EmC"/>
                                                 <constraint firstItem="IrV-zk-Hl1" firstAttribute="leading" secondItem="bWJ-dj-Wmi" secondAttribute="trailing" constant="10" id="Shx-qz-vOU"/>
+                                                <constraint firstAttribute="bottom" secondItem="hXb-o0-oxx" secondAttribute="bottom" id="aym-5P-7Ke"/>
                                                 <constraint firstAttribute="trailing" secondItem="IrV-zk-Hl1" secondAttribute="trailing" constant="10" id="ggV-hV-yiM"/>
                                                 <constraint firstItem="bWJ-dj-Wmi" firstAttribute="leading" secondItem="D8o-dT-9bD" secondAttribute="trailing" constant="10" id="gwb-5p-z0C"/>
                                                 <constraint firstItem="hXb-o0-oxx" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="kF3-0t-VcT"/>
-                                                <constraint firstItem="fxK-22-NiX" firstAttribute="height" secondItem="fNQ-qX-XW4" secondAttribute="height" id="kdS-NC-0vk"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hk2-Yd-WSa" secondAttribute="trailing" constant="10" id="kw5-jp-vuF"/>
                                                 <constraint firstItem="fxK-22-NiX" firstAttribute="top" secondItem="Vwm-6I-fLO" secondAttribute="top" id="l3B-lx-ouG"/>
                                                 <constraint firstItem="mx3-qC-YBa" firstAttribute="top" secondItem="Hk2-Yd-WSa" secondAttribute="bottom" constant="10" id="lP5-qY-hhQ"/>
-                                                <constraint firstItem="fNQ-qX-XW4" firstAttribute="top" secondItem="hXb-o0-oxx" secondAttribute="bottom" constant="10" id="oaD-XL-4RI"/>
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="top" secondItem="lzM-fY-WaS" secondAttribute="bottom" constant="10" id="qmV-cE-QxY"/>
                                                 <constraint firstItem="m3c-2y-2gt" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="sgV-4s-wTu"/>
                                                 <constraint firstItem="Hk2-Yd-WSa" firstAttribute="leading" secondItem="Vwm-6I-fLO" secondAttribute="leading" constant="10" id="tAI-4N-W47"/>
                                                 <constraint firstItem="D8o-dT-9bD" firstAttribute="leading" secondItem="lzM-fY-WaS" secondAttribute="trailing" constant="10" id="vWj-dq-PgS"/>
                                                 <constraint firstAttribute="trailing" secondItem="mx3-qC-YBa" secondAttribute="trailing" constant="10" id="wsL-dS-Afx"/>
-                                                <constraint firstAttribute="trailing" secondItem="fNQ-qX-XW4" secondAttribute="trailing" id="zN0-dW-a7b"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
