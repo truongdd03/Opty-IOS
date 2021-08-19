@@ -96,9 +96,10 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         var address = StreetInput.text! + ", " + CityInput.text! + ", " + StateInput.text! + ", "
         address += CountryInput.text!
     
-        let post = Post(userName: HomepageViewController.username!, date: "", title: CompanyInput.text!, content: ContentInput.text, tags: NewpostViewController.tags, address: address, applicantsNumber: 0)
+        let post = Post(userName: HomepageViewController.username!, date: "", title: CompanyInput.text!, content: ContentInput.text, tags: NewpostViewController.tags, address: address)
         post.updateDate()
         post.id = Writer.writePost(post: post)
+        AllPostsViewController.myPosts!.append(MyPost(post: post, applicants: 0))
 
         Index.updatePost(tags: post.tags, content: post.content, postID: post.id!, isDelete: false)
         

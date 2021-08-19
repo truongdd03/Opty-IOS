@@ -8,7 +8,7 @@
 import UIKit
 
 class AllPostsViewController: UIViewController {
-    static var myPosts: [Post]?
+    static var myPosts: [MyPost]?
     
     @IBOutlet weak var PostsTableView: UITableView!
     @IBOutlet weak var BottomView: UITableView!
@@ -31,19 +31,19 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
-        let post = AllPostsViewController.myPosts![indexPath.row]
+        let post = AllPostsViewController.myPosts![indexPath.row].post
                 
         cell.address = post.address
-        cell.applicantsNumber = post.applicantsNumber
         cell.company = post.title
         cell.content = post.content
+        cell.applicantsNumber = AllPostsViewController.myPosts![indexPath.row].applicants
         cell.date = post.date
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let str = AllPostsViewController.myPosts![indexPath.row].content
+        let str = AllPostsViewController.myPosts![indexPath.row].post.content
         let width = view.frame.size.width - 20
         let height = str.height(withConstrainedWidth: width, font: .systemFont(ofSize: 14))
         return min(height + 120, 300)
@@ -59,7 +59,7 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let post = AllPostsViewController.myPosts![indexPath.row]
+            let post = AllPostsViewController.myPosts![indexPath.row].post
             
             AllPostsViewController.myPosts!.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)

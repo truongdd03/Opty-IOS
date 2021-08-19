@@ -49,3 +49,5 @@ Docker
 Typescript
 Machine learning
 RESTful
+Rust
+MongoDB

@@ -64,7 +64,6 @@ class Writer {
         let uid = Auth.auth().currentUser!.uid
         do {
             let id = try Firestore.firestore().collection("Posts").addDocument(from: post).documentID
-            AllPostsViewController.myPosts!.append(post)
             Database.database().reference().child("Posts").child(uid).child(id).setValue(id)
             return id
         } catch {
@@ -83,5 +82,9 @@ class Writer {
         let ref = Database.database().reference()
         ref.child("Applicants").child(postID).child(uid).setValue(uid)
         ref.child("AppliedPosts").child(uid).child(postID).setValue(postID)
+        ref.child("ApplicantsNumber").child(postID).getData { (err, snapshot) in
+            let val = snapshot.value as? Int ?? 0
+            ref.child("ApplicantsNumber").child(postID).setValue(val + 1)
+        }
     }
 }

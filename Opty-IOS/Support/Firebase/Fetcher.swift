@@ -125,16 +125,25 @@ class Fetcher {
         }
     }
     
+    static func fetchApplicantsNumber(postID: String, completion: @escaping (Int) -> Void) {
+        Database.database().reference().child("ApplicantsNumber").child(postID).getData { (err, snapshot) in
+            let value = snapshot.value as? Int ?? 0
+            completion(value)
+        }
+    }
+    
     static func fetchMyPosts() {
         let uid = Auth.auth().currentUser!.uid
         let ref = Database.database().reference()
         AllPostsViewController.myPosts = []
 
         ref.child("Posts").child(uid).getData { (err, snapshot) in
-            for child in snapshot.children {
-                let documentID = (child as! DataSnapshot).value as! String
-                fetchPost(id: documentID) { (post) in
-                    AllPostsViewController.myPosts?.append(post)
+            let dict = snapshot.value as? [String: String] ?? [String: String]()
+            for key in dict.keys {
+                fetchPost(id: key) { (post) in
+                    fetchApplicantsNumber(postID: key) { (value) in
+                        AllPostsViewController.myPosts?.append(MyPost(post: post, applicants: value))
+                    }
                 }
             }
         }
@@ -189,7 +198,7 @@ class Fetcher {
         NewsfeedViewController.postsSent = [String]()
         let uid = Auth.auth().currentUser!.uid
         Database.database().reference().child("AppliedPosts").child(uid).getData { (err, snapshot) in
-            let dict = snapshot.value as! [String: String]
+            let dict = snapshot.value as? [String: String] ?? [String: String]()
             for key in dict.keys {
                 NewsfeedViewController.postsSent?.append(key)
             }

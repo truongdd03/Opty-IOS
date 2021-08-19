@@ -8,6 +8,16 @@
 import UIKit
 import FirebaseFirestoreSwift
 
+class MyPost: NSObject {
+    var post: Post
+    var applicants: Int
+    
+    init(post: Post, applicants: Int) {
+        self.post = post
+        self.applicants = applicants
+    }
+}
+
 class Post: NSObject, Codable {
     @DocumentID var id: String?
     var userName: String
@@ -16,7 +26,6 @@ class Post: NSObject, Codable {
     var content: String
     var tags: [String]
     var address: String
-    var applicantsNumber: Int
     
     override init() {
         self.userName = ""
@@ -24,18 +33,16 @@ class Post: NSObject, Codable {
         self.title = ""
         self.content = ""
         self.address = ""
-        self.applicantsNumber = 0
         self.tags = []
     }
         
-    init(userName: String, date: String, title: String, content: String, tags: [String], address: String, applicantsNumber: Int) {
+    init(userName: String, date: String, title: String, content: String, tags: [String], address: String) {
         self.userName = userName
         self.date = date
         self.title = title
         self.content = content
         self.tags = tags
         self.address = address
-        self.applicantsNumber = applicantsNumber
     }
     
     func updateDate() {

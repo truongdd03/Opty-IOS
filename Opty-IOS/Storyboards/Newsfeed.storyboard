@@ -165,7 +165,7 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <state key="normal" title="Send Resume"/>
                                                     <connections>
-                                                        <action selector="sendResumeButtonTapped:" destination="Cy7-WR-EtJ" eventType="touchUpInside" id="JYN-g3-fLO"/>
+                                                        <action selector="buttonTapped:" destination="Cy7-WR-EtJ" eventType="touchUpInside" id="ARG-ty-1Sa"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="500 Unknown Street, East Lansing, Michigan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-2y-2gt">
@@ -209,12 +209,12 @@ Our mission is to offer Vietnam’s most talented technologists a platform to co
                                         <connections>
                                             <outlet property="AddressLabel" destination="m3c-2y-2gt" id="Vkj-y1-aY4"/>
                                             <outlet property="AvatarView" destination="lzM-fY-WaS" id="GuR-df-Eg8"/>
-                                            <outlet property="CompanyLabel" destination="mx3-qC-YBa" id="Sk5-4L-Faf"/>
+                                            <outlet property="Button" destination="bWJ-dj-Wmi" id="pqO-i6-Jgl"/>
                                             <outlet property="ContentLabel" destination="hXb-o0-oxx" id="Fa4-Yy-0Bm"/>
                                             <outlet property="DateLabel" destination="fLE-wA-ZDr" id="jIc-wM-xb5"/>
                                             <outlet property="NameLabel" destination="rHJ-Da-WbL" id="mw0-KN-KVM"/>
-                                            <outlet property="SendResumeButton" destination="bWJ-dj-Wmi" id="DDw-fj-gkQ"/>
                                             <outlet property="TagsCollection" destination="Hk2-Yd-WSa" id="FhB-jE-0TK"/>
+                                            <outlet property="TitleLabel" destination="mx3-qC-YBa" id="qgp-7X-Ajo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
