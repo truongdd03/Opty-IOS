@@ -8,7 +8,6 @@
 import UIKit
 
 class NewsfeedTableViewCell: UITableViewCell {
-
     @IBOutlet weak var AvatarView: UIImageView!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!

@@ -8,8 +8,9 @@
 import UIKit
 
 class NewsfeedViewController: UIViewController {
-
     @IBOutlet weak var NewsfeedTableView: UITableView!
+    
+    static var postsSent: [String]?
     
     var posts: [Post] = [Post]()
     var postsID: [String] = []
@@ -95,7 +96,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         cell.title = tmp.title
         cell.content = tmp.content
         cell.address = tmp.address
-        cell.buttonClicked = false
+        cell.buttonClicked = (NewsfeedViewController.postsSent!.contains(tmp.id!))
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         cell.selectionStyle = .none
         return cell

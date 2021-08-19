@@ -96,7 +96,9 @@ class Fetcher {
             let dict = snapshot?.data() as? [String: [String]] ?? [String: [String]]()
             
             SkillsViewController.tags = dict["Tags"] ?? []
-            completion()
+            Fetcher.fetchPostsSent {
+                completion()
+            }
         }
     }
     
@@ -180,6 +182,19 @@ class Fetcher {
                 
                 completion(postsID)
             }
+        }
+    }
+    
+    static func fetchPostsSent(completion: @escaping () -> Void) {
+        NewsfeedViewController.postsSent = [String]()
+        let uid = Auth.auth().currentUser!.uid
+        Database.database().reference().child("AppliedPosts").child(uid).getData { (err, snapshot) in
+            let dict = snapshot.value as! [String: String]
+            for key in dict.keys {
+                NewsfeedViewController.postsSent?.append(key)
+            }
+            
+            completion()
         }
     }
 }
