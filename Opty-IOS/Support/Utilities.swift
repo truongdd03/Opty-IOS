@@ -12,17 +12,12 @@ import Firebase
 class Utilities {
     
     static func styleTextField(_ textfield:UITextField) {
-        
-        // Create the bottom line
         let bottomLine = CALayer()
         
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
         
         bottomLine.backgroundColor = UIColor.systemBlue.cgColor
-        // Remove border on text field
         textfield.borderStyle = .none
-        
-        // Add the line to the text field
         textfield.layer.addSublayer(bottomLine)
         
     }
@@ -40,20 +35,30 @@ class Utilities {
     }
     
     static func styleFilledButton(_ button:UIButton) {
-        
-        // Filled rounded corner style
         button.backgroundColor = UIColor.systemBlue
         button.layer.cornerRadius = 15.0
         button.tintColor = UIColor.white
     }
     
+    static func styleFilledMiniButton(_ button:UIButton, color: UIColor) {
+        button.backgroundColor = color
+        button.layer.cornerRadius = 10
+        button.tintColor = UIColor.white
+    }
+    
     static func styleHollowButton(_ button:UIButton) {
-        
-        // Hollow rounded corner style
         button.backgroundColor = UIColor.white
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 15.0
+        button.tintColor = UIColor.black
+    }
+    
+    static func styleHollowMiniButton(_ button:UIButton) {
+        button.backgroundColor = UIColor.white
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.cornerRadius = 10.0
         button.tintColor = UIColor.black
     }
     

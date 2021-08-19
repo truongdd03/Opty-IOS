@@ -13,6 +13,8 @@ class NewsfeedViewController: UIViewController {
     
     var posts: [Post] = [Post]()
     var postsID: [String] = []
+    var isApplicant = false
+    var name = "Opty"
     
     var index = -1
     var clicked = false
@@ -21,7 +23,7 @@ class NewsfeedViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass.circle"), style: .plain, target: self, action: #selector(searchTapped))
-        title = "Opty"
+        title = name
         
         setUp()
     }
@@ -46,7 +48,7 @@ class NewsfeedViewController: UIViewController {
             Fetcher.fetchTags {
                 Fetcher.fetchPostID(keywords: SkillsViewController.tags!) { (ids) in
                     self.postsID = ids
-
+                                        
                     for i in 0...5 {
                         self.loadNext(index: i)
                     }
@@ -86,12 +88,14 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsfeedCell", for: indexPath) as! NewsfeedTableViewCell
         let tmp = posts[indexPath.row]
-                
+        
+        cell.id = tmp.id
         cell.name = tmp.userName
         cell.date = tmp.date
-        cell.company = tmp.companyName
+        cell.title = tmp.title
         cell.content = tmp.content
         cell.address = tmp.address
+        cell.buttonClicked = false
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         cell.selectionStyle = .none
         return cell
@@ -131,7 +135,6 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         if index >= postsID.count { return }
         if index < posts.count { return }
         
-        //print(index)
         posts.append(Post())
                 
         Fetcher.fetchPost(id: postsID[index]) { (post) in

@@ -35,7 +35,7 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
                 
         cell.address = post.address
         cell.applicantsNumber = post.applicantsNumber
-        cell.company = post.companyName
+        cell.company = post.title
         cell.content = post.content
         cell.date = post.date
         

@@ -12,7 +12,7 @@ class Post: NSObject, Codable {
     @DocumentID var id: String?
     var userName: String
     var date: String
-    var companyName: String
+    var title: String
     var content: String
     var tags: [String]
     var address: String
@@ -21,17 +21,17 @@ class Post: NSObject, Codable {
     override init() {
         self.userName = ""
         self.date = ""
-        self.companyName = ""
+        self.title = ""
         self.content = ""
         self.address = ""
         self.applicantsNumber = 0
         self.tags = []
     }
         
-    init(userName: String, date: String, companyName: String, content: String, tags: [String], address: String, applicantsNumber: Int) {
+    init(userName: String, date: String, title: String, content: String, tags: [String], address: String, applicantsNumber: Int) {
         self.userName = userName
         self.date = date
-        self.companyName = companyName
+        self.title = title
         self.content = content
         self.tags = tags
         self.address = address

@@ -18,6 +18,7 @@ class NewsfeedTableViewCell: UITableViewCell {
     @IBOutlet weak var AddressLabel: UILabel!
     @IBOutlet weak var TagsCollection: UICollectionView!
     
+    var id: String?
     var name: String? {
         didSet {
             NameLabel.text = name
@@ -28,9 +29,9 @@ class NewsfeedTableViewCell: UITableViewCell {
             DateLabel.text = date
         }
     }
-    var company: String? {
+    var title: String? {
         didSet {
-            CompanyLabel.text = company
+            CompanyLabel.text = title
         }
     }
     var content: String? {
@@ -38,14 +39,14 @@ class NewsfeedTableViewCell: UITableViewCell {
             ContentLabel.text = content
         }
     }
-    var hasSent: Bool? {
+    var buttonClicked: Bool? {
         didSet {
-            if hasSent == true {
+            if buttonClicked == true {
                 SendResumeButton.setTitle("Sent", for: .normal)
-                Utilities.styleHollowButton(SendResumeButton)
+                Utilities.styleHollowMiniButton(SendResumeButton)
             } else {
                 SendResumeButton.setTitle("Send Resume", for: .normal)
-                Utilities.styleFilledButton(SendResumeButton)
+                Utilities.styleFilledMiniButton(SendResumeButton, color: UIColor.systemGreen)
             }
         }
     }
@@ -63,7 +64,8 @@ class NewsfeedTableViewCell: UITableViewCell {
     }
     
     @IBAction func sendResumeButtonTapped(_ sender: Any) {
-        hasSent = true
+        buttonClicked = true
+        Writer.writeApplicants(postID: id!)
     }
     
     @IBAction func MessageButtonTapped(_ sender: Any) {

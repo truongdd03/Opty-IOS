@@ -77,4 +77,11 @@ class Writer {
         let uid = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("Usernames").document(uid).setData(["Username": username])
     }
+    
+    static func writeApplicants(postID: String) {
+        let uid = Auth.auth().currentUser!.uid
+        let ref = Database.database().reference()
+        ref.child("Applicants").child(postID).child(uid).setValue(uid)
+        ref.child("AppliedPosts").child(uid).child(postID).setValue(postID)
+    }
 }
