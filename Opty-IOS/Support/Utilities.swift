@@ -87,4 +87,10 @@ class Utilities {
         
         return countries
     }
+    
+    static func reformatDate(date: Date, format: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.string(from: date)
+    }
 }

@@ -64,7 +64,7 @@ class Info: NSObject {
         
         db.collection("Basics").document(Auth.auth().currentUser!.uid).setData([
             "name": self.name,
-            "birth": self.birth, //reformatDateToString(date: self.birth),
+            "birth": self.birth,
             "address": self.address,
             "country": self.country,
             "nation": self.nation,

@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestoreSwift
+import Firebase
 
 class MyPost: NSObject {
     var post: Post
@@ -50,5 +51,9 @@ class Post: NSObject, Codable {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         self.date = formatter.string(from: date)
+    }
+    
+    func createResume() {
+        self.date = Utilities.reformatDate(date: BasicsViewController.basicInfo!.birth, format: "yyyy/MM/dd")
     }
 }

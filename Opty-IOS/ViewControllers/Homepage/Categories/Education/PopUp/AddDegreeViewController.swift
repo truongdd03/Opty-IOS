@@ -51,17 +51,11 @@ class AddDegreeViewController: PopUpViewController, UIPickerViewDelegate, UIPick
         return true;
     }
     
-    func reformatDate(date: UIDatePicker) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/yy"
-        return formatter.string(from: date.date)
-    }
-    
     @IBAction func addButtonTapped(_ sender: Any) {
         if (!validateInputs()) { return }
         let degree = degreeTypes[DegreePicker.selectedRow(inComponent: 0)] + " in " + majorInput.text!
-        let startDate = reformatDate(date: StartDate)
-        let endDate = reformatDate(date: EndDate)
+        let startDate = Utilities.reformatDate(date: StartDate.date, format: "MM/yy")
+        let endDate = Utilities.reformatDate(date: EndDate.date, format: "MM/yy")
         
         let tmp = Degree(school: schoolInput.text!, degree: degree, startDate: startDate, endDate: endDate)
         
