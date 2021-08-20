@@ -60,6 +60,7 @@ class Info: NSObject {
     }
     
     func uploadData() {
+        Writer.writeResume()
         let db = Firestore.firestore()
         
         db.collection("Basics").document(Auth.auth().currentUser!.uid).setData([

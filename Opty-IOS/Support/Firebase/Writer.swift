@@ -17,6 +17,7 @@ class Writer {
         
         do {
             let _ = try db.document(uid).collection("Degrees").addDocument(from: degree)
+            writeResume()
         } catch {
             print("Error")
         }
@@ -27,6 +28,7 @@ class Writer {
         
         do {
             let _ = try db.document(uid).collection("Awards").addDocument(from: award)
+            writeResume()
         } catch {
             print("Error")
         }
@@ -37,6 +39,7 @@ class Writer {
         
         do {
             let _ = try db.document(uid).collection("Jobs").addDocument(from: job)
+            writeResume()
         } catch {
             print("Error")
         }
@@ -47,6 +50,7 @@ class Writer {
         
         do {
             let _ = try db.document(uid).collection("Skills").addDocument(from: skill)
+            writeResume()
         } catch {
             print("Error")
         }
@@ -58,6 +62,7 @@ class Writer {
         db.document(uid).collection("Tags").document("Tags").setData([
             "Tags": SkillsViewController.tags!
         ])
+        writeResume()
     }
     
     static func writePost(post: Post) -> String? {
@@ -75,6 +80,7 @@ class Writer {
     static func writeUsername(username: String) {
         let uid = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("Usernames").document(uid).setData(["Username": username])
+        writeResume()
     }
     
     static func writeApplicants(postID: String) {
@@ -93,5 +99,7 @@ class Writer {
         let resume = Post()
         resume.createResume()
         
+        print(resume.content)
+        try? Firestore.firestore().collection("Resumes").document(uid).setData(from: resume)
     }
 }
