@@ -53,7 +53,42 @@ class Post: NSObject, Codable {
         self.date = formatter.string(from: date)
     }
     
+    func generateContent() -> String {
+        var content = ""
+        let tab = "    "
+        
+        content += "- Degrees: \n"
+        for degree in EducationViewController.degrees! {
+            content += "\(tab)+ \(degree.parseToString())\n"
+        }
+        
+        content += "- Awards: \n"
+        for award in EducationViewController.awards! {
+            content += "\(tab)+ \(award.parseToString())\n"
+        }
+        
+        content += "- Experience: \n"
+        for job in ExperienceViewController.jobs! {
+            content += "\(tab)+ \(job.parseToString())\n"
+        }
+        
+        content += "- Skills: \n"
+        for skill in SkillsViewController.skills! {
+            content += "\(tab)+ \(skill.parseToString())\n"
+        }
+        
+        content += "Phone number: \(BasicsViewController.basicInfo!.phone)"
+        return content
+    }
+    
     func createResume() {
-        self.date = Utilities.reformatDate(date: BasicsViewController.basicInfo!.birth, format: "yyyy/MM/dd")
+        let info = BasicsViewController.basicInfo!
+        self.date = Utilities.reformatDate(date: info.birth, format: "yyyy/MM/dd")
+        self.title = info.name
+        self.address = info.address
+        
+        self.tags = SkillsViewController.tags!
+        self.userName = HomepageViewController.username!
+        self.content = generateContent()
     }
 }

@@ -17,4 +17,8 @@ class Skill: NSObject, Codable {
         self.name = name
         self.content = content
     }
+    
+    func parseToString() -> String {
+        return "\(self.name): \(self.content)"
+    }
 }

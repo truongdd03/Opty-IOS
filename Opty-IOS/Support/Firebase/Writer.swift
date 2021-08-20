@@ -87,4 +87,11 @@ class Writer {
             ref.child("ApplicantsNumber").child(postID).setValue(val + 1)
         }
     }
+    
+    static func writeResume() {
+        let uid = Auth.auth().currentUser!.uid
+        let resume = Post()
+        resume.createResume()
+        
+    }
 }

@@ -22,4 +22,8 @@ class Award: NSObject, Codable {
         case name
         case content
     }
+    
+    func parseToString() -> String {
+        return "\(self.name): \(self.content)"
+    }
 }

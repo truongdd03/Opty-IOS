@@ -24,4 +24,9 @@ class Job: NSObject, Codable {
         self.content = content ?? ""
         self.duration = duration + "yr(s)"
     }
+    
+    func parseToString() -> String {
+        var content = "\(self.role) at \(self.company) for \(self.duration) years. \(self.content)."
+        return content
+    }
 }

@@ -22,4 +22,8 @@ class Degree: NSObject, Codable {
         self.startDate = startDate
         self.endDate = endDate
     }
+    
+    func parseToString() -> String {
+        return "\(self.degree) at \(self.school) (from \(startDate) to \(endDate))"
+    }
 }
