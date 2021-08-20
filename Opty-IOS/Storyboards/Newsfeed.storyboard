@@ -42,6 +42,14 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="PcI-Qw-CtQ">
+                                    <rect key="frame" x="0.0" y="356" width="414" height="8"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="8" id="iEU-ch-AlF"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsfeedCell" rowHeight="300" id="Cy7-WR-EtJ" customClass="NewsfeedTableViewCell" customModule="Opty_IOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>

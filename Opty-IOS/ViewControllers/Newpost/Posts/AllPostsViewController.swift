@@ -46,7 +46,7 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
         let str = AllPostsViewController.myPosts![indexPath.row].post.content
         let width = view.frame.size.width - 20
         let height = str.height(withConstrainedWidth: width, font: .systemFont(ofSize: 14))
-        return min(height + 120, 300)
+        return min(height + 120, 200)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
