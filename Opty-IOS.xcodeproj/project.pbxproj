@@ -25,7 +25,6 @@
 		5E4268EF26B50695007D25FD /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4268EE26B50695007D25FD /* Info.swift */; };
 		5E44342826C410D100BFF936 /* AllPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44342726C410D100BFF936 /* AllPostsViewController.swift */; };
 		5E44342B26C417FD00BFF936 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44342A26C417FD00BFF936 /* PostTableViewCell.swift */; };
-		5E44343126C4195A00BFF936 /* ApplicantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E44343026C4195A00BFF936 /* ApplicantsViewController.swift */; };
 		5E4AB54826CAB21400D56FF6 /* NewsfeedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4AB54726CAB21400D56FF6 /* NewsfeedSearchViewController.swift */; };
 		5E5221D826C6B19500BD5B63 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5221D726C6B19500BD5B63 /* Index.swift */; };
 		5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CEDA026B41073009C86D7 /* Degree.swift */; };
@@ -82,7 +81,6 @@
 		5E4268EE26B50695007D25FD /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		5E44342726C410D100BFF936 /* AllPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPostsViewController.swift; sourceTree = "<group>"; };
 		5E44342A26C417FD00BFF936 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		5E44343026C4195A00BFF936 /* ApplicantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicantsViewController.swift; sourceTree = "<group>"; };
 		5E4AB54726CAB21400D56FF6 /* NewsfeedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedSearchViewController.swift; sourceTree = "<group>"; };
 		5E5221D726C6B19500BD5B63 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		5E6CEDA026B41073009C86D7 /* Degree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
@@ -227,17 +225,8 @@
 			children = (
 				5E44342726C410D100BFF936 /* AllPostsViewController.swift */,
 				5E44342A26C417FD00BFF936 /* PostTableViewCell.swift */,
-				5E44342F26C4194600BFF936 /* Applicants */,
 			);
 			path = Posts;
-			sourceTree = "<group>";
-		};
-		5E44342F26C4194600BFF936 /* Applicants */ = {
-			isa = PBXGroup;
-			children = (
-				5E44343026C4195A00BFF936 /* ApplicantsViewController.swift */,
-			);
-			path = Applicants;
 			sourceTree = "<group>";
 		};
 		5E5221D626C6B15600BD5B63 /* Index */ = {
@@ -545,7 +534,6 @@
 				5EF5B1B326BA793B007E587C /* Fetcher.swift in Sources */,
 				5E890FE826B7DB83005B718C /* AddSkillViewController.swift in Sources */,
 				5EB1E5F426B79EC7005FA6F0 /* SkillTableViewCell.swift in Sources */,
-				5E44343126C4195A00BFF936 /* ApplicantsViewController.swift in Sources */,
 				5E3E8B8F26B6EDA400B0CA16 /* SkillsViewController.swift in Sources */,
 				5E44342826C410D100BFF936 /* AllPostsViewController.swift in Sources */,
 				5EB6384D26B2BFC7007B6FBF /* AppDelegate.swift in Sources */,

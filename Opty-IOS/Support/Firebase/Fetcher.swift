@@ -206,4 +206,19 @@ class Fetcher {
             completion()
         }
     }
+    
+    static func fetchApplicants(postID: String, completion: @escaping ([String]) -> Void) {
+        Database.database().reference().child("Applicants").child(postID).getData { (err, snapshot) in
+            let dict = snapshot.value as? [String: String] ?? [String:String]()
+            let keys = Array(dict.keys)
+            completion(keys)
+        }
+    }
+    
+    static func fetchResume(id: String, completion: @escaping (Post) -> Void) {
+        Firestore.firestore().collection("Resumes").document(id).getDocument { (snapshot, err) in
+            let post = try! snapshot?.data(as: Post.self)
+            completion(post!)
+        }
+    }
 }

@@ -96,9 +96,13 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         cell.title = tmp.title
         cell.content = tmp.content
         cell.address = tmp.address
-        cell.buttonClicked = (NewsfeedViewController.postsSent!.contains(tmp.id!))
-        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         cell.selectionStyle = .none
+        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+        if isApplicant {
+            cell.buttonClicked = false
+        } else {
+            cell.buttonClicked = (NewsfeedViewController.postsSent!.contains(tmp.id!))
+        }
         return cell
     }
     
@@ -137,12 +141,21 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         if index < posts.count { return }
         
         posts.append(Post())
-                
-        Fetcher.fetchPost(id: postsID[index]) { (post) in
+        
+        if isApplicant {
+            Fetcher.fetchResume(id: postsID[index]) { (post) in
+                self.posts[index] = post
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
+                }
+            }
+        } else {
+            Fetcher.fetchPost(id: postsID[index]) { (post) in
             self.posts[index] = post
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
             }
+        }
         }
     }
 }

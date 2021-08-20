@@ -52,9 +52,19 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let storyBoard = UIStoryboard(name: "Newpost", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "Applicants") as! ApplicantsViewController
-        navigationController?.pushViewController(vc, animated: true)
+        let id = AllPostsViewController.myPosts![indexPath.row].post.id!
+        Fetcher.fetchApplicants(postID: id) { (postsID) in
+            let storyBoard = UIStoryboard(name: "Newsfeed", bundle: nil)
+            
+            print(postsID)
+            DispatchQueue.main.async {
+                let vc = storyBoard.instantiateViewController(identifier: "Newsfeed") as! NewsfeedViewController
+                vc.postsID = postsID
+                vc.name = "Applicants"
+                vc.isApplicant = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
