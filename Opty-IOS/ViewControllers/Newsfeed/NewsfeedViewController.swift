@@ -50,7 +50,9 @@ class NewsfeedViewController: UIViewController {
             Fetcher.fetchTags {
                 Fetcher.fetchPostID(keywords: SkillsViewController.tags!) { (ids) in
                     self.postsID = ids
-                                        
+                    
+                    print(self.postsID)
+                    
                     for i in 0...5 {
                         self.loadNext(index: i)
                     }
@@ -105,7 +107,8 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
             cell.buttonClicked = false
         } else {
             cell.buttonTitle = "Send resume"
-            cell.buttonClicked = (NewsfeedViewController.postsSent!.contains(tmp.id!))
+            cell.buttonClicked = (NewsfeedViewController.postsSent!.contains(postsID[indexPath.row
+            ]))
         }
         return cell
     }
@@ -145,6 +148,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         if index < posts.count { return }
         
         posts.append(Post())
+        print(index)
         
         if isApplicant {
             Fetcher.fetchResume(id: postsID[index]) { (post) in
@@ -155,11 +159,12 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
             }
         } else {
             Fetcher.fetchPost(id: postsID[index]) { (post) in
-            self.posts[index] = post
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
+                self.posts[index] = post
+                //print(self.postsID[index], post.id)
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadNewsfeed"), object: nil)
+                }
             }
-        }
         }
     }
 }

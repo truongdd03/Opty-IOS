@@ -51,3 +51,8 @@ Machine learning
 RESTful
 Rust
 MongoDB
+Flask
+Flutter
+Kotlin
+Angular
+NoSQL

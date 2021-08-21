@@ -105,7 +105,7 @@ class Fetcher {
     static func fetchUsername() {
         let uid = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("Usernames").document(uid).getDocument { (snapshot, err) in
-            let dict = snapshot?.data() as! [String: String]
+            let dict = snapshot?.data() as? [String: String] ?? [String: String]()
             HomepageViewController.username = dict["Username"]
         }
     }

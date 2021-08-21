@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PorterStemmer2
 
 class NewpostViewController: PopUpViewController, UITextFieldDelegate {
 
@@ -17,6 +18,7 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
     @IBOutlet weak var CountryInput: UITextField!
     @IBOutlet weak var ContentInput: UITextView!
     @IBOutlet weak var PostButton: UIButton!
+    @IBOutlet weak var GenerateTagsButton: UIButton!
     
     static var tags: [String] = []
     
@@ -49,6 +51,7 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
     }
     
     func setUp() {
+        Utilities.styleHollowButton(GenerateTagsButton)
         Utilities.styleSimpleTextField(textField: CompanyInput)
         Utilities.styleSimpleTextField(textField: StreetInput)
         Utilities.styleSimpleTextField(textField: CityInput)
@@ -87,6 +90,40 @@ class NewpostViewController: PopUpViewController, UITextFieldDelegate {
         ContentInput.text = ""
         
         NewpostViewController.tags.removeAll()
+        TagsCollection.reloadData()
+    }
+    
+    func reformatTags(arr: [String]) -> [String]{
+        var tags = arr
+        for id in 0..<tags.count {
+            tags[id] = tags[id].lowercased()
+            if tags[id].first?.isLetter == false {
+                tags[id].removeFirst()
+            }
+            if tags[id].last?.isLetter == false {
+                tags[id].removeLast()
+            }
+            
+            if let stemmer = PorterStemmer(withLanguage: .English) {
+                tags[id] = stemmer.stem(tags[id])
+            }
+        }
+        
+        return tags
+    }
+    
+    @IBAction func generateTagsTapped(_ sender: Any) {
+        let content = ContentInput.text
+        let words = Index.splitContent(content: content!)
+        let tags = fetchTags()
+        let reformattedTags = reformatTags(arr: tags)
+        NewpostViewController.tags = []
+
+        for id in 0..<reformattedTags.count {
+            if words.firstIndex(of: reformattedTags[id]) != nil {
+                NewpostViewController.tags.append(tags[id])
+            }
+        }
         TagsCollection.reloadData()
     }
     

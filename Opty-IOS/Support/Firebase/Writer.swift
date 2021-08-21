@@ -80,7 +80,7 @@ class Writer {
     static func writeUsername(username: String) {
         let uid = Auth.auth().currentUser!.uid
         Firestore.firestore().collection("Usernames").document(uid).setData(["Username": username])
-        writeResume()
+        //writeResume()
     }
     
     static func writeApplicants(postID: String) {

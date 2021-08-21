@@ -93,4 +93,17 @@ class Utilities {
         formatter.dateFormat = format
         return formatter.string(from: date)
     }
+    
+    static func fetchTags() -> [String] {
+        var tags = [String]()
+        let file = "tags"
+        if let textFile = Bundle.main.url(forResource: file, withExtension: "txt") {
+            if let fileContents = try? String(contentsOf: textFile) {
+                tags = fileContents.components(separatedBy: "\n")
+            }
+        }
+        tags.removeLast()
+        tags.sort()
+        return tags
+    }
 }

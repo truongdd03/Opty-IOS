@@ -140,6 +140,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6j-wp-B0u">
+                                <rect key="frame" x="279" y="147.5" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="5XY-qM-4Vf"/>
+                                </constraints>
+                                <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="generateTagsTapped:" destination="5bp-za-UDN" eventType="touchUpInside" id="8P2-yb-ggN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NgD-fq-gcs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -162,6 +172,7 @@
                             <constraint firstItem="KPK-25-pOi" firstAttribute="leading" secondItem="NgD-fq-gcs" secondAttribute="leading" constant="20" id="LBn-y9-hFK"/>
                             <constraint firstItem="0hS-QG-axk" firstAttribute="leading" secondItem="nOd-wP-KUU" secondAttribute="leading" constant="20" id="OwQ-hg-9LY"/>
                             <constraint firstItem="DvZ-Hu-Vgu" firstAttribute="top" secondItem="0hS-QG-axk" secondAttribute="bottom" constant="10" id="Q2o-xA-0cc"/>
+                            <constraint firstItem="O6D-E3-Ybi" firstAttribute="leading" secondItem="F6j-wp-B0u" secondAttribute="trailing" constant="10" id="RfR-SR-YGo"/>
                             <constraint firstItem="wfV-Bl-RuR" firstAttribute="top" secondItem="oDK-1W-DCu" secondAttribute="bottom" constant="10" id="STt-Us-aAa"/>
                             <constraint firstItem="3bn-5C-iSa" firstAttribute="leading" secondItem="oDK-1W-DCu" secondAttribute="trailing" constant="20" id="U41-fX-Hsz"/>
                             <constraint firstItem="Lzn-JL-GoE" firstAttribute="leading" secondItem="NgD-fq-gcs" secondAttribute="leading" constant="20" id="b3I-7s-7Q7"/>
@@ -172,6 +183,7 @@
                             <constraint firstItem="UUm-Ud-beK" firstAttribute="top" secondItem="zm0-i6-7gU" secondAttribute="bottom" constant="30" id="l47-3c-jXZ"/>
                             <constraint firstItem="P5v-Fp-6gN" firstAttribute="top" secondItem="Lzn-JL-GoE" secondAttribute="bottom" constant="10" id="n7r-mI-khO"/>
                             <constraint firstItem="0hS-QG-axk" firstAttribute="top" secondItem="NgD-fq-gcs" secondAttribute="top" constant="20" id="qCo-Mo-bXG"/>
+                            <constraint firstItem="F6j-wp-B0u" firstAttribute="centerY" secondItem="DvZ-Hu-Vgu" secondAttribute="centerY" id="rSN-fO-777"/>
                             <constraint firstItem="zm0-i6-7gU" firstAttribute="leading" secondItem="NgD-fq-gcs" secondAttribute="leading" constant="20" id="u5R-9X-Izy"/>
                             <constraint firstAttribute="trailing" secondItem="0hS-QG-axk" secondAttribute="trailing" constant="20" id="xix-CZ-Q6P"/>
                         </constraints>
@@ -182,6 +194,7 @@
                         <outlet property="CompanyInput" destination="0hS-QG-axk" id="JNM-UZ-DWg"/>
                         <outlet property="ContentInput" destination="zm0-i6-7gU" id="sD6-3Y-ZSO"/>
                         <outlet property="CountryInput" destination="3bn-5C-iSa" id="i8m-xV-dQv"/>
+                        <outlet property="GenerateTagsButton" destination="F6j-wp-B0u" id="0dB-8G-X2p"/>
                         <outlet property="PostButton" destination="UUm-Ud-beK" id="yBh-w2-kgx"/>
                         <outlet property="StateInput" destination="oDK-1W-DCu" id="cUk-ha-4xW"/>
                         <outlet property="StreetInput" destination="P5v-Fp-6gN" id="yya-g7-Du3"/>
