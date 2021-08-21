@@ -62,6 +62,7 @@ extension AllPostsViewController: UITableViewDelegate, UITableViewDataSource {
                 vc.postsID = postsID
                 vc.name = "Applicants"
                 vc.isApplicant = true
+                vc.postID = id
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

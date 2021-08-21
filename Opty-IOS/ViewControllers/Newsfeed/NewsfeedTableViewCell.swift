@@ -38,14 +38,23 @@ class NewsfeedTableViewCell: UITableViewCell {
             ContentLabel.text = content
         }
     }
+    var buttonTitle: String?
     var buttonClicked: Bool? {
         didSet {
             if buttonClicked == true {
-                Button.setTitle("Sent", for: .normal)
+                if buttonTitle == "Reject" {
+                    Button.setTitle("Rejected", for: .normal)
+                } else {
+                    Button.setTitle("Sent", for: .normal)
+                }
                 Utilities.styleHollowMiniButton(Button)
             } else {
-                Button.setTitle("Send Resume", for: .normal)
-                Utilities.styleFilledMiniButton(Button, color: UIColor.systemGreen)
+                Button.setTitle(buttonTitle, for: .normal)
+                if buttonTitle == "Reject" {
+                    Utilities.styleFilledMiniButton(Button, color: UIColor.systemRed)
+                } else {
+                    Utilities.styleFilledMiniButton(Button, color: UIColor.systemGreen)
+                }
             }
         }
     }
@@ -54,6 +63,7 @@ class NewsfeedTableViewCell: UITableViewCell {
             AddressLabel.text = address
         }
     }
+    var postID: String?
 
     func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
         TagsCollection.delegate = dataSourceDelegate
@@ -64,7 +74,11 @@ class NewsfeedTableViewCell: UITableViewCell {
     
     @IBAction func buttonTapped(_ sender: Any) {
         if buttonClicked == false {
-            Writer.writeApplicants(postID: id!)
+            if buttonTitle == "Reject" {
+                Remover.removeApplicant(postID: postID!, uid: id!)
+            } else {
+                Writer.writeApplicants(postID: id!)
+            }
         }
         buttonClicked = true
     }

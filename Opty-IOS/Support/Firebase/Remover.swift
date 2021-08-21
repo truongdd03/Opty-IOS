@@ -45,4 +45,13 @@ class Remover {
         Firestore.firestore().collection("Posts").document(id).delete()        
         Database.database().reference().child("Posts").child(uid).child(id).removeValue()
     }
+    
+    static func removeApplicant(postID: String, uid: String) {
+        let ref = Database.database().reference()
+        ref.child("Applicants").child(postID).child(uid).removeValue()
+        ref.child("ApplicantsNumber").child(postID).getData { (err, snapshot) in
+            let val = snapshot.value as? Int ?? 0
+            ref.child("ApplicantsNumber").child(postID).setValue(val - 1)
+        }
+    }
 }

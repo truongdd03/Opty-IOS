@@ -16,6 +16,7 @@ class NewsfeedViewController: UIViewController {
     var postsID: [String] = []
     var isApplicant = false
     var name = "Opty"
+    var postID: String?
     
     var index = -1
     var clicked = false
@@ -91,6 +92,7 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         let tmp = posts[indexPath.row]
         
         cell.id = tmp.id
+        cell.postID = postID
         cell.name = tmp.userName
         cell.date = tmp.date
         cell.title = tmp.title
@@ -99,8 +101,10 @@ extension NewsfeedViewController: UITableViewDelegate, UITableViewDataSource, UI
         cell.selectionStyle = .none
         cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
         if isApplicant {
+            cell.buttonTitle = "Reject"
             cell.buttonClicked = false
         } else {
+            cell.buttonTitle = "Send resume"
             cell.buttonClicked = (NewsfeedViewController.postsSent!.contains(tmp.id!))
         }
         return cell
