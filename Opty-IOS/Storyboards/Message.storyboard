@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bHY-JE-f1g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bHY-JE-f1g">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" rowHeight="70" id="Wn5-An-ZL2" customClass="MessageTableViewCell" customModule="Opty_IOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="68.5" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wn5-An-ZL2" id="Vlk-F0-LBr">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -34,39 +34,41 @@
                                                 <constraint firstAttribute="width" constant="50" id="S3m-3J-Kjz"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-wT-7Vp">
-                                            <rect key="frame" x="80" y="10" width="324" height="50"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truong Dinh Dong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-gb-Wza">
-                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="33"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" systemColor="systemBlueColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You: What's up! - Thu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngb-QU-6lF">
-                                                    <rect key="frame" x="0.0" y="33" width="324" height="17"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="8XS-AY-Z4W"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Truong Dinh Dong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-gb-Wza">
+                                            <rect key="frame" x="80" y="16" width="146.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemBlueColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="You: Yo! How are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngb-QU-6lF">
+                                            <rect key="frame" x="80" y="37" width="143" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" - Thu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogC-ob-I1s">
+                                            <rect key="frame" x="223" y="37" width="39" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="db8-A9-dAY" firstAttribute="leading" secondItem="Vlk-F0-LBr" secondAttribute="leading" constant="20" id="3Rk-Mo-iZG"/>
-                                        <constraint firstAttribute="bottom" secondItem="pWg-wT-7Vp" secondAttribute="bottom" constant="10" id="58d-GJ-uqh"/>
-                                        <constraint firstItem="pWg-wT-7Vp" firstAttribute="leading" secondItem="db8-A9-dAY" secondAttribute="trailing" constant="10" id="9B9-1I-lXg"/>
+                                        <constraint firstItem="ogC-ob-I1s" firstAttribute="centerY" secondItem="ngb-QU-6lF" secondAttribute="centerY" id="Ayh-Ft-D49"/>
+                                        <constraint firstAttribute="bottom" secondItem="ngb-QU-6lF" secondAttribute="bottom" constant="16" id="F3z-MW-GVm"/>
+                                        <constraint firstItem="ngb-QU-6lF" firstAttribute="leading" secondItem="db8-A9-dAY" secondAttribute="trailing" constant="10" id="HVi-n6-OPP"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ogC-ob-I1s" secondAttribute="trailing" constant="10" id="KuZ-FY-TMP"/>
                                         <constraint firstItem="db8-A9-dAY" firstAttribute="top" secondItem="Vlk-F0-LBr" secondAttribute="top" constant="10" id="OsA-f1-J1J"/>
+                                        <constraint firstItem="pbW-gb-Wza" firstAttribute="leading" secondItem="db8-A9-dAY" secondAttribute="trailing" constant="10" id="ZIj-9f-33i"/>
+                                        <constraint firstItem="pbW-gb-Wza" firstAttribute="top" secondItem="Vlk-F0-LBr" secondAttribute="top" constant="16" id="mvn-lg-kcj"/>
                                         <constraint firstAttribute="bottom" secondItem="db8-A9-dAY" secondAttribute="bottom" constant="10" id="ne6-eK-4rr"/>
-                                        <constraint firstAttribute="trailing" secondItem="pWg-wT-7Vp" secondAttribute="trailing" constant="10" id="oYm-pc-YJG"/>
-                                        <constraint firstItem="pWg-wT-7Vp" firstAttribute="top" secondItem="Vlk-F0-LBr" secondAttribute="top" constant="10" id="tNg-JG-Qzl"/>
+                                        <constraint firstItem="ogC-ob-I1s" firstAttribute="leading" secondItem="ngb-QU-6lF" secondAttribute="trailing" id="nqh-Pa-V5i"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="Avatar" destination="db8-A9-dAY" id="I53-uU-ugQ"/>
+                                    <outlet property="DateLabel" destination="ogC-ob-I1s" id="ztc-8s-ITQ"/>
                                     <outlet property="NameLabel" destination="pbW-gb-Wza" id="j4B-is-SNQ"/>
                                     <outlet property="TextLabel" destination="ngb-QU-6lF" id="sg5-rK-yuo"/>
                                 </connections>

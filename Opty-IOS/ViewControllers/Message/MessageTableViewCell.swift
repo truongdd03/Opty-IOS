@@ -12,16 +12,21 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var Avatar: UIImageView!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var TextLabel: UILabel!
+    @IBOutlet weak var DateLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var name: String? {
+        didSet {
+            NameLabel.text = name
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var text: String? {
+        didSet {
+            TextLabel.text = text
+        }
     }
-
+    var date: String? {
+        didSet {
+            DateLabel.text = " - \(date!)"
+        }
+    }
 }
