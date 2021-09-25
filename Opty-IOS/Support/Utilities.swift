@@ -19,7 +19,6 @@ class Utilities {
         bottomLine.backgroundColor = UIColor.systemBlue.cgColor
         textfield.borderStyle = .none
         textfield.layer.addSublayer(bottomLine)
-        
     }
     
     static func styleSimpleTextField(textField: UITextField) {

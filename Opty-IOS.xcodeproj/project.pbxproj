@@ -60,6 +60,7 @@
 		5EF5B1BC26BA8BEA007E587C /* Remover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5B1BB26BA8BEA007E587C /* Remover.swift */; };
 		5EFF111126B63EA00040DC86 /* AddExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF111026B63EA00040DC86 /* AddExperienceViewController.swift */; };
 		5EFF111826B6ACC10040DC86 /* tags.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5EFF111726B6ACC10040DC86 /* tags.txt */; };
+		F6F9E36126DDBB22005CEB08 /* DetailMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F9E36026DDBB22005CEB08 /* DetailMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		5EFF111726B6ACC10040DC86 /* tags.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = tags.txt; sourceTree = "<group>"; };
 		C6C0B5A7ED9990686F219676 /* Pods-Opty-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Opty-IOS.release.xcconfig"; path = "Target Support Files/Pods-Opty-IOS/Pods-Opty-IOS.release.xcconfig"; sourceTree = "<group>"; };
 		D7F3FF28590BAE7726881192 /* Pods_Opty_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Opty_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F9E36026DDBB22005CEB08 /* DetailMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				5E27842F26B2EBE000469AB5 /* MessageViewController.swift */,
 				5EA56A4726B8E5CE00BDD468 /* MessageTableViewCell.swift */,
+				F6F9E36026DDBB22005CEB08 /* DetailMessageViewController.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				5E6CEDA126B41073009C86D7 /* Degree.swift in Sources */,
 				5EB6385126B2BFC7007B6FBF /* LobbyViewController.swift in Sources */,
 				5E4268EF26B50695007D25FD /* Info.swift in Sources */,
+				F6F9E36126DDBB22005CEB08 /* DetailMessageViewController.swift in Sources */,
 				5E27843426B2EC6400469AB5 /* HomepageViewController.swift in Sources */,
 				5E6CEDA426B41168009C86D7 /* Award.swift in Sources */,
 				5EC7432026BB9F46006DB2AF /* NewsfeedTableViewCell.swift in Sources */,
@@ -707,11 +711,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Dong-Truong.Opty-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dong-Truong.Shellhack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -728,10 +732,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Dong-Truong.Opty-IOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dong-Truong.Shellhack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
